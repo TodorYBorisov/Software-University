@@ -8,4 +8,4 @@ function largestNumber(a, b, c) {
         console.log(`The largest number is ${c}.`);
     }
 }
-largestNumber(5, -3, 16)
+largestNumber(5, -3, 16);

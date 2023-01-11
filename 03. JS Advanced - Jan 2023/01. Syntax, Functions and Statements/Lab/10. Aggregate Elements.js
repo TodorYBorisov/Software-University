@@ -9,7 +9,7 @@ function aggregateElements(array) {
     }
 
     for (let numArr of array) {
-        inverseSum +=(1 /Number(numArr));
+        inverseSum += (1 / Number(numArr));
     }
 
     console.log(sum);

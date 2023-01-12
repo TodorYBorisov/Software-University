@@ -15,3 +15,4 @@ function ccd(a, b) {
     console.log(num1);
 }
 ccd(15, 5)
+ccd(2154, 458)

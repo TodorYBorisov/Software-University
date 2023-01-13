@@ -1,19 +1,21 @@
 function sameNumbers(input) {
 
     let num = input.toString();
+    let isSame = true;
     let firstNumber = num[0];
     let sum = 0;
-    
-    for (let i =0; i < num.length; i++) {
+    let arrL = num.length;
 
-        if (firstNumber === num[i]) {
-            sum +=Number(num[i]);
-        }else{
-            console.log('false');
-            sum +=Number(num[i]);
+    for (let i = 0; i < arrL; i++) {
+
+        sum += Number(num[i]);
+
+        if (Number(firstNumber) !== Number(num[i])) {
+
+            isSame = false;
         }
     }
-    console.log('true');
+    console.log(isSame);
     console.log(sum);
 }
 sameNumbers(1234);

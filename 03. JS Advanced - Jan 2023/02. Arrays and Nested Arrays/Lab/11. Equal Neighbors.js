@@ -1,23 +1,7 @@
-function matrix() {
+function equalNeighbors(matrix) {
 
-    let matrix = [[4, 5, 6, 2], [6, 5, 4, 3], [5, 5, 5, 7]];
-
-    for (let row of matrix) {
-        for (let el of row) {
-            console.log(el);
-        }    
-    }
-//////////////////////////////////////////////////
-
-    for (let i = 0; i < matrix.length; i++) {
-        let row = matrix[i];
-        for (let j = 0; j < row.length; j++) {
-            const element = row[j];
-            console.log(element);
-        }
-    }
-/////////////////////////////////////////////////////
     let counter = 0;
+
     for (let row = 0; row < matrix.length; row++) {
         for (let col = 0; col < matrix[0].length - 1; col++) {
             let element = matrix[row][col];
@@ -37,5 +21,14 @@ function matrix() {
             }
         }
     }
+
+    console.log(counter);
 }
-matrix();
+equalNeighbors([['2', '3', '4', '7', '0'],
+                ['4', '0', '5', '3', '4'],
+                ['2', '3', '5', '4', '2'],
+                ['9', '8', '7', '5', '4']]);
+
+equalNeighbors([['test', 'yes', 'yo', 'ho'],
+                ['well', 'done', 'yo', '6'],
+                ['not', 'done', 'yet', '5']]);

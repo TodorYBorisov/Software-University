@@ -14,6 +14,5 @@ function biggestElemnt(array) {
 }
 
 console.log(biggestElemnt([[3, 5, 7, 12],
-    [-1, 4, 33, 2],
-    [8, 3, 0, 4]]
-   ));
+                            [-1, 4, 33, 2],
+                            [8, 3, 0, 4]]));

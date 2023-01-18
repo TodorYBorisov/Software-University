@@ -2,10 +2,9 @@ function pieceOfPie(array, flavor1, flavor2) {
 
     let startIndex = Number(array.indexOf(flavor1));
     let lastIndex = Number(array.indexOf(flavor2));
+    let removed = array.slice(startIndex, lastIndex + 1);
 
-    let removed = array.splice(startIndex, lastIndex);
-
-    console.log(removed);
+    return removed;
 }
 (pieceOfPie(['Pumpkin Pie',
     'Key Lime Pie',

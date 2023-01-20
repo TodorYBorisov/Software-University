@@ -6,6 +6,6 @@ function cityRecord(name, population, treasury) {
         treasury: treasury,
     };
 
-    console.log(JSON.stringify(result));
+    return result;
 }
 cityRecord('Tortuga', 7000, 15000);

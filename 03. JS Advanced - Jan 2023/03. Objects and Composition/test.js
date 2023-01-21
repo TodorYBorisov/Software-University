@@ -14,3 +14,15 @@ function test() {
 
 }
 test();
+
+property: function(params) {
+    console.log();
+}
+
+property: () =>{
+    console.log();
+},
+
+property() {
+    console.log();
+}

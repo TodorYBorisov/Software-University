@@ -34,9 +34,7 @@ function assemblyLine() {
                 }
 
             };
-
         }
-
     };
 }
 

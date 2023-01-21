@@ -15,14 +15,17 @@ function test() {
 }
 test();
 
-property: function(params) {
-    console.log();
-}
+let car = {
 
-property: () =>{
-    console.log();
-},
+    property: function (params) {
+        console.log();
+    },
 
-property() {
-    console.log();
-}
+    property: () => {
+        console.log();
+    },
+
+    property() {
+        console.log();
+    },
+};

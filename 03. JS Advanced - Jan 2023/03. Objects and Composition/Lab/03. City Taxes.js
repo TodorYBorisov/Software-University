@@ -18,7 +18,7 @@ function cityTaxes(name, population, treasury) {
 
     return city;
 }
-console.log(cityTaxes('Tortuga', 7000, 15000));
+cityTaxes('Tortuga', 7000, 15000);
 
 
 

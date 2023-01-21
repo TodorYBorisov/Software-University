@@ -1,18 +1,20 @@
-function objectFactory(lib, list) {
+function objectFactory(library, orders) {
 
     const result = [];
 
-    for (let order of list) {
+    for (let order of orders) {
 
         const object = {};
         const template = order.template;
-        for (let prop in template) {
-            object[prop] = template[prop];
+
+        for (let product in template) {
+            object[product] = template[product];
         }
 
         const parts = order.parts;
+        
         for (let part of parts) {
-            object[part] = lib[part];
+            object[part] = library[part];
         }
 
         result.push(object);

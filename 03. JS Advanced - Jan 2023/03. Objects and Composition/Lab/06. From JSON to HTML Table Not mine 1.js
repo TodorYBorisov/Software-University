@@ -7,7 +7,6 @@ function fromJSONToHTMLTable(dataAsJson) {
 
     result.push(`    <tr>${keys.map(k => `<th>${k}</th>`).join('')}</tr>`);
 
-
     for (const entry of object) {
         result.push(`    <tr>${keys.map(k => `<td>${entry[k]}</td>`).join('')}</tr> `);
     }
@@ -15,6 +14,7 @@ function fromJSONToHTMLTable(dataAsJson) {
     result.push('</table>');
 
     return result.join('\n');
+    //липсва ескейп функцията на ентититата.
 }
 console.log(fromJSONToHTMLTable(`[{"Name":"Stamat",
 "Score":5.5},

@@ -39,7 +39,7 @@
 
             for (let key of headings) {
 
-                tableHeadings += '<th>' + key + '</th>';
+                tableHeadings += '<th>' + escapeHtml(key) + '</th>';
             }
             tableHeadings += '</tr>';
 
@@ -49,7 +49,7 @@
                 let tableRows = '   <tr>';
                 for (let j = 0; j < headings.length; j++) {
                     let value = data[i][headings[j]];
-                    tableRows += '<td>' + value + '</td>';
+                    tableRows += '<td>' + escapeHtml(value) + '</td>';
                 }
                 tableRows += '</tr>';
 
@@ -60,15 +60,16 @@
 
             return table.join('\n');
 
-            // function escapeHtml(value) {
-            //     return value
-            //         .toString()
-            //         .replace(/&/g, '&amp;')
-            //         .replace(/</g, '&lt;')
-            //         .replace(/>/g, '&gt;')
-            //         .replace(/"/g, '&quot;')
-            //         .replace(/'/g, '&#39;');
-            // }
+            function escapeHtml(value) {
+                return value
+                    .toString()
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
         }
         window.onload = function () {
             let container = document.getElementById('wrapper');

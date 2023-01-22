@@ -6,8 +6,8 @@ function calorieObject(array) {
         let product = array[i];
         let cal = Number(array[i + 1]);
 
-        if (i % 2 === 0){
-            obj[product]=cal;
+        if (i % 2 === 0) {
+            obj[product] = cal;
         }
     }
 

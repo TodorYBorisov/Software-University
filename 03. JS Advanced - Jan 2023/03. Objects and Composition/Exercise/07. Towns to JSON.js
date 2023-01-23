@@ -10,13 +10,12 @@ function townsToJson(array) {
 
         res.push({
             Town: town,
-            Latitude: Number(latitude).toFixed(2),
-            Longitude: Number(longitude).toFixed(2),
+            Latitude: Number(Number(latitude).toFixed(2)),
+            Longitude: Number(Number(longitude).toFixed(2)),
         });
     }
 
-console.log(JSON.stringify(res));
-
+    console.log(JSON.stringify(res));
 
 }
 townsToJson(['| Town | Latitude | Longitude |',

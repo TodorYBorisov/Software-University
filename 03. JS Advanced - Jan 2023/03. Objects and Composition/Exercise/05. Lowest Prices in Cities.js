@@ -17,13 +17,11 @@ function lowestPriceinCities(array) {
         }
     }
 
-for (let key in result) {
-
-    console.log(`${key} -> ${result[key].productPrice} (${result[key].townName})`);
-   
-}
-
-} lowestPriceinCities(['Sample Town | Sample Product | 1000',
+    for (let key in result) {
+        console.log(`${key} -> ${result[key].productPrice} (${result[key].townName})`);
+    }
+} 
+lowestPriceinCities(['Sample Town | Sample Product | 1000',
     'Sample Town | Orange | 2',
     'Sample Town | Peach | 1',
     'Sofia | Orange | 3',

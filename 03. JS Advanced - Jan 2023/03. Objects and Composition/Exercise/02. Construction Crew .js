@@ -8,21 +8,20 @@ function constructorCrew(object) {
     };
 
     for (let key in object) {
-    
+
         if (worker.hasOwnProperty(key)) {
 
             worker[key] = object[key];
 
             if (object[key] === true) {
 
-                worker.levelOfHydrated += 0.1 * worker.weight * worker.experience;
+                worker.levelOfHydrated += Number(0.1 * worker.weight * worker.experience);
                 worker.dizziness = false;
             }
         }
     }
 
-
-    console.log(worker);
+    return worker;
 }
 constructorCrew({
     weight: 80,

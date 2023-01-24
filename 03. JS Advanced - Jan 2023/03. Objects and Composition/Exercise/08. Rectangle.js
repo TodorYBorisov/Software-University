@@ -7,7 +7,6 @@ function rectangle(width, height, color) {
         calcArea() {
             return width * height;
         },
-
     };
 
     return rect;

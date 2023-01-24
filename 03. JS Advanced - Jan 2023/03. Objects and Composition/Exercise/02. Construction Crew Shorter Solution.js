@@ -1,24 +1,8 @@
-function constructorCrew(object) {
+function constructorCrew(worker) {
 
-    let worker = {
-        weight: 0,
-        experience: 0,
-        levelOfHydrated: 0,
-        dizziness: false,
-    };
-
-    for (let key in object) {
-
-        if (worker.hasOwnProperty(key)) {
-
-            worker[key] = object[key];
-
-            if (object[key] === true) {
-
-                worker.levelOfHydrated += Number(0.1 * worker.weight * worker.experience);
-                worker.dizziness = false;
-            }
-        }
+    if (worker.dizziness) {
+        worker.levelOfHydrated += 0.1 * worker.experience * worker.weight;
+        worker.dizziness = false;
     }
 
     return worker;
@@ -28,7 +12,6 @@ constructorCrew({
     experience: 1,
     levelOfHydrated: 0,
     dizziness: true
-}
-);
+});
 
 

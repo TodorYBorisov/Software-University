@@ -11,7 +11,6 @@ function storeCatalog(array) {
         if (result[i][0] !== firstLetter) {
 
             console.log(result[i][0]);
-
         }
         console.log(`  ${current[0]}: ${current[1]}`);
         firstLetter = result[i][0];

@@ -4,8 +4,8 @@ function solve() {
     let manaOrStamina = 100;
     let obj = {};
 
-    const create = {
-        fighter: (name) => {
+    let create = {
+        fighter(name) {
             return (obj = {
                 name: name,
                 health: health,
@@ -16,7 +16,7 @@ function solve() {
                 },
             });
         },
-        mage: (name) => {
+        mage(name) {
             return (obj = {
                 name: name,
                 health: health,

@@ -5,3 +5,7 @@ function editElement(ref, match, replacer) {
     ref.textContent = result;                      // Референцията на текста я даваме да е равна на резултата.
 }
 editElement();
+
+// Друго решение с регекс: 
+// let pattern = new RegExp(match, 'g');
+// ref.textContent = ref.textContent.replace(pattern,replacer);

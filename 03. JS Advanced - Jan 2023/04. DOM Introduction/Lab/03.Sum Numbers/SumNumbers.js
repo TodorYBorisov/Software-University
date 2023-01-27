@@ -1,8 +1,8 @@
 function calc() {
 
-    const num1 = document.getElementById('num1');
-    const num2 = document.getElementById('num2');
-    const sum = document.getElementById('sum');
+    let num1 = document.getElementById('num1').value;
+    let num2 = document.getElementById('num2').value;
+    let sum = document.getElementById('sum').value;
 
-    sum.value = Number(num1.value) + Number(num2.value);
+    sum = Number(num1) + Number(num2);
 }

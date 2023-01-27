@@ -9,15 +9,8 @@ function colorize() {
     //         row.style.background = 'teal';
     //     }
     // }
-
     const rows = document.querySelectorAll('table tr:nth-of-type(even)');
-
-    // for (const row of rows) {
-    //     row.style.backgroundColor = 'teal';
-    // }
-    rows.forEach(element => {
-        element.style.backgroundColor = 'teal';
-
-    });
-
+    for (const row of rows) {
+        row.style.backgroundColor = 'teal';
+    }
 }

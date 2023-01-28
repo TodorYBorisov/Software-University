@@ -7,6 +7,7 @@ function extract(content) {
     let match = pattern.exec(p);
 
     let result = [];
+    
     while (match) {
 
         result.push(match[1]);

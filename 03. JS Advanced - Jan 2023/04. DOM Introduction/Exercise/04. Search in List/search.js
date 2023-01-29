@@ -3,10 +3,10 @@ function search() {
    let list = document.querySelectorAll('#towns li');
    let search = document.getElementById('searchText').value;
 
-   for (let town of list) {
-      town.style.textDecoration = '';
-      town.style.fontWeight = 'normal';
-   }
+   // for (let town of list) { // тук изчистваме всички предишни градове
+   //    town.style.textDecoration = '';
+   //    town.style.fontWeight = 'normal';
+   // }
 
    let counter = 0;
    for (let line of list) {
@@ -15,6 +15,9 @@ function search() {
          counter++;
          line.style.textDecoration = 'underline';
          line.style.fontWeight = 'bold';
+      } else {                // изчистваме предходното търсене
+         line.style.textDecoration = ''; 
+         line.style.fontWeight = 'normal';
       }
    }
    document.getElementById('result').textContent = `${counter} matches found`;

@@ -9,7 +9,7 @@ function solve() {
 
          row.classList.remove('select'); // с това се зачистваме ако има приложение класове преди това
 
-         if (row.innerHTML.includes(input) && input !== '') {
+         if (row.innerHTML.includes(input) && input !== '') { //innerHTML проверява във всички деца на елемента, който сме избрали
             row.className = 'select'; // тук добавяме на всеки ред клас, които е от ccs файла
          }
       }

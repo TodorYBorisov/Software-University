@@ -14,7 +14,7 @@ function search() {
       if (line.textContent.includes(search)) {
          counter++;
          line.style.textDecoration = 'underline';
-         line.style.fontWeight = ' bold';
+         line.style.fontWeight = 'bold';
       }
    }
    document.getElementById('result').textContent = `${counter} matches found`;

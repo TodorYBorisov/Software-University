@@ -16,7 +16,7 @@ function search() {
          line.style.textDecoration = 'underline';
          line.style.fontWeight = 'bold';
       } else {                // изчистваме предходното търсене
-         line.style.textDecoration = ''; 
+         line.style.textDecoration = 'none'; 
          line.style.fontWeight = 'normal';
       }
    }

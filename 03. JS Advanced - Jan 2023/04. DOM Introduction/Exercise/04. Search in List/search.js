@@ -11,12 +11,12 @@ function search() {
    let counter = 0;
    for (let line of list) {
 
-      if (line.textContent.includes(search)) {
+      if (line.textContent.includes(search) && search !== '') {
          counter++;
          line.style.textDecoration = 'underline';
          line.style.fontWeight = 'bold';
       } else {                // изчистваме предходното търсене
-         line.style.textDecoration = 'none'; 
+         line.style.textDecoration = 'none';
          line.style.fontWeight = 'normal';
       }
    }

@@ -47,12 +47,12 @@ function solve() {
             totalSalary = 0;
          }
       }
-      
+
       let sortedBySalary = Object.entries(output[bestName]).sort((a, b) => b[1] - a[1]);
 
       let print = '';
 
-      for (const worker of sortedBySalary) {
+      for (let worker of sortedBySalary) {
 
          print += `Name: ${worker[0]} With Salary: ${worker[1]} `;
       }

@@ -47,6 +47,7 @@ function solve() {
             totalSalary = 0;
          }
       }
+      
       let sortedBySalary = Object.entries(output[bestName]).sort((a, b) => b[1] - a[1]);
 
       let print = '';

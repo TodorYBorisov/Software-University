@@ -11,6 +11,7 @@ function addItem() {
     deleteButton.href ='#';
     deleteButton.textContent = '[Delete]';
     addLiElement.appendChild(deleteButton);
+    listElement.appendChild(addLiElement);
     
     // deleteButton.onclick = () => {
     //     addNewElement.parentElement.removeChild(addNewElement);

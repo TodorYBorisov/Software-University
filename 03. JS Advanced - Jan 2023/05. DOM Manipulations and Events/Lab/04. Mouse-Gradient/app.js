@@ -1,11 +1,11 @@
 function attachGradientEvents() {
-    let gardienPosition = document.getElementById('gradient');
-    gardienPosition.addEventListener('mousemove', onMouseMove);
-
+    let gradientElement = document.getElementById('gradient');
     let resultField = document.getElementById('result');
 
-    function onMouseMove(event) {
-        resultField.textContent = Math.floor((event.offsetX / gardienPosition.clientWidth)* 100) + '%';
-    }
+    gradientElement.addEventListener('mousemove', onMouseMove);
 
+    function onMouseMove(event) {
+        let percent = Math.floor((event.offsetX / gradientElement.clientWidth) * 100) + '%';
+        resultField.textContent = percent;
+    }
 }

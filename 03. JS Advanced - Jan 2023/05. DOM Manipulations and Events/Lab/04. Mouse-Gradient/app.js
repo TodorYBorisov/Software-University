@@ -5,6 +5,7 @@ function attachGradientEvents() {
     gradientElement.addEventListener('mousemove', onMouseMove);
 
     function onMouseMove(event) {
+        
         let percent = Math.floor((event.offsetX / gradientElement.clientWidth) * 100) + '%';
         resultField.textContent = percent;
     }

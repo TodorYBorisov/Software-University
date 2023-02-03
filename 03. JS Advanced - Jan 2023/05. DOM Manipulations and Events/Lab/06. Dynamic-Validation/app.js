@@ -12,7 +12,5 @@ function validate() {
         }else{
             event.currentTarget.classList.add('error');
         }
-        
     }
-
 }

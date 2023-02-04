@@ -14,7 +14,7 @@ function solve() {
 
    function addToCart(event) {
 
-      let parentElemnt = event.target.parentElement.parentElement;
+      let parentElemnt = event.currentTarget.parentElement.parentElement;
 
       let nameElement = parentElemnt.getElementsByClassName('product-title')[0].textContent;
       let priceElement = Number(parentElemnt.getElementsByClassName('product-line-price')[0].textContent);

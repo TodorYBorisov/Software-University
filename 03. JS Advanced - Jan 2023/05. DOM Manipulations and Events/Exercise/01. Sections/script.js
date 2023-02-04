@@ -13,7 +13,7 @@ function create(array) {
 
       divElement.addEventListener('click', (event) => {
 
-         if (event.currentTarget.firstElementChild.style.display = 'none') {
+         if (event.currentTarget.children[0].style.display = 'none') {
             event.currentTarget.firstElementChild.style.display = '';
          }
       });

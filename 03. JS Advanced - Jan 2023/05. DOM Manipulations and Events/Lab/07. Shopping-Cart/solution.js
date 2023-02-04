@@ -1,7 +1,7 @@
 function solve() {
 
-   let addButton = document.getElementsByClassName('add-product');
-   let checkButton = document.getElementsByClassName('checkout')[0];
+   let addButton = document.querySelectorAll('.add-product');
+   let checkButton = document.querySelector('.checkout');
 
    let inputArea = document.querySelector('textarea');
    let finalList = {};
@@ -28,21 +28,24 @@ function solve() {
    }
 
    function checkOut() {
-      let arry = Object.entries(finalList);
-      let totalSum = 0;
-      let list = '';
 
-      for (let [product, price] of arry) {
+      let totalSum = 0;
+      let list = [];
+
+      for (let [product, price] of Object.entries(finalList)) {
          totalSum += Number(price);
-         list += `${product}, `;
+         list.push(product);
       }
 
-      inputArea.textContent += `You bought ${list} for ${totalSum.toFixed(2)}.`;
+      // const list = Object.keys(finalList).join(', ');
+      // const totalPrice = Object.values(finalList)
+      //    .reduce((previousValue, totalSum) => previousValue + totalSum, 0);
 
       for (let button of addButton) {
          button.setAttribute('disabled', '');
       }
       checkButton.setAttribute('disabled', '');
+      
+      inputArea.textContent += `You bought ${list.join(', ')} for ${totalSum.toFixed(2)}.`;
    }
-
-}
+};

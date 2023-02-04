@@ -16,7 +16,6 @@ function create(array) {
          if (event.currentTarget.firstElementChild.style.display = 'none') {
             event.currentTarget.firstElementChild.style.display = '';
          }
-
       });
    }
 }

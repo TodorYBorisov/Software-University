@@ -33,7 +33,6 @@ function attachEventsListeners() {
 
         let input = event.target.parentElement.querySelector('input[type="text"]');
 
-        console.log(input);
         let time = convert(Number(input.value), input.id);
 
         inputDays.value = time.days;

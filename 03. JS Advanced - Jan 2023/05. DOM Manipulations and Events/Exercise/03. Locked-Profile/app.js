@@ -12,7 +12,7 @@ function lockedProfile() {
 
         if (isActive) { // Ако е чекнат бутона 
 
-            let div = profile.querySelector('div'); // Намираме родителя на натиснатия бутон 
+            let div = profile.querySelector('div');  // Намираме дива в профила, който отговаря за доп информация  
 
             if (event.target.textContent === 'Show more') {// Ако текста на бутона е Show More 
                 div.style.display = 'block'; // Показваме информацията

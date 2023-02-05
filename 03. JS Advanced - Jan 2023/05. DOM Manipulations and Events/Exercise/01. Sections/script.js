@@ -14,7 +14,7 @@ function create(array) {
       divElement.addEventListener('click', (event) => {
 
          if (event.currentTarget.children[0].style.display = 'none') {
-            event.currentTarget.firstElementChild.style.display = '';
+            event.currentTarget.firstElementChild.style.display = 'block';
          }
       });
    }

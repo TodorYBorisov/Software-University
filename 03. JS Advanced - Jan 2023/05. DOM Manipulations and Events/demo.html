@@ -15,23 +15,55 @@
         <li>The Matrix</li>
     </ul>
 
+    <div id="new" style="background-color: black;color: white; padding: 5px;">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, eaque cupiditate. Dolorem ipsa ea deleniti ullam!
+        Perspiciatis corrupti iure voluptatem nulla, sint porro vel itaque commodi consectetur ullam assumenda sequi?
+    </div>
+
+
+    <div>
+        <input type="text" id="some-text">
+        <button id="some-button" disabled >Send</button>
+    </div>
+
 
     <script>
 
-        let ulElement = document.getElementById('list');
+        // let ulElement = document.getElementById('list');
 
-        let movieLiElement = document.createElement('li');
-        movieLiElement.textContent = 'Man of Steel';
-        let copy = movieLiElement.cloneNode(true)
-        copy.textContent = 'Die Hard'
-        ulElement.appendChild(movieLiElement);
-        ulElement.prepend(copy)
-        
+        // let movieLiElement = document.createElement('li');
+        // movieLiElement.textContent = 'Man of Steel';
+        // let copy = movieLiElement.cloneNode(true)
+        // copy.textContent = 'Die Hard'
+        // ulElement.appendChild(movieLiElement);
+        // ulElement.prepend(copy)
+
 
         //let removeElement = document.querySelectorAll('#list li')[2];
 
         //removeElement.remove();
 
+        let divlement = document.getElementById('new');
+        divlement.addEventListener('mouseout', function (event) {
+
+            let backgroundColor = event.currentTarget.style.backgroundColor;
+
+            if (backgroundColor === 'black') {
+                event.currentTarget.style.backgroundColor = 'white'
+                event.currentTarget.style.color = 'black'
+            } else {
+                event.currentTarget.style.backgroundColor = 'black'
+                event.currentTarget.style.color = 'white'
+            }
+        });
+
+        let textelement = document.getElementById('some-text')
+        let buttonElemnt = document.getElementById('some-button');
+
+        textelement.addEventListener('input',function (element) {
+            buttonElemnt.removeAttribute('disabled')
+            
+        })
 
     </script>
 </body>

@@ -8,8 +8,9 @@ function addItem() {
     optionMenu.value = inputField2.value;
 
     let selectElement = document.getElementById('menu');
-    selectElement.appendChild(optionMenu);
-
+    if (inputField1.value !== '' && inputField2 !== '') {
+        selectElement.appendChild(optionMenu);
+    }
     inputField1.value = '';
     inputField2.value = '';
 }

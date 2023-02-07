@@ -14,7 +14,6 @@ function listProcessor(array) {
             console.log(result.join(','));
         }
     }
-
 }
 listProcessor(['add hello', 'add again', 'remove hello', 'add again', 'print']);
 // return {

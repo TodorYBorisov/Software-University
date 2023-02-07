@@ -1,19 +1,15 @@
 function commandProcessor() {
 
     let result = '';
-
     function append(string) {
         result += string;
     };
-
     function removeStart(n) {
         result = result.slice(n);
     };
-
     function removeEnd(n) {
         result = result.slice(0, -n);
     }
-
     function print() {
         console.log(result);
     }

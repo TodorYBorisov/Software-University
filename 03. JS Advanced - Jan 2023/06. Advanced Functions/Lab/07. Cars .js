@@ -1,33 +1,24 @@
 function cars(input) {
 
-    let objFunc = {
-        create,
-        inherit,
-        set,
-        print,
-    };
-
-    let carList = {};
-
+    const objFn = { create, inherit, set, print };
+    const carList = {};
 
     for (let line of input) {
         let info = line.split(' ');
         let command = info.shift();
-        
-        objFunc[command](info);
+        objFn[command](info);
     }
 
     function create(info) {
-
         let [name, inherit, parentName] = info;
 
         if (!carList[name]) {
             carList[name] = {};
         }
-        if (inherit) {
-            objFunc[inherit](name, parentName);
-        }
 
+        if (inherit) {
+            objFn[inherit](name, parentName);
+        }
     }
 
     function inherit(name, parentName) {
@@ -41,13 +32,10 @@ function cars(input) {
     }
 
     function print([name]) {
-
-        let entries = [];
-
-        for (let key in carList[name]) {
-            entries.push((`${key}:${carList[name][key]}`));
+        const entries = [];
+        for (const key in carList[name]) {
+            entries.push(`${key}:${carList[name][key]}`);
         }
-
         console.log(entries.join(','));
     }
 }

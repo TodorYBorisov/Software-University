@@ -7,9 +7,9 @@ function filterEmployee(data, criteria) {
     for (let line of dataArr) {
 
         if (line[key] === value) {
-            
+
             console.log(`${counter}. ${line.first_name} ${line.last_name} - ${line.email}`);
-            
+
             counter++;
         };
     }

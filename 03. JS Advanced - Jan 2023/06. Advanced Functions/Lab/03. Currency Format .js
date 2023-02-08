@@ -1,13 +1,19 @@
 function createFormatter(separator, symbol, symbolFirst, currencyFormatter) {
 
     return currencyFormatter.bind(this, separator, symbol, symbolFirst);
+
+    //return (value) => currencyFormatter(separator, symbol, symbolFirst, value);
 }
 
 function currencyFormatter(separator, symbol, symbolFirst, value) {
     let result = Math.trunc(value) + separator;
     result += value.toFixed(2).substr(-2, 2);
-    if (symbolFirst) return symbol + ' ' + result;
-    else return result + ' ' + symbol;
+    if (symbolFirst) {
+        return symbol + ' ' + result;
+    } else {
+        return result + ' ' + symbol;
+    }
+
 }
 
 let dollarFormatter = createFormatter(',', '$', true, currencyFormatter);

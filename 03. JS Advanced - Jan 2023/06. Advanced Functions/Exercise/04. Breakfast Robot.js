@@ -20,6 +20,7 @@ function breakfastRobot() {
             for (let element in recipe) {
 
                 if (recipe[element] * quantity > store[element]) {
+                    
                     return `Error: not enough ${element} in stock `;
                 }
             }
@@ -29,12 +30,14 @@ function breakfastRobot() {
                 store[element] -= recipe[element] * quantity;
             }
             return 'Success';
+
         } else if (command === 'restock') {
 
             store[param] += Number(quantity);
 
             return 'Success';
         } else if (command === 'report') {
+
             return `protein=${store.protein} carbohydrate=${store.carbohydrate} fat=${store.fat} flavour=${store.flavours}`;
         }
     }

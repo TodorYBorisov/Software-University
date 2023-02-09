@@ -6,6 +6,7 @@ function add(num1) {
         sum += num2;
         return inner;
     }
+    
     inner.toString = () => {
         return sum;
     };

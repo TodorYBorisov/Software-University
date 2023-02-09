@@ -10,7 +10,7 @@ function argumentInfo(...input) {
         if (!result[type]) {
             result[type] = 0;
         }
-        result[type] += 1;
+        result[type]++;
     }
 
     let sort = Object.entries(result).sort((a, b) => b[1] - a[1]);

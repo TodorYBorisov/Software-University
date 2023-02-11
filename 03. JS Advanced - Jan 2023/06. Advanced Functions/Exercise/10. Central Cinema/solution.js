@@ -95,7 +95,6 @@ function solve() {
                     
                     li.remove();
                 }
-
             }
         }
     }

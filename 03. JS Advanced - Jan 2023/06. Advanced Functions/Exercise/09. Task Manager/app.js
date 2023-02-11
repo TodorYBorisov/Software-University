@@ -1,80 +1,65 @@
 function solve() {
+    const inputTask = document.querySelector('#task');
+    const inputDesc = document.querySelector('#description');
+    const inputDate = document.querySelector('#date');
+    const [inputSection, openSection, progressSection, completeSection] =
+        document.querySelectorAll('section');
 
-    let inputTask = document.getElementById('task');
-    let inputDesc = document.getElementById('description');
-    let inputDate = document.getElementById('date');
-    let addButton = document.getElementById('add');
-
-    let [addSection, openSection, inProgressSection, completeSection] = document.querySelectorAll('section');
-
-    addButton.addEventListener('click', addInfo);
-
-    function addInfo(event) {
-
-        if (inputTask.value.trim() === '' || inputDesc.value.trim() === '' || inputDate.value.trim() === '') {
+    const addBtn = document.querySelector('#add');
+    addBtn.addEventListener('click', addToDo);
+    function addToDo(event) {
+        event.preventDefault();
+        if (
+            inputDate.value.trim() === '' ||
+            inputDesc.value.trim() === '' ||
+            inputTask.value.trim() === ''
+        ) {
             return;
         }
-        event.preventDefault();
-
-        let article = document.createElement('article');
-
-        let h3Element = document.createElement('h3');
-        h3Element.textContent = inputTask.value;
-
-        let p1Element = document.createElement('p');
-        p1Element.textContent = `Description: ${inputDesc.value}`;
-
-        let p2Element = document.createElement('p');
-        p2Element.textContent = `Due Date: ${inputDate.value}`;
-
-        let divButtons = document.createElement('div');
-        divButtons.classList.add('flex');
-
-        let startButton = document.createElement('button');
-        startButton.textContent = 'Start';
-        startButton.classList.add('green');
-        startButton.addEventListener('click', moveToProgress);
-
-        let deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.classList.add('red');
-
-        divButtons.appendChild(startButton);
-        divButtons.appendChild(deleteButton);
-        article.appendChild(h3Element);
-        article.appendChild(p1Element);
-        article.appendChild(p2Element);
-        article.appendChild(divButtons);
-
+        const article = document.createElement('article');
+        const h3 = document.createElement('h3');
+        h3.textContent = inputTask.value;
+        const pDesc = document.createElement('p');
+        pDesc.textContent = `Description: ${inputDesc.value}`;
+        const pDate = document.createElement('p');
+        pDate.textContent = `Due Date: ${inputDate.value}`;
+        const divBtns = document.createElement('div');
+        divBtns.classList.add('flex');
+        const startBtn = document.createElement('button');
+        startBtn.classList.add('green');
+        startBtn.textContent = 'Start';
+        startBtn.addEventListener('click', startArticle);
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('red');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.addEventListener('click', deleteArticle);
+        divBtns.appendChild(startBtn);
+        divBtns.appendChild(deleteBtn);
+        article.appendChild(h3);
+        article.appendChild(pDesc);
+        article.appendChild(pDate);
+        article.appendChild(divBtns);
         openSection.lastElementChild.appendChild(article);
-
-        deleteButton.addEventListener('click', removeArticle);
-
-        inputTask.value = '';
-        inputDesc.value = '';
         inputDate.value = '';
-
-        function removeArticle() {
+        inputDesc.value = '';
+        inputTask.value = '';
+        function deleteArticle() {
             article.remove();
         }
 
-        function moveToProgress() {
-
-            startButton.remove();
-            let finishButton = document.createElement('button');
-            finishButton.textContent = 'Finish';
-            finishButton.classList.add('orange');
-            divButtons.appendChild(finishButton);
-
-            inProgressSection.lastElementChild.appendChild(article);
-
-            finishButton.addEventListener('click', moveToLastsection);
+        function startArticle() {
+            startBtn.remove();
+            const finishBtn = document.createElement('button');
+            finishBtn.classList.add('orange');
+            finishBtn.textContent = 'Finish';
+            finishBtn.addEventListener('click', finishArticle);
+            divBtns.appendChild(finishBtn);
+            progressSection.lastElementChild.appendChild(article);
         }
 
-        function moveToLastsection() {
-
-            completeSection.lastElementChild.append(article);
-            divButtons.remove();
+        function finishArticle() {
+            divBtns.remove();
+            completeSection.lastElementChild.appendChild(article);
         }
     }
 }

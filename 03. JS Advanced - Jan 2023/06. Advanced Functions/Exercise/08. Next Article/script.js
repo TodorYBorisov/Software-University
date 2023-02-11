@@ -11,4 +11,4 @@ function getArticleGenerator(articles) {
             div.appendChild(articleElement);
         }
     };
-};
+}

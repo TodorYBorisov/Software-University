@@ -1,10 +1,10 @@
-// const { expect } = require('chai');
-// const { isSymmetric } = require('../05. Check for Symmetry');
+const { expect } = require('chai');
+const { isSymmetric } = require('../05. Check for Symmetry');
 
-// describe('', () => {
+describe('', () => {
 
-//     it('', () => {
-//         expect(isSymmetric()).to.equal();
-//     });
+    it('', () => {
+        expect(isSymmetric()).to.equal();
+    });
 
-// });
+});

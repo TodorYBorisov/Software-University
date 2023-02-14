@@ -1,5 +1,5 @@
 function requestValidator(obj) {
-    
+
     const validMethods = ['GET', 'POST', 'DELETE', 'CONNECT'];              // Правим масив с валидните ни методи 
     const validVersions = ['HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2.0']; // Правим масив с валидните ни версии 
     const uriRegex = /^[\w.]+$/g;                                           // Създаваме регекс за uri
@@ -7,7 +7,7 @@ function requestValidator(obj) {
     const messageRegex = /^[^<>\\&\'\"]+$/g;
     // Може да съдържа всички символи без < > \ & ' "
 
-    if (!(obj.hasOwnProperty('method') && validMethods.includes(obj.method))) { 
+    if (!(obj.hasOwnProperty('method') && validMethods.includes(obj.method))) {
         // Проверяваме имаме ли method като пропърти на обекта и дали този метод е един от валидните ни, АКО НЕ 
         throw new Error('Invalid request header: Invalid Method');  // Хвърляме грешка 
     }
@@ -23,7 +23,7 @@ function requestValidator(obj) {
     }
 
 
-    if (!(obj.hasOwnProperty('message') &&(obj.message === '' || messageRegex.test(obj.message)))) {
+    if (!(obj.hasOwnProperty('message') && (obj.message === '' || messageRegex.test(obj.message)))) {
         // Проверяваме имаме ли message като пропърти на обекта и дали стойността му е празен стринг или валиден като го проверим през регекса, АКО НЕ 
         throw new Error('Invalid request header: Invalid Message'); // Хвърляме грешка
     }

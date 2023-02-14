@@ -3,80 +3,80 @@ const { mathEnforcer } = require('../04. Math Enforcer');
 
 describe('Match Enforcer', () => {
 
-    // describe('AddFive tests', () => {
+    describe('AddFive tests', () => {
 
-    //     it('should return undefined with non-number param', () => {
+        it('should return undefined with non-number param', () => {
 
-    //         expect(mathEnforcer.addFive('t')).to.be.undefined;
-    //     });
-    //     it('should return undefined with non-number param', () => {
+            expect(mathEnforcer.addFive('t')).to.be.undefined;
+        });
+        it('should return undefined with non-number param', () => {
 
-    //         expect(mathEnforcer.addFive([1])).to.be.undefined;
-    //     });
+            expect(mathEnforcer.addFive([1])).to.be.undefined;
+        });
 
-    //     it('should return undefined with non-number param', () => {
+        it('should return undefined with non-number param', () => {
 
-    //         expect(mathEnforcer.addFive({})).to.be.undefined;
-    //     });
+            expect(mathEnforcer.addFive({})).to.be.undefined;
+        });
 
-    //     it('should return 10 when add num param 5', () => {
+        it('should return 10 when add num param 5', () => {
 
-    //         expect(mathEnforcer.addFive(5)).to.equal(10);
-    //     });
-    //     it('should return 6.1 when add num param 5', () => {
+            expect(mathEnforcer.addFive(5)).to.equal(10);
+        });
+        it('should return 6.1 when add num param 5', () => {
 
-    //         expect(mathEnforcer.addFive(1.1)).to.closeTo(6.1,0.01);
-    //     });
-    //     it('should return 2 when add negative num param -3', () => {
+            expect(mathEnforcer.addFive(1.1)).to.closeTo(6.1,0.01);
+        });
+        it('should return 2 when add negative num param -3', () => {
 
-    //         expect(mathEnforcer.addFive(-3)).to.equal(2);
-    //     });
-    //     it('should return 20 when add num param 15', () => {
+            expect(mathEnforcer.addFive(-3)).to.equal(2);
+        });
+        it('should return 20 when add num param 15', () => {
 
-    //         expect(mathEnforcer.addFive(15)).to.equal(20);
-    //     });
+            expect(mathEnforcer.addFive(15)).to.equal(20);
+        });
 
-    // });
+    });
 
-    // describe('SubtractTen Test', () => {
+    describe('SubtractTen Test', () => {
 
-    //     it('should return undefined with non-number param', () => {
+        it('should return undefined with non-number param', () => {
 
-    //         expect(mathEnforcer.subtractTen('t')).to.be.undefined;
-    //     });
-    //     it('should return undefined with non-number param', () => {
+            expect(mathEnforcer.subtractTen('t')).to.be.undefined;
+        });
+        it('should return undefined with non-number param', () => {
 
-    //         expect(mathEnforcer.subtractTen([1])).to.be.undefined;
-    //     });
+            expect(mathEnforcer.subtractTen([1])).to.be.undefined;
+        });
 
-    //     it('should return undefined with non-number param', () => {
+        it('should return undefined with non-number param', () => {
 
-    //         expect(mathEnforcer.subtractTen({})).to.be.undefined;
-    //     });
+            expect(mathEnforcer.subtractTen({})).to.be.undefined;
+        });
 
-    //     it('should return 40 when add num param 10', () => {
+        it('should return 40 when add num param 10', () => {
 
-    //         expect(mathEnforcer.subtractTen(50)).to.equal(40);
-    //     });
-    //     it('should return 20 when add num param 15', () => {
+            expect(mathEnforcer.subtractTen(50)).to.equal(40);
+        });
+        it('should return 20 when add num param 15', () => {
 
-    //         expect(mathEnforcer.subtractTen(80)).to.equal(70);
-    //     });
-    //     it('should return 0 when add num param 10', () => {
+            expect(mathEnforcer.subtractTen(80)).to.equal(70);
+        });
+        it('should return 0 when add num param 10', () => {
 
-    //         expect(mathEnforcer.subtractTen(10)).to.equal(0);
-    //     });
-    //     it('should return -30 when add num param -20', () => {
+            expect(mathEnforcer.subtractTen(10)).to.equal(0);
+        });
+        it('should return -30 when add num param -20', () => {
 
-    //         expect(mathEnforcer.subtractTen(-20)).to.equal(-30);
-    //     });
+            expect(mathEnforcer.subtractTen(-20)).to.equal(-30);
+        });
 
-    //     it('should return 2.1 when add num param -10', () => {
+        it('should return 2.1 when add num param -10', () => {
 
-    //         expect(mathEnforcer.subtractTen(12.1)).to.closeTo(2.1,0.01);
-    //     });
+            expect(mathEnforcer.subtractTen(12.1)).to.closeTo(2.1,0.01);
+        });
 
-    // });
+    });
 
     describe('Sum Test', () => {
 

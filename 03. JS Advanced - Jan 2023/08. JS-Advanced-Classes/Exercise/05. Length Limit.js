@@ -32,6 +32,7 @@ class Stringer {
         return this.innerString;
     }
 }
+
 let test = new Stringer('Test', 5);
 console.log(test.toString()); // Test
 

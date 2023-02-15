@@ -26,9 +26,8 @@ function tickets(array, string) {
         result = result.sort((a, b) => a[string].localeCompare(b[string]));
     }
 
-    console.log(result);
-
-};
+    return result;
+}
 tickets(['Philadelphia|94.20|available',
     'New York City|95.99|available',
     'New York City|95.99|sold',

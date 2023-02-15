@@ -9,6 +9,7 @@ class Hex {
     }
 
     toString() {
+        //така указваме, че искаме да стрингосаме число в 16-тична бройна система
         return '0x' + `${this.value.toString(16).toUpperCase()}`;
     }
     plus(number) {
@@ -21,10 +22,9 @@ class Hex {
         return new Hex(this.value - number);
     }
     parse(string) {
-
-        return parseInt(string,16);
+        //parseInt(number, 16) - подаваме число, което е като стринг и указваме да се парстне към 16-на бройна система
+        return parseInt(string, 16);
     }
-
 }
 let FF = new Hex(255);
 console.log(FF.toString());

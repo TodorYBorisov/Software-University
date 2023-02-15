@@ -22,7 +22,6 @@ function juiceFlavors(input) {
                 bottles[juiceName] += numberOfBottles;
             }
             juices[juiceName] -= numberOfBottles * 1000;
-
         }
     }
 

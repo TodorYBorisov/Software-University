@@ -30,7 +30,7 @@ li {
     margin-left: 3.5%;
 }
 
-#giftText {
+.giftText {
     font-size: 17px;
 }
 
@@ -58,14 +58,14 @@ section {
     margin-left: 150px;
 }
 
-#addGifts {
+.addGifts {
     min-height: 150px;
     float: left;
     margin-top: 30px;
     margin-right: 30px;
     margin-left: 150px;
 }
-#giftsList {
+.giftsList {
     min-height: 150px;
     float: right;
     margin-top: 30px;
@@ -73,7 +73,7 @@ section {
     margin-right: 150px;
 } 
 
-#sentGifts {
+.sentGifts {
     min-height: 150px;
     float: left;
     margin-top: 30px;
@@ -81,7 +81,7 @@ section {
     margin-left: 150px;
 }
 
-#discardedGifts {
+.discardedGifts {
     min-height: 150px;
     float: right;
     margin-top: 30px;
@@ -89,7 +89,7 @@ section {
     margin-right: 150px;
 }
 
-#addButton {
+.addButton {
     background-color: transparent;
     background-color:rgb(255,0,0);
     color: white;
@@ -98,7 +98,7 @@ section {
     font-size: 17px;
 }
 
-#sendButton {
+.sendButton {
     background-color: transparent;
     background-color: green;
     color: white;
@@ -106,7 +106,7 @@ section {
     border-radius: 10px;
     font-size: 15px;
 }
-#discardButton {
+.discardButton {
     background-color: transparent;
     background-color: darkgrey;
     color: black;

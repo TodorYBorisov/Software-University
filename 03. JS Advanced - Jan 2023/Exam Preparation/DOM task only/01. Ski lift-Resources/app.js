@@ -20,7 +20,6 @@ function solve() {
         let data = dataEl.value;
         let days = daysEl.value;
 
-
         if (firstName === '' || lastName === '' || people === '' || data === '' || days === '') {
             return;
         }
@@ -73,7 +72,6 @@ function solve() {
         editBtn.disabled = false;
         continueBtn.disabled = false;
 
-
         editBtn.addEventListener('click', edit);
 
         function edit() {
@@ -87,7 +85,6 @@ function solve() {
             dataEl.value = data;
             daysEl.value = days;
         }
-
 
         continueBtn.addEventListener('click', conti);
 
@@ -112,7 +109,6 @@ function solve() {
 
             li.appendChild(confirmBtn);
             li.appendChild(cancelBtn);
-
 
             cancelBtn.addEventListener('click', remove);
 

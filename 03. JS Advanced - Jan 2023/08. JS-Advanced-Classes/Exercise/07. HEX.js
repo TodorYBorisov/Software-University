@@ -1,4 +1,5 @@
 class Hex {
+    
     constructor(value) {
         this.value = value;
     }

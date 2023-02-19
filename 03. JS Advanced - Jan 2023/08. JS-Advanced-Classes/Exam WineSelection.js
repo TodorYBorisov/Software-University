@@ -5,7 +5,6 @@ class WineSelection {
         this.space = space;
         this.wines = [];
         this.bill = 0;
-
     }
 
     reserveABottle(wineName, wineType, price) {
@@ -15,7 +14,7 @@ class WineSelection {
         }
 
         this.wines.push({ wineName, wineType, price, paid: false });
-        this.space--;
+        
 
         return `You reserved a bottle of ${wineName} ${wineType} wine.`;
     }
@@ -44,8 +43,8 @@ class WineSelection {
 
     openBottle(wineName) {
 
-
-        let foundProduct = this.wines.find((wine) => wine.wineName === wineName);
+        let index = this.wines.findIndex((wine) => wine.wineName === wineName);
+        let foundProduct = this.wines[index];
 
         if (!foundProduct) {
             throw new Error('The wine, you\'re looking for, is not found.');
@@ -55,12 +54,9 @@ class WineSelection {
             throw new Error(`${wineName} needs to be paid before opening the bottle.`);
         }
 
-        let index = this.wines.indexOf(foundProduct);
         this.wines.splice(index, 1);
-        this.space++;
-
+       
         return `You drank a bottle of ${wineName}.`;
-
     }
 
     cellarRevision(wineType) {
@@ -104,7 +100,7 @@ class WineSelection {
 
 
 const selection = new WineSelection(2);
-selection.reserveABottle('Sauvignon Blanc Marlborough', 'White',50);
+selection.reserveABottle('Sauvignon Blanc Marlborough', 'White', 50);
 console.log(selection.payWineBottle('Sauvignon Blanc Marlborough', 120));
 console.log(selection.payWineBottle('Bodegas Godelia Mencía', 144));
 

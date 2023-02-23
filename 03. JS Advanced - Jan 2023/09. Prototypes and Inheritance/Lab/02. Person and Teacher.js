@@ -35,8 +35,8 @@ class Teacher extends Person {              // Създаваме клас Teach
     }
 }
 
-let person = new Person('Rosen', 'rosendobrev@mail.bg')
-console.log(`Person: ${person.name} (${person.email})`)
+let person = new Person('Rosen', 'rosendobrev@mail.bg');
+console.log(`Person: ${person.name} (${person.email})`);
 
-let teacher = new Teacher('Yordanka', 'yordanka_tr@abv.bg', 'Geography')
-console.log(`Teacher: ${teacher.name} (${teacher.email}), teaches ${teacher.subject}`)
+let teacher = new Teacher('Yordanka', 'yordanka_tr@abv.bg', 'Geography');
+console.log(`Teacher: ${teacher.name} (${teacher.email}), teaches ${teacher.subject}`);

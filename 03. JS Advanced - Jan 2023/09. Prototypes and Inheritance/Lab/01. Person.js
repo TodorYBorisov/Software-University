@@ -19,5 +19,5 @@ function createPerson(firstName, lastName) {
             }
         },
     });
-    return person;                      // Накрая функцията връща обекта 
+    return person;   // Накрая функцията връща обекта 
 }

@@ -13,7 +13,7 @@ function personAndTeacher() {
         }
     }
 
-    return {                            // Връщаме обект, в който са двата ни класа 
+    return {   // Връщаме обект, в който са двата ни класа 
         Person,
         Teacher,
     };

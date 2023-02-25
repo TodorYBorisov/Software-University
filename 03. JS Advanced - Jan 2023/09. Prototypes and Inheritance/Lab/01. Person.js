@@ -1,8 +1,8 @@
 function createPerson(firstName, lastName) {
 
-    const person = {        // Създаваме си обект 
-        firstName,          // Сетваме да има пропърти firstName, което ще има и такава стойност първоначално 
-        lastName,           // Сетваме да има пропърти lastName, което ще има и такава стойност първоначално 
+    const person = {      // Създаваме си обект 
+        firstName,        // Сетваме да има пропърти firstName, което ще има и такава стойност първоначално 
+        lastName,         // Сетваме да има пропърти lastName, което ще има и такава стойност първоначално 
     };
 
     Object.defineProperty(person, 'fullName', {

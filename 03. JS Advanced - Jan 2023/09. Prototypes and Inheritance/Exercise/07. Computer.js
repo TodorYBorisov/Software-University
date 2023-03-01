@@ -45,7 +45,7 @@ function computer() {
 
     class Laptop extends Computer {
         constructor(manufacturer, processorSpeed, ram, hardDiskSpace, weight, color, battery) {
-            super(manufacturer, processorSpeed, ram, hardDiskSpace)
+            super(manufacturer, processorSpeed, ram, hardDiskSpace);
             this.weight = weight;
             this.color = color;
             this.battery = battery;
@@ -76,7 +76,7 @@ function computer() {
 
         set keyboard(value) {
             if (!(value instanceof Keyboard)) {
-                throw new TypeError('argument should be instance of the Keyboard class')
+                throw new TypeError('argument should be instance of the Keyboard class');
             }
             this._keyboard = value;
         }
@@ -106,5 +106,5 @@ let Battery = classes.Battery;
 let Keyboard = classes.Keyboard;
 let battery = new Battery('Energy', 3);
 console.log(battery);
-let laptop = new Laptop("Hewlett Packard", 2.4, 4, 0.5, 3.12, "Silver", battery);
+let laptop = new Laptop('Hewlett Packard', 2.4, 4, 0.5, 3.12, 'Silver', battery);
 console.log(laptop);

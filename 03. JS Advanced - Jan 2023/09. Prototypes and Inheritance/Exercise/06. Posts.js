@@ -24,7 +24,7 @@ function posts() {
         }
 
         toString() {                                    // Overridvame метода toString
-            let commentsString = "";                    // Правим променлива, в която да изпечатаме всички коментари в масива 
+            let commentsString = '';                    // Правим променлива, в която да изпечатаме всички коментари в масива 
             for (const comment of this.comments) {      // Минавамe по всеки коментар от коментарите в масива 
                 commentsString += `\n * ${comment}`;    // към променливата добавяме нов ред, интервал, звезда, интервал и коментара
             }
@@ -58,15 +58,15 @@ function posts() {
 }
 
 const classes = posts();
-let post = new classes.Post("Post", "Content");
+let post = new classes.Post('Post', 'Content');
 console.log(post.toString());
 // Post: Post
 // Content: Content
 
-let scm = new classes.SocialMediaPost("TestTitle", "TestContent", 25, 30);
-scm.addComment("Good post");
-scm.addComment("Very good post");
-scm.addComment("Wow!");
+let scm = new classes.SocialMediaPost('TestTitle', 'TestContent', 25, 30);
+scm.addComment('Good post');
+scm.addComment('Very good post');
+scm.addComment('Wow!');
 console.log(scm.toString());
 // Post: TestTitle
 // Content: TestContent

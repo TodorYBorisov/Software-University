@@ -3,16 +3,16 @@ function computer() {
     class Periphery {
         constructor(manufacturer) {
             if (new.target === Periphery) {
-                throw new Error('cannot make instance of abstract class Periphery')
+                throw new Error('cannot make instance of abstract class Periphery');
             }
-            this.manufacturer = manufacturer
+            this.manufacturer = manufacturer;
         }
     }
 
     class Keyboard extends Periphery {
         constructor(manufacturer, responseTime) {
-            super(manufacturer)
-            this.responseTime = responseTime
+            super(manufacturer);
+            this.responseTime = responseTime;
         }
     }
 

@@ -29,16 +29,16 @@ function people() {
     class Junior extends Employee {     // Създаваме клас Junior, който extendva Employee
         constructor(name, age) {        // Конструктора приема name и age  
             super(name, age);           // Наследява name и age
-            this.tasks.push(`is working on a simple task.`);    // Добавяме към задачите на Junior, следното 
+            this.tasks.push('is working on a simple task.');    // Добавяме към задачите на Junior, следното 
         }
     }
 
     class Senior extends Employee {     // Създаваме клас Senior, който extendva Employee
         constructor(name, age) {        // Конструктора приема name и age 
             super(name, age);           // Наследява name и age
-            this.tasks.push(`is working on a complicated task.`);   // Добавяме към задачите на Senior, следното 
-            this.tasks.push(`is taking time off work.`);            // Добавяме към задачите на Senior, следното     
-            this.tasks.push(`is supervising junior workers.`);      // Добавяме към задачите на Senior, следното 
+            this.tasks.push('is working on a complicated task.');   // Добавяме към задачите на Senior, следното 
+            this.tasks.push('is taking time off work.');            // Добавяме към задачите на Senior, следното     
+            this.tasks.push('is supervising junior workers.');      // Добавяме към задачите на Senior, следното 
         }
     }
 
@@ -47,7 +47,7 @@ function people() {
             super(name, age);               // Наследява name и age
             this.dividend = 0;              // Той има и dividend допълнително, който първоначално е 0 
             this.tasks.push('scheduled a meeting.');                // Добавяме към задачите на Manager, следното 
-            this.tasks.push(`is preparing a quarterly report.`);    // Добавяме към задачите на Manager, следното 
+            this.tasks.push('is preparing a quarterly report.');    // Добавяме към задачите на Manager, следното 
         }
 
         getSalary() {                                   // Overridvame, getSalary метода 

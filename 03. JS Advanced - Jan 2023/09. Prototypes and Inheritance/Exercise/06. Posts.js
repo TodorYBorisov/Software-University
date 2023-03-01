@@ -31,10 +31,10 @@ function posts() {
 
             if (this.comments.length === 0) {           // Ако в коментарите няма нито един такъв 
                 return `${super.toString()}\nRating: ${this.likes - this.dislikes}`;
-            // Връщаме наследения метод toString от post и добавяме нов ред и съобщение за Rating
+                                                       // Връщаме наследения метод toString от post и добавяме нов ред и съобщение за Rating
             }
             return `${super.toString()}\nRating: ${this.likes - this.dislikes}\nComments:${commentsString}`;
-            // Ако има коментари връщаме горното + Коментарите 
+                                                         // Ако има коментари връщаме горното + Коментарите 
         }
     }
 
@@ -54,7 +54,7 @@ function posts() {
         }
     }
 
-    return { Post, SocialMediaPost, BlogPost }; // Връщаме трите класа в обект 
+    return { Post, SocialMediaPost, BlogPost };     // Връщаме трите класа в обект 
 }
 
 const classes = posts();

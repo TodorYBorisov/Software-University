@@ -16,13 +16,13 @@
 function executor(resolve, reject) {
     console.log('promise starting');
 
-    setTimeout(() => {
-        reject(new Error('Simulated error'));
-    }, 1000);
-
     // setTimeout(() => {
-    //     resolve('hello');
-    // }, 2000);
+    //     reject(new Error('Simulated error'));
+    // }, 1000);
+
+    setTimeout(() => {
+        resolve('hello');
+    }, 2000);
 
     console.log('promise ended');
 
@@ -30,6 +30,9 @@ function executor(resolve, reject) {
 let promise = new Promise(executor);
 promise.then(successCallback);
 promise.catch(failureCallback);
+promise.finally(() => {
+    console.log('operation completed');
+});
 
 function successCallback(data) {
     console.log('received data:', data);

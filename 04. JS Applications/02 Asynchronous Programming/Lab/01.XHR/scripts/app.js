@@ -17,11 +17,31 @@ button.addEventListener('click', loadRepos);
 
 function loadRepos() {
 
-   let url = 'https://api.github.com/users/testnakov/repos';
+   const url = 'https://api.github.com/users/testnakov/repos';
 
-   fetch(url)
-      .then(responce => responce.json())
-      .then(data => {
+   fetch(url)//това ни връща промис да ни върне заглавния ред и хедърите
+      .then((response) => response.json())//това ни е съксес колбек функцията които държи заглавния и хедърите
+      .then((data) => {
          document.getElementById('res').textContent = data;
       });
 }
+
+// function loadRepos() {
+
+//    let url = 'https://api.github.com/users/testnakov/repos';
+
+//    let request = fetch(url);
+
+//    request.then(resposeHandler);
+
+// };
+
+// function resposeHandler(response) {
+//    console.log('received headers');
+//    const dataPromise = response.json();
+//    dataPromise.then(dataHandler);
+// };
+// function dataHandler(data) {
+//    console.log('received data');
+//    document.getElementById('res').textContent = JSON.stringify(data);
+// };

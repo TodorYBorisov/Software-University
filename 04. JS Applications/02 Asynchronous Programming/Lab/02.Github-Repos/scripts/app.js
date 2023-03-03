@@ -17,7 +17,8 @@ function loadRepos() {
     }
 
     function displayRepos(data) {
-        list.innerHTML = '';			// Зачистваме първо въведените преди това репота 
+        list.innerHTML = '';	
+                        		        // Зачистваме първо въведените преди това репота 
         for (let repo of data) {		// Минаваме по всяко репо от получените в data
             list.innerHTML += `<li>
             <a href='${repo.html_url}'> ${repo.full_name}</a>

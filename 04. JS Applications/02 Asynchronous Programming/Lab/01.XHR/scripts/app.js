@@ -23,7 +23,8 @@ function loadRepos() {
       .then((response) => response.json())//това ни е съксес колбек функцията които държи заглавния и хедърите
       .then((data) => {
          document.getElementById('res').textContent = data;
-      });
+      })
+      .catch((error) => console.error(error));
 }
 
 // function loadRepos() {

@@ -22,7 +22,7 @@ function loadRepos() {
    fetch(url)//това ни връща промис да ни върне заглавния ред и хедърите
       .then((response) => response.json())//това ни е съксес колбек функцията които държи заглавния и хедърите
       .then((data) => { //втория промис съдържа бодито вече
-         document.getElementById('res').textContent = data;
+        document.getElementById('res').textContent = data;
       })
       .catch((error) => console.error(error));
 }

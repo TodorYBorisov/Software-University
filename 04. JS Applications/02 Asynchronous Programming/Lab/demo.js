@@ -17,17 +17,23 @@ function executor(resolve, reject) {
     console.log('promise starting');
 
     setTimeout(() => {
-        resolve('hello');
-    }, 2000);
+        reject(new Error('Simulated error'));
+    }, 1000);
+
+    // setTimeout(() => {
+    //     resolve('hello');
+    // }, 2000);
 
     console.log('promise ended');
 
 }
 let promise = new Promise(executor);
 promise.then(successCallback);
-promise.catch();
+promise.catch(failureCallback);
 
 function successCallback(data) {
     console.log('received data:', data);
-    
+}
+function failureCallback(error) {
+    console.log('Encountered error', error.message);
 }

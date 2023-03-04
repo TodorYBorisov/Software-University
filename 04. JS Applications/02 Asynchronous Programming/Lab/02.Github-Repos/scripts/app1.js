@@ -8,7 +8,8 @@ function loadRepos() {
 
         if (response.ok == false) {
             // console.log('Encountered error: ', responce.status, responce.statusText);
-            return Promise.reject(`${response.status}: ${response.statusText}`);
+            // return Promise.reject(`${response.status}: ${response.statusText}`);
+            throw new Error(`${response.status}: ${response.statusText}`);
         } else {
 
             return response.json();

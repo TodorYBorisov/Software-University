@@ -15,6 +15,8 @@ async function loadCommits() {
         }
         
         let data = await response.json();
+
+        console.log(data);
         
         for (let entry of data) {
 
@@ -28,5 +30,4 @@ async function loadCommits() {
         li.textContent = `${error.message}`;
         output.appendChild(li);
     }
-
 }

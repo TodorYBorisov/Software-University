@@ -10,7 +10,7 @@ function loadRepos() {
 
     function handleResponse(response) {
         if (response.ok === false) {										// Ако не сме получили response, който да е true 
-            throw new Error(`${response.status} ${response.statusText}`);	// Хвърляме грешка, като взимаме статуса и текста на респонса 
+            throw new Error(`${response.status}: ${response.statusText}`);	// Хвърляме грешка, като взимаме статуса и текста на респонса 
         }
 
         return response.json();	// Ако всичко е наред взимаме json na респонса

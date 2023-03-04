@@ -15,8 +15,6 @@ async function loadCommits() {
         }
         
         let data = await response.json();
-
-        console.log(data);
         
         for (let entry of data) {
 

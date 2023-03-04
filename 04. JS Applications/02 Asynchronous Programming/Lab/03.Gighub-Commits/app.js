@@ -6,14 +6,12 @@ function loadCommits() {
     
     const url = `https://api.github.com/repos/${username}/${repository}/commits`;
     
-    
     fetch(url).then((response) => {
         
         if (response.ok === false) {
             throw new Error(`Error: ${response.status} (Not Found)`);
         }
         return response.json();
-        
         
     }).then((data) => {
         output.innerHTML = '';

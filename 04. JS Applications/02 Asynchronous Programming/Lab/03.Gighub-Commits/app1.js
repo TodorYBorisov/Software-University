@@ -16,7 +16,6 @@ async function loadCommits() {
         
         let data = await response.json();
         
-
         for (let entry of data) {
 
             let li = document.createElement('li');

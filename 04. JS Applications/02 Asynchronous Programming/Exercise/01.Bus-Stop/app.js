@@ -19,7 +19,9 @@ async function getInfo() {
         let busesObj = data.buses;
 
         stopName.textContent = name;
+
         list.innerHTML ='';
+        
         for (let bus in busesObj ) {
 
             let li = document.createElement('li');

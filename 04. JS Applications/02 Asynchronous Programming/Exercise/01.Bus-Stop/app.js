@@ -9,7 +9,7 @@ async function getInfo() {
     try {
         let response = await fetch(url);
 
-        if (response.ok === false) {
+        if (response.status !== 200) {
             throw new Error(`${response.status}: ${response.statusText}`);
         }
 

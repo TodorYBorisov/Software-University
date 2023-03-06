@@ -6,16 +6,16 @@ function solve() {
     // let arriveBtn = document.getElementById('arrive');
     // arriveBtn.addEventListener('click', arrive);
 
-    let infoElement = document.querySelector(".info");  // Взимаме инфо елемента, в който ще показваме спирката
-    let departBtn = document.getElementById("depart");  // Селектираме бутона depart
-    let arriveBtn = document.getElementById("arrive");  // Селектираме бутона arrive
+    let infoElement = document.querySelector('.info');  // Взимаме инфо елемента, в който ще показваме спирката
+    let departBtn = document.getElementById('depart');  // Селектираме бутона depart
+    let arriveBtn = document.getElementById('arrive');  // Селектираме бутона arrive
 
     let busStop = {                 // Правим обект, в който да пазим следващата спирка 
-        next: "depot",              // В началото спирката е depot 
+        next: 'depot',              // В началото спирката е depot 
     };
 
     function depart() {
-        departBtn.disabled = true;      // Изключваме бутона za depart, след като сме го натиснали 
+        departBtn.disabled = true;      // Изключваме бутона за depart, след като сме го натиснали 
         fetch(`http://localhost:3030/jsonstore/bus/schedule/${busStop.next}`)   // Взимаме заявката със текущата спирка 
             .then((response) => response.json())                                // Обработваме промиса от респонсе
             .then((data) => {                                                   // Обработваме промиса от дата

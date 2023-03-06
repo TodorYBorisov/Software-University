@@ -4,8 +4,8 @@ function solve() {
     let departBtn = document.getElementById('depart');  // Селектираме бутона depart
     let arriveBtn = document.getElementById('arrive');  // Селектираме бутона arrive
 
-    let busStop = {                 // Правим обект, в който да пазим следващата спирка 
-        next: 'depot',              // В началото спирката е depot 
+    let busStop = {         // Правим обект, в който да пазим следващата спирка 
+        next: 'depot',      // В началото спирката е depot 
     };
 
     function depart() {

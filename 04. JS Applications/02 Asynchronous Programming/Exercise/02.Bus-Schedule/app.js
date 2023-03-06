@@ -1,11 +1,5 @@
 function solve() {
 
-    // let departBtn = document.getElementById('depart');
-    // departBtn.addEventListener('click', depart);
-
-    // let arriveBtn = document.getElementById('arrive');
-    // arriveBtn.addEventListener('click', arrive);
-
     let infoElement = document.querySelector('.info');  // Взимаме инфо елемента, в който ще показваме спирката
     let departBtn = document.getElementById('depart');  // Селектираме бутона depart
     let arriveBtn = document.getElementById('arrive');  // Селектираме бутона arrive

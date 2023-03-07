@@ -24,25 +24,23 @@ function solve() {
             stopId.name = data.name;
             stopId.next = data.next;
             
+            infoBox.textContent = `Next stop ${stopId.name}`;
             departBtn.disabled = true;
             arriveBtn.disabled = false;
-
-            infoBox.textContent = `Next stop ${stopId.name}`;
-
+            
         } catch (error) {
 
             infoBox.textContent = 'Error';
             arriveBtn.disabled = true;
             departBtn.disabled = true;
         }
-
     }
 
     function arrive() {
+
+        infoBox.textContent = `Arriving at ${stopId.name}`;
         arriveBtn.disabled = true;
         departBtn.disabled = false;
-        
-        infoBox.textContent = `Arriving at ${stopId.name}`;
     }
 
     return {

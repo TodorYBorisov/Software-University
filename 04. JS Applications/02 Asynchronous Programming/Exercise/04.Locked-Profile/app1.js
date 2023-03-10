@@ -10,7 +10,7 @@ async function lockedProfile() {
         mainElement.innerHTML = '';
 
         let i = 0;
-        Object.values(data).forEach(element => {
+        Object.values(data).forEach(profile => {
             i++;
             const divProfile = document.createElement('div');
             divProfile.className = 'profile';
@@ -23,20 +23,19 @@ async function lockedProfile() {
             <input type="radio" name="user${i}Locked" value="unlock"><br>
             <hr>
             <label>Username</label>
-            <input type="text" name="user${i}Username" value="${element['username']}" disabled readonly />
+            <input type="text" name="user${i}Username" value="${profile['username']}" disabled readonly />
             <div id="user${i}HiddenFields">
                 <hr>
                 <label>Email:</label>
-                <input type="email" name="user${i}Email" value="${element['email']}" disabled readonly />
+                <input type="email" name="user${i}Email" value="${profile['email']}" disabled readonly />
                 <label>Age:</label>
-                <input type="email" name="user${i}Age" value="${element['age']}" disabled readonly />
+                <input type="email" name="user${i}Age" value="${profile['age']}" disabled readonly />
             </div>
             
             <button>Show more</button>`;
             document.getElementById(`user${i}HiddenFields`).style.display = 'none';
 
         });
-
 
         const btns = [...document.getElementsByTagName('button')];
         btns.forEach(btn => btn.addEventListener('click', showHide));

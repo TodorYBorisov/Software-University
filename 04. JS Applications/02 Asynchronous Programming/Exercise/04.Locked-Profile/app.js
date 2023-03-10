@@ -12,53 +12,55 @@ async function lockedProfile() {
 
         main.innerHTML = '';
 
-        for (let profile of arrValues) {
+        for (let card of arrValues) {
 
             let div = document.createElement('div');
             div.classList.add('profile');
 
-            let button = document.createElement('button');
-            button.textContent = 'Show more';
+            // let button = document.createElement('button');
+            // button.textContent = 'Show more';
 
             div.innerHTML = `<img src='./iconProfile2.png' class='userIcon'>
             <label>Lock</label>
-            <input type='radio' name='user${profile._id}Locked' value='lock' checked=''>
+            <input type='radio' name='user${card._id}Locked' value='lock' checked=''>
             <label>Unlock</label>
-            <input type='radio' name='user${profile._id}Locked' value='unlock'><br>
+            <input type='radio' name='user${card._id}Locked' value='unlock'><br>
             <hr>
             <label>Username</label>
-            <input type='text' name='user${profile._id}Username' value=${profile.username} disabled='' readonly=''>
-            <div id='user${profile._id}HiddenFields'>
+            <input type='text' name='user${card._id}Username' value=${card.username} disabled='' readonly=''>
+            <div id='user${card._id}HiddenFields'>
             <hr>
             <label>Email:</label>
-            <input type='email' name='user${profile._id}Email' value=${profile.email} disabled='' readonly=''>
+            <input type='email' name='user${card._id}Email' value=${card.email} disabled='' readonly=''>
             <label>Age:</label>
-            <input type='text' name='user${profile._id}Age' value=${profile.age} disabled='' readonly=''>
-            </div>`;
+            <input type='text' name='user${card._id}Age' value=${card.age} disabled='' readonly=''>
+            </div>
+            <button>Show more</button>`;
 
-            div.appendChild(button);
             main.appendChild(div);
-            document.getElementById(`user${profile._id}HiddenFields`).style.display = 'none';
+            document.getElementById(`user${card._id}HiddenFields`).style.display = 'none';
 
+        };
+
+        const btns = document.querySelectorAll('button');
+        btns.forEach(button => {
             button.addEventListener('click', reveal);
+        });
 
-            function reveal(event) {
+        function reveal(event) {
 
-                let button = event.target;
-                let currProfile = button.parentNode;
-                let checked = currProfile.querySelector('input[type="radio"]:checked');
+            const buttonClick = event.target;
+            const profile = buttonClick.parentNode;
+            const moreInformation = profile.getElementsByTagName('div')[0];
+            const lockStatus = profile.querySelector('input[type="radio"]:checked').value;
 
-                let moreInfo = document.getElementById(`user${profile._id}HiddenFields`);
-
-                if (checked.value === 'unlock') {
-                    
-                    if (button.textContent === 'Show more') {
-                        moreInfo.style.display = 'block';
-                        button.textContent = 'Hide it';
-                    } else {
-                        moreInfo.style.display = 'none';
-                        button.textContent = 'Show more';
-                    }
+            if (lockStatus === 'unlock') {
+                if (buttonClick.textContent === 'Show more') {
+                    moreInformation.style.display = 'block';
+                    buttonClick.textContent = 'Hide it';
+                } else if (buttonClick.textContent === 'Hide it') {
+                    moreInformation.style.display = 'none';
+                    buttonClick.textContent = 'Show more';
                 }
             }
         }

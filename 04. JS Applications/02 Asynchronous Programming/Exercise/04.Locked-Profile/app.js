@@ -8,9 +8,9 @@ async function lockedProfile() {
             throw new Error('Error');
         }
         let data = await response.json();
-        let arrValues = Object.values(data);
-
         main.innerHTML = '';
+        
+        let arrValues = Object.values(data);
 
         for (let profile of arrValues) {
 
@@ -41,7 +41,7 @@ async function lockedProfile() {
             document.getElementById(`user${profile._id}HiddenFields`).style.display = 'none';
 
         };
-        
+
         const btns = [...document.getElementsByTagName('button')];
         btns.forEach(btn => btn.addEventListener('click', reveal));
 

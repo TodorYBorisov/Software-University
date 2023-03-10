@@ -12,7 +12,7 @@ async function lockedProfile() {
 
         main.innerHTML = '';
 
-        for (let card of arrValues) {
+        for (let profile of arrValues) {
 
             let div = document.createElement('div');
             div.classList.add('profile');
@@ -22,30 +22,28 @@ async function lockedProfile() {
 
             div.innerHTML = `<img src='./iconProfile2.png' class='userIcon'>
             <label>Lock</label>
-            <input type='radio' name='user${card._id}Locked' value='lock' checked=''>
+            <input type='radio' name='user${profile._id}Locked' value='lock' checked=''>
             <label>Unlock</label>
-            <input type='radio' name='user${card._id}Locked' value='unlock'><br>
+            <input type='radio' name='user${profile._id}Locked' value='unlock'><br>
             <hr>
             <label>Username</label>
-            <input type='text' name='user${card._id}Username' value=${card.username} disabled='' readonly=''>
-            <div id='user${card._id}HiddenFields'>
+            <input type='text' name='user${profile._id}Username' value=${profile.username} disabled='' readonly=''>
+            <div id='user${profile._id}HiddenFields'>
             <hr>
             <label>Email:</label>
-            <input type='email' name='user${card._id}Email' value=${card.email} disabled='' readonly=''>
+            <input type='email' name='user${profile._id}Email' value=${profile.email} disabled='' readonly=''>
             <label>Age:</label>
-            <input type='text' name='user${card._id}Age' value=${card.age} disabled='' readonly=''>
+            <input type='text' name='user${profile._id}Age' value=${profile.age} disabled='' readonly=''>
             </div>
             <button>Show more</button>`;
 
             main.appendChild(div);
-            document.getElementById(`user${card._id}HiddenFields`).style.display = 'none';
+            document.getElementById(`user${profile._id}HiddenFields`).style.display = 'none';
 
         };
-
-        const btns = document.querySelectorAll('button');
-        btns.forEach(button => {
-            button.addEventListener('click', reveal);
-        });
+        
+        const btns = [...document.getElementsByTagName('button')];
+        btns.forEach(btn => btn.addEventListener('click', reveal));
 
         function reveal(event) {
 

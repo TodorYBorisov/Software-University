@@ -54,9 +54,9 @@ async function solution() {
 
             document.querySelector('.extra').style.display = 'none';
 
-            button.addEventListener('click', showInfo);
+            button.addEventListener('click', toggle);
 
-            function showInfo(event) {
+            function toggle(event) {
 
                 const button = event.target;
                 const section = button.parentNode.parentNode;

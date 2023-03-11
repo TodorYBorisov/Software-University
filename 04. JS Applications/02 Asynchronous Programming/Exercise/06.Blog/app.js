@@ -17,7 +17,6 @@ function attachEvents() {
             }
             let data = await response.json();
 
-            console.log(data);
             for (const key in data) {
 
                 let option = document.createElement('option');

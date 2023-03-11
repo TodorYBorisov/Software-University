@@ -3,7 +3,6 @@ function attachEvents() {
     let loadPostsBtn = document.getElementById('btnLoadPosts');
     let viewPostsBtn = document.getElementById('btnViewPost');
 
-
     loadPostsBtn.addEventListener('click', loadPosts);
     viewPostsBtn.addEventListener('click', showData);
 
@@ -17,6 +16,8 @@ function attachEvents() {
                 throw new Error('Data can not be fetched!');
             }
             let data = await response.json();
+
+            console.log(data);
             for (const key in data) {
 
                 let option = document.createElement('option');

@@ -93,6 +93,13 @@ function tableAction(event) {
 //4 Task delete data row
 async function deleteRecord(recordId) {
 
+    //слагаме едно питане дали иска да се изтрие?
+    const choice = confirm('Are you sure?');
+
+    if(choice==false){
+        return;
+    }
+
     const url = 'http://localhost:3030/jsonstore/autoparts/' + recordId;
 
     const options = {

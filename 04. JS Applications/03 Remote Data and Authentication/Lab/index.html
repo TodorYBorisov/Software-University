@@ -20,6 +20,9 @@
         th {
             padding: 4px, 8px;
         }
+        #editor_edit {
+            display: none;
+        }
     </style>
 </head>
 
@@ -44,8 +47,8 @@
     </section>
     </table>
 
-    <section id="editor">
-        <h2>Part Editor</h2>
+    <section id="editor_create">
+        <h2>New Part</h2>
         <div>
             <span>Lable</span>
             <input type="text" id="part_lable">
@@ -63,6 +66,31 @@
 
         <div>
             <button id="create_btn">Create Part</button>
+        </div>
+    </section>
+
+    <section id="editor_edit">
+        <h2>Edit Part</h2>
+
+        <input type="hidden" id="edit_part_id">
+        <div>
+            <span>Lable</span>
+            <input type="text" id="edit_part_lable">
+        </div>
+
+        <div>
+            <span>Unite Price</span>
+            <input type="number" id="edit_part_price">
+        </div>
+
+        <div>
+            <span>Quantity</span>
+            <input type="number" id="edit_part_quantity">
+        </div>
+
+        <div>
+            <button id="save_btn">Save Part</button>
+            <button id="cancel_btn">Cancel</button>
         </div>
     </section>
 

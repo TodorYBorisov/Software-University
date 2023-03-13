@@ -57,7 +57,7 @@ async function postData(event) {
     };
 
     if (partData.price == '' || partData.qty == '') {
-        return;
+        alert('Price and quantity must be numbers!');
     }
 
     // const data = formData.entries();

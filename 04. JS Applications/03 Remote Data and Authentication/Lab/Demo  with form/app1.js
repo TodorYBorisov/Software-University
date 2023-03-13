@@ -1,7 +1,7 @@
 start();
 
 function start() {
-    document.getElementById('create_btn').addEventListener('click', postData);
+    document.getElementById('editor_create').addEventListener('submit', postData);
     document.getElementById('save_btn').addEventListener('click', savePart);
     document.getElementById('load_btn').addEventListener('click', loadData);
 
@@ -44,17 +44,25 @@ function createRow(record) {
 }
 //Тask 1
 //тук правим НОВ запис в базата данни с POST request!
-async function postData() {
+async function postData(event) {
+    event.preventDefault();
 
-    const label = document.getElementById('part_lable').value;
-    const price = Number(document.getElementById('part_price').value);
-    const qty = Number(document.getElementById('part_quantity').value);
+    const formData = new FormData(event.target);
+    //const formData = Object.fromEntries(new FormData(event.target));
 
     const partData = {
-        label,
-        price,
-        qty
+        label: formData.get('label'),
+        price: Number(formData.get('price')),
+        qty: Number(formData.get('qty')),
     };
+
+    if (partData.price == '' || partData.qty == '') {
+        return;
+    }
+
+    // const data = formData.entries();
+    // const arr = [...data]; // връща ни масив от kvp-ta
+    // console.log(Object.fromEntries(arr)); ще ни върне обект
 
     const url = 'http://localhost:3030/jsonstore/autoparts';
 
@@ -63,11 +71,21 @@ async function postData() {
         headers: { 'Content-type': 'applications/json' },
         body: JSON.stringify(partData)
     };
+    try {
+        const response = await fetch(url, options);
 
-    const response = await fetch(url, options);
-    const data = await response.json();
+        if (response.ok == false) {
+            throw new Error('Error');
+        }
+        const data = await response.json();
+
+    } catch (error) {
+        alert(error.message);
+        throw error;
+    }
 
     loadData();
+    event.target.reset(); // зачистваме полетата на формуляра
 }
 
 
@@ -96,7 +114,7 @@ async function deleteRecord(recordId) {
     //слагаме едно питане дали иска да се изтрие?
     const choice = confirm('Are you sure?');
 
-    if(choice==false){
+    if (choice == false) {
         return;
     }
 

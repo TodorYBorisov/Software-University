@@ -28,12 +28,12 @@ async function onRegister(event) {
         headers: { 'Content-type': 'applications/json' },
         body: JSON.stringify({ email, password })
     };
-    //правим трай/кеч, защото имаме комуникация с въбшен инзточник
+    //правим трай/кеч, защото имаме комуникация с външен източник
     try {
         const response = await fetch(url, options);
         if (response.ok == false) {
 
-            const error = await repass.json();
+            const error = await response.json();
             throw error;
         }
 

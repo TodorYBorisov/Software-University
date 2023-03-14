@@ -13,8 +13,8 @@ function attachEvents() {
         }
 
         let newObj = {
-            author: nameAuthor.value,
-            content: contentAuthor.value
+            author: nameAuthor.value.trim(),
+            content: contentAuthor.value.trim()
         };
 
         const url = 'http://localhost:3030/jsonstore/messenger';

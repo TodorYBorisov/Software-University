@@ -59,9 +59,9 @@ async function postData(event) {
     //const formData = Object.fromEntries(new FormData(event.target));
 
     const partData = {
-        label: formData.get('label'),
+        label: formData.get('lable'),
         price: Number(formData.get('price')),
-        qty: Number(formData.get('qty')),
+        qty: Number(formData.get('quantity')),
     };
 
     if (partData.price == '' || partData.qty == '') {

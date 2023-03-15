@@ -98,7 +98,7 @@ async function loadData() {
     const options = {
         method: 'get',
         headers: { 'X-Authorization': token },
-        // за да не хардкодваме токена, правим отгоре една променлива token=null;
+        // за да не хардкодваме токена, сетваме го през localStorige от регистрацията
     };
 
     try {

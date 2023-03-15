@@ -86,7 +86,7 @@ async function postData(event) {
             throw new Error('Error');
         }
         const data = await response.json();
-
+ 
     } catch (error) {
         alert(error.message);
         throw error;
@@ -95,7 +95,6 @@ async function postData(event) {
     loadData();
     event.target.reset(); // зачистваме полетата на формуляра
 }
-
 
 //Task 3 event delegation/ намираме на кой ред е цъкнал потребителя
 function tableAction(event) {

@@ -4,46 +4,46 @@ document.getElementById('form').addEventListener('submit', postData);
 
 async function postData(event) {
     event.preventDefault();
-
+    
     const formData = new FormData(event.target);
-
+    
     // const studentData = {
-    //     firstName: formData.get('firstName'),
-    //     lastName: formData.get('lastName'),
-    //     facultyNumber: formData.get('facultyNumber'),
-    //     grade: Number(formData.get('grade')),
-
-    // };
-
-    const { firstName, lastName, facultyNumber, grade } = Object.fromEntries(formData.entries());
-
-    if (firstName == '' || lastName == '' || facultyNumber == '' || Number(grade) == '') {
-        return alert('All fields must be filled!');
-    }
-
-    const url = 'http://localhost:3030/jsonstore/collections/students';
-
-    const options = {
-        method: 'post',
-        headers: { 'Content-type': 'applications/json' },
-        body: JSON.stringify({ firstName, lastName, facultyNumber, grade })
-    };
-    try {
-        const response = await fetch(url, options);
-        if (response.ok == false) {
-            const error = await response.json();
-            throw error;
+        //     firstName: formData.get('firstName'),
+        //     lastName: formData.get('lastName'),
+        //     facultyNumber: formData.get('facultyNumber'),
+        //     grade: Number(formData.get('grade')),
+        
+        // };
+        
+        const { firstName, lastName, facultyNumber, grade } = Object.fromEntries(formData.entries());
+        
+        if (firstName == '' || lastName == '' || facultyNumber == '' || Number(grade) == '') {
+            return alert('All fields must be filled!');
         }
-
-        const userData = await response.json();
-
-        event.target.reset();
-
+        
+        const url = 'http://localhost:3030/jsonstore/collections/students';
+        
+        const options = {
+            method: 'post',
+            headers: { 'Content-type': 'applications/json' },
+            body: JSON.stringify({ firstName, lastName, facultyNumber, grade })
+        };
+        try {
+            const response = await fetch(url, options);
+            if (response.ok == false) {
+                const error = await response.json();
+                throw error;
+            }
+            
+            const userData = await response.json();
+            
+            event.target.reset();
+            
+            loadData();
     } catch (error) {
         alert(error.message);
     }
 
-   loadData();
 }
 
 async function loadData() {

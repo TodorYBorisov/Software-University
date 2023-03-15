@@ -15,6 +15,7 @@ function start() {
 //Task 2
 // тук,ще заредим данните от сървъра които създадохме и ще ги сложим в DOM
 async function loadData() {
+    
     const url = 'http://localhost:3030/jsonstore/autoparts';
     const response = await fetch(url);
     const data = await response.json();

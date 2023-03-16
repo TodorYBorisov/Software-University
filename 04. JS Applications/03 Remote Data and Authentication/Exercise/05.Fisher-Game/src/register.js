@@ -37,6 +37,13 @@ async function onRegister(event) {
         const userData = await response.json();
         console.log(userData);
 
+        // const data = {
+        //     id: userData._id,
+        //     email: userData.email,
+        //     accessToken: userData.accessToken
+        // };
+        // localStorage.setItem('userData', JSON.stringify(data));
+
         localStorage.setItem('email', userData.email);
         localStorage.setItem('accessToken', userData.accessToken);
         localStorage.setItem('_id', userData._id);

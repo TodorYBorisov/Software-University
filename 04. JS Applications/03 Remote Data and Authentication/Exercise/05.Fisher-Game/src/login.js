@@ -29,13 +29,19 @@ async function onLogin(event) {
             throw error;
         }
 
-        const userData = await response.json();
-        
-        localStorage.setItem('email', userData.email);
-        localStorage.setItem('accessToken', userData.accessToken);
-        localStorage.setItem('_id', userData._id);
+        const data = await response.json();
 
-        event.target.reset();
+        const userData = {
+            id: data._id,
+            email: data.email,
+            token: data.accessToken
+        };
+        localStorage.setItem('userData', JSON.stringify(userData));
+        //const userData =JSON.parse(localStorage.getItem('userData'));//userData след парса вече е обект и може да се достъпва.
+
+        // localStorage.setItem('email', userData.email);
+        // localStorage.setItem('accessToken', userData.accessToken);
+        // localStorage.setItem('_id', userData._id);
 
         window.location = ('./index.html');
 

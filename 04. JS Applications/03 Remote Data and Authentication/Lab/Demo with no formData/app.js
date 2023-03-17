@@ -20,14 +20,14 @@ async function loadData() {
     const response = await fetch(url);
     const data = await response.json();
 
-    const rows = Object.values(data).map(createRow);
+    const rows = Object.values(data).map(createCatch);
     //Може да завъртим тук forOf, но го правим с функцията по долу
 
     //тук заместваме в таблицата с новите редове който ще дойдат от функцията createRow
     document.getElementById('table_body').replaceChildren(...rows);
     //replaceChildren приема списък от нодове и трябва да се спредне с трите точки за да стане на масив
 }
-function createRow(record) {
+function createCatch(record) {
 
     const trEl = document.createElement('tr');
 
@@ -130,7 +130,7 @@ async function loadForEditing(recordId) {
     document.getElementById('edit_part_quantity').value = data.qty;
 }
 
-//Task 6 запазване на едитнатия елемент в базата
+//Task 5.1 запазване на едитнатия елемент в базата
 
 async function savePart() {
 

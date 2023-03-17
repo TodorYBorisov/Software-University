@@ -12,7 +12,7 @@ async function onRegister(event) {
 
     if (email === '' || password === '' || rePass === '') {
         notification.textContent = 'All fileds must be filled!';
-        return alert('No empy fields allowed!');
+        return alert('No empty fields allowed!');
     }
     if (password !== rePass) {
         notification.textContent = 'Password must match!';
@@ -34,25 +34,22 @@ async function onRegister(event) {
             throw error;
         }
 
-        const userData = await response.json();
-        console.log(userData);
+        const data = await response.json();
+        
+        const userData = {
+            id: data._id,
+            email: data.email,
+            token: data.accessToken
+        };
+        localStorage.setItem('userData', JSON.stringify(userData));
+        //const userData =JSON.parse(localStorage.getItem('userData'));//userData след парса вече е обект и може да се достъпва.
 
-        // const data = {
-        //     id: userData._id,
-        //     email: userData.email,
-        //     accessToken: userData.accessToken
-        // };
-        // localStorage.setItem('userData', JSON.stringify(data));
-
-        localStorage.setItem('email', userData.email);
-        localStorage.setItem('accessToken', userData.accessToken);
-        localStorage.setItem('_id', userData._id);
-
-        event.target.reset();
+        // localStorage.setItem('email', userData.email);
+        // localStorage.setItem('accessToken', userData.accessToken);
+        // localStorage.setItem('_id', userData._id);
 
         window.location = ('./index.html');
         //window.location = 'index.html';
-
     } catch (error) {
         document.getElementById('register-form').reset();
         alert(error.message);

@@ -20,9 +20,9 @@ if (userData) {
 
     loadData();
 } else {
- 
+
     document.getElementById('user').style.display = 'none';
-    
+
 }
 
 //LOGOUT
@@ -33,7 +33,11 @@ async function onLogout() {
 
         headers: { 'X-Authorization': userData.token },
     };
-    await fetch(url, options);
+    const response = await fetch(url, options);
+
+    if (response.status !== 204) {
+        throw new Error(`Error: ${response.statusText} - ${response.status}`);
+    }
 
     localStorage.clear();
     //викаме функциятя за да опарви навигацията

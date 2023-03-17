@@ -33,12 +33,3 @@ function createElement2(typeEl, content, parentEl, atributes) {
     parentEl.appendChild(element);
     return element;
 }
-
-function getHeaders(method, options) {
-
-    return {
-        method: `${method}`,
-        headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify(options)
-    };
-}

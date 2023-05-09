@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
             break;
 
         default:
-            res.write('Anything else')
+            res.write('Anything else');
             break;
     }
 

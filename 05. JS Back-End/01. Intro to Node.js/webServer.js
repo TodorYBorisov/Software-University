@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
     //console.log(req.url);  може да видим какъв е url
 
     res.writeHead(200, {
-        'content-type': 'text/html'
+        'Content-Type': 'text/html'
     });
 
     switch (req.url) {

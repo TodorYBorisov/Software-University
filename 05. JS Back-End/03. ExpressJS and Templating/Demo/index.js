@@ -5,7 +5,8 @@ const port = 5000;
 
 //add middleware
 
-app.use((rew, res, next) => {
+app.use((req, res, next) => {
+console.log(`HTTP request${req.method}:${req.path}`);
 
 });
 

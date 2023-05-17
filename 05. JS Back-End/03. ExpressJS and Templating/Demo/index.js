@@ -5,7 +5,7 @@ const port = 5000;
 
 app.get('/', (req, res) => {
     res.status(200);
-    res.send('Welcome to Express.js!');
+    res.send('Welcome to Express!');
 
 
 });

@@ -20,5 +20,7 @@ app.get('/cats/:catsId', (req, res) => {
 
     res.send(`Request with parameter - ${req.params.catsId}`);
 });
+
+
 app.listen(port, () => console.log(`Server is running on ${port}...`));
 

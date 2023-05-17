@@ -3,8 +3,13 @@ const app = express();
 
 const port = 5000;
 
+//add middleware
 
-//express router
+app.use((rew, res, next) => {
+
+});
+
+//express router/ Actions
 
 app.get('/', (req, res) => {
     res.status(200);

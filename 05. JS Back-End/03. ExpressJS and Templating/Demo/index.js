@@ -3,6 +3,9 @@ const app = express();
 
 const port = 5000;
 
+
+//express router
+
 app.get('/', (req, res) => {
     res.status(200);
     res.send('Welcome to Express!');

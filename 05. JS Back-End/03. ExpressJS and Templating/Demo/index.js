@@ -21,6 +21,8 @@ app.get('/cats/:catsId', (req, res) => {
     res.send(`Request with parameter - ${req.params.catsId}`);
 });
 
-
+app.get('old-route', (req, res) => {
+    res.redirect('/cats');
+});
 app.listen(port, () => console.log(`Server is running on ${port}...`));
 

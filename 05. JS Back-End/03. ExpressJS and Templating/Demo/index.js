@@ -7,7 +7,7 @@ const port = 5000;
 
 app.use((req, res, next) => {
 console.log(`HTTP request${req.method}:${req.path}`);
-
+next();
 });
 
 //express router/ Actions

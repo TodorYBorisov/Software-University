@@ -31,7 +31,7 @@ app.get('/cats/:catsId', (req, res) => {
 });
 
 app.get('old-route', (req, res) => {
-    res.redirect('/cats');
+    res.redirect('/cats')
 });
 app.listen(port, () => console.log(`Server is running on ${port}...`));
 

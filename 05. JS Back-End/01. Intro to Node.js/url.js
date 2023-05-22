@@ -7,4 +7,4 @@ const soft = new URL('https://softuni.bg/search/results?SearchTerm=JS+Back-End+-
 const qs = querystring.parse(myURL.search);
 
 console.log(qs);
-//console.log(soft);
+console.log(soft);

@@ -6,11 +6,11 @@ const server = http.createServer((req, res) => {
     console.log(req.method);
     console.log(req.url);
 
-    res.writeHead(201, {
+    res.writeHead(200, {
         'Content-type': 'text/html'
     });
 
-    res.write('Hello from Node JS server!');
+    res.write('<h1>Hello from Node JS server!</h1>');
     res.end();
 });
 

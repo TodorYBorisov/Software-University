@@ -1,7 +1,11 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('./streams/input.txt');
-const writeStream = fs.createWriteStream('./streams/output.txt');
+// библиотека за оправяне на пътищата при четене на файлове от системата
+const path = require('path');
+
+
+const readStream = fs.createReadStream(path.resolve(__dirname, 'input.txt'));
+const writeStream = fs.createWriteStream(path.resolve(__dirname, 'output.txt'));
 
 readStream.on('data', (chunk) => {
     writeStream.write(chunk);

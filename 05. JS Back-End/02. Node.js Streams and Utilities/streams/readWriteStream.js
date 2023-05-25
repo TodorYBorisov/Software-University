@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-const readStream = fs.createReadStream('./input.txt');
-const writeStream = fs.createWriteStream('./output.txt');
+const readStream = fs.createReadStream('./streams/input.txt');
+const writeStream = fs.createWriteStream('./streams/output.txt');
 
 readStream.on('data', (chunk) => {
     writeStream.write(chunk);

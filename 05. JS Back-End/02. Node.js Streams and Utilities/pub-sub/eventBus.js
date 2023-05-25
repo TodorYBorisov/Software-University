@@ -1,8 +1,8 @@
 const listeners = {};
 
 const publish = (eventName) => {
-    
-    listeners[eventName].forEach(listener => listener());
+
+    listeners[eventName]?.forEach(listener => listener()); //? e optional chaining , за да няма грешка
 };
 
 const subscribe = (eventName, eventListener) => {

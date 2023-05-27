@@ -12,9 +12,11 @@ app.use((req, res, next) => {
 
 //custom midleware
 
-app.use('/user/:userID', (req, res, next) => {
+app.use('/user/:userId', (req, res, next) => {
 
+    const userId = req.params.userId;
     let userExist = true;
+
     if (!userExist) {
         res.redirect('/login');
     } else {
@@ -24,6 +26,13 @@ app.use('/user/:userID', (req, res, next) => {
     app.get('/user/userId', (req, res) => {
         res.send('User home page!');
     });
+});
+
+//partial midleware /частиче зависи от пътя на заявката
+
+app.use('/cats', (req, res, next) => {
+    console.log('Cats midleware');
+    next();
 });
 
 

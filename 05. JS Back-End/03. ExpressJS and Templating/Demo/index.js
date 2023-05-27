@@ -10,7 +10,7 @@ app.use((req, res, next) => {
     next();
 });
 
-//custom midleware with validation
+//custom middleware with validation
 
 app.use('/user/:userId', (req, res, next) => {
 
@@ -28,24 +28,29 @@ app.use('/user/:userId', (req, res, next) => {
     });
 });
 
-//partial midleware /частиче зависи от пътя на заявката
+//partial middleware /частиче зависи от пътя на заявката
 
 app.use('/cats', (req, res, next) => {
-    console.log('Cats midleware');
+    console.log('Cats middleware');
     next();
 });
 
 
-//Специфичен midleware ,когато имаме get заявка към специфичен път, където слагаме Midleware вътре в пътя
+//Специфичен middleware ,когато имаме get заявка към специфичен път, където слагаме middleware вътре в пътя
 
-const specificMidleware = (req, res, next) => {
+const specificmiddleware = (req, res, next) => {
     console.log('Just for specific route only.');
     next();
 };
 
-app.get('/specific', specificMidleware, (req, res) => {
-    res.send('Some specific rout with midleware.');
+app.get('/specific', specificmiddleware, (req, res) => {
+    res.send('Some specific rout with middleware.');
 });
+
+//add third-party middleware
+
+const bodyParser = express.urlencoded({ extended: false });
+app.use(bodyParser);
 
 //=====================================================================//
 //От тука надолу е нашия Express router/Actions
@@ -58,9 +63,23 @@ app.get('/', (req, res) => {
 
 //подаваме вида ня заявката, след което указваме и пътя и в комбинация с хендлъра се нарича=> ендпоинт
 //Action e самия рикуест хендлър
+// app.get('/cats', (req, res) => {
+//     res.status(200);
+//     res.send('This page contains cats');
+// });
+
+// връщане на форм дата с боди парсъра
 app.get('/cats', (req, res) => {
     res.status(200);
-    res.send('This page contains cats');
+    res.send(`
+    <form method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" />
+        <input type="submit" value="Create" />
+    </form>
+    `);
 });
 
 app.get('old-route', (req, res) => {
@@ -68,6 +87,7 @@ app.get('old-route', (req, res) => {
 });
 
 app.post('/cats', (req, res) => {
+    console.log(req.body);
     res.status(201);
     res.send('Cat has been created!');
 });

@@ -2,6 +2,22 @@ const express = require('express');
 const app = express(); // правим си инстанция 
 const path = require('path');
 
+const handlebars = require('express-handlebars');
+
+const { addCat, getCats } = require('./dataCats');
+
+//Setup Handlebars to Express, как да закачим handlebars view engine
+
+// app.engine('handlebars', handlebars.engine());
+// app.set('view engine', 'handlebars');
+
+//Setup Handlebars to Express, как да сменим разширението
+app.engine('hbs', handlebars.engine({
+    extname: 'hbs'
+}));
+app.set('view engine', 'hbs');
+
+
 
 //тук добавяме глобален middleware който важи за всички requests
 
@@ -62,7 +78,9 @@ app.use(express.static('public'));
 
 //може да си слагаме статус, който да се чейнва
 app.get('/', (req, res) => {
-    res.status(200).res.send('Welcome to Express!');
+    // res.status(200).res.send('Welcome to Express!');
+    res.render('home');
+
 });
 
 
@@ -75,33 +93,11 @@ app.get('/', (req, res) => {
 
 // връщане на форм дата с боди парсъра
 app.get('/cats', (req, res) => {
+    const cats = getCats();
+    //const firstCat = cats[0]; така се подава само първата котка, а с {cats}подаваме целия масив 
+
     res.status(200);
-    res.send(`
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Test page</title>
-</head>
-
-<body>
-
-    <form method="post">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
-        <label for="age">Age</label>
-        <input type="number" name="age" id="age" />
-        <input type="submit" value="Create" />
-    </form>
-
-</body>
-
-</html>
-    `);
+    res.render('cats', {cats});
 });
 
 app.get('old-route', (req, res) => {
@@ -110,8 +106,12 @@ app.get('old-route', (req, res) => {
 
 app.post('/cats', (req, res) => {
     console.log(req.body);
+
+    addCat(req.body.name, Number(req.body.age));
+
     res.status(201);
-    res.send('Cat has been created!');
+    //res.send('Cat has been created!');
+    res.redirect('/cats');
 });
 app.put('/cats', (req, res) => {
     //res.status(201);
@@ -153,6 +153,10 @@ app.get('/download', (req, res) => {
 //редиректва от стар път към нов такъв
 app.get('/old-route', (req, res) => {
     res.redirect('/cats');
+});
+
+app.get('/about', (req, res) => {
+    res.render('about');
 });
 
 

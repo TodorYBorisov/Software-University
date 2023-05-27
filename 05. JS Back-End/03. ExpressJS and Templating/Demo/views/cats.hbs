@@ -1,0 +1,26 @@
+{{#if cats}}
+
+{{!-- така задаваме, че се ползва частичен темплейт от partial папката  --}}
+{{> cat}} 
+
+
+    {{!-- {{#each cats}}
+    <article>
+        <h2>{{name}}</h2>
+        <p>Cat {{name}} is {{age}} years old!</p>
+    </article>
+    {{/each}} --}}
+
+{{else}}
+
+    <h1>The are no cats in the array!</h1>
+
+{{/if}} 
+
+<form method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+    <label for="age">Age</label>
+    <input type="number" name="age" id="age" />
+    <input type="submit" value="Create" />
+</form>

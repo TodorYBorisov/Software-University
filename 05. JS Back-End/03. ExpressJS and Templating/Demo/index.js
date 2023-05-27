@@ -3,14 +3,14 @@ const app = express(); // правим си инстанция
 const path = require('path');
 
 
-//тук добавяме един middleware
+//тук добавяме глобален middleware който важи за всички requests
 
 app.use((req, res, next) => {
     console.log(`HTTP request ${req.method}: ${req.path}`);
     next();
 });
 
-//custom midleware
+//custom midleware with validation
 
 app.use('/user/:userId', (req, res, next) => {
 
@@ -35,6 +35,17 @@ app.use('/cats', (req, res, next) => {
     next();
 });
 
+
+//Специфичен midleware ,когато имаме get заявка към специфичен път, където слагаме Midleware вътре в пътя
+
+const specificMidleware = (req, res, next) => {
+    console.log('Just for specific route only.');
+    next();
+};
+
+app.get('/specific', specificMidleware, (req, res) => {
+    res.send('Some specific rout with midleware.');
+});
 
 //=====================================================================//
 //От тука надолу е нашия Express router/Actions

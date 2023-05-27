@@ -52,6 +52,11 @@ app.get('/specific', specificmiddleware, (req, res) => {
 const bodyParser = express.urlencoded({ extended: false });
 app.use(bodyParser);
 
+
+
+//middleware за статични файлове от public folder
+app.use(express.static('public'));
+
 //=====================================================================//
 //От тука надолу е нашия Express router/Actions
 
@@ -72,6 +77,19 @@ app.get('/', (req, res) => {
 app.get('/cats', (req, res) => {
     res.status(200);
     res.send(`
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Test page</title>
+</head>
+
+<body>
+
     <form method="post">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" />
@@ -79,6 +97,10 @@ app.get('/cats', (req, res) => {
         <input type="number" name="age" id="age" />
         <input type="submit" value="Create" />
     </form>
+
+</body>
+
+</html>
     `);
 });
 

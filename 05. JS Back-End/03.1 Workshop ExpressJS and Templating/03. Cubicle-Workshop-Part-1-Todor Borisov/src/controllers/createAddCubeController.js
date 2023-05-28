@@ -8,7 +8,7 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-    
+
     //деструкторираме данните от бодито на формата
     const { name, description, imageUrl, difficultyLevel } = req.body;
 
@@ -20,6 +20,13 @@ router.post('/create', (req, res) => {
     });
 
     res.redirect('/'); // след като сме постнали данните редиректваме към home page
+});
+
+router.get('/details/:id', (req, res) => {
+
+    const cube = cubeManager.getOne(req.params.id); //взимаме id на един куб през мениджъра
+
+    res.render('details', { ...cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите
 });
 
 

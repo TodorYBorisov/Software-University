@@ -3,7 +3,9 @@ const uniqid = require('uniqid');
 //name, description, imageUrl, difficultyLevel = cubeData
 const cubes = [];
 
-exports.getAll = ()=>cubes.slice();  // със слайс ще направим един вид копие на масива, , зада  върнем нова референция към getAll
+exports.getAll = () => cubes.slice();  // със слайс ще направим един вид копие на масива, , зада  върнем нова референция към getAll
+
+exports.getOne = (getById) => cubes.find(x => x.id == getById);
 
 exports.create = (cubeData) => {
 

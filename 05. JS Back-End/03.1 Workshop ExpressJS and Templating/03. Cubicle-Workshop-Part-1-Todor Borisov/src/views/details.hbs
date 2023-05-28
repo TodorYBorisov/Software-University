@@ -20,6 +20,7 @@
     </header> --}}
 
     {{!-- Ако несе появяват данните това което сме го подали да се рендерира се поставя пред променливитес точка  --}}
+    {{!-- {{#with cube}} може и така но не трябва да деструкторираме--}} 
     <main>
       <h1>{{name}}</h1>
       <img class="cube" src="{{imageUrl}}">
@@ -29,6 +30,7 @@
         <a class="btn" href="/">Back</a>
       </div>
     </main>
+    {{!-- {{/with}} --}}
   {{!-- </div>
   <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
 </body>

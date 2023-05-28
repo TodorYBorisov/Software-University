@@ -11,7 +11,7 @@ expressConfigurator(app);
 handlebarsConfigurator(app);
 
 app.use(homeController);
-app.use('/cubes', createAddCubeController);
+app.use('/cubes', createAddCubeController); //тук си добавихме /cubes, трябва да се оправи пътя и в main layout
 
 
 app.listen(port, () => console.log(`Server is listening on port ${port}...`));

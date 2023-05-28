@@ -1,8 +1,4 @@
 const handlebars = require('express-handlebars');
-const express = require('express');
-
-
-
 
 function handlebarsConfigurator(app) {
     //настройваме на хендълбарс

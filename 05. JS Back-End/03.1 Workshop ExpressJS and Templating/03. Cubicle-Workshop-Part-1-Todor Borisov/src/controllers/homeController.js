@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
     const cubes = cubeManager.getAll(search, from, to); //взимаме всички кубчета от мениджъра и ги подаваме на рендър темплейта
 
-    res.render('index', { cubes });
+    res.render('index', { cubes, search, from, to }); // тук сме подали search, from, to за да осатват стойностите в полетаа на формата
 });
 
 router.get('/about', (req, res) => {

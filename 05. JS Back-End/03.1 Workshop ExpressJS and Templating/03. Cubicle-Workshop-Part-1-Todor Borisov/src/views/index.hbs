@@ -1,12 +1,14 @@
 <main>
   <h1>Browser</h1>
   <form action="/" method="GET">
-    <input type="text" class="search" name="search" placeholder="Search...">
-    <input type="number" name="from" class="difficulty" placeholder="Difficulty from...">
+    <input type="text" class="search" name="search" value="{{search}}" placeholder="Search...">
+    <input type="number" name="from" value="{{from}}" class="difficulty" placeholder="Difficulty from...">
     <span>-</span>
-    <input type="number" name="to" class="difficulty" placeholder="Difficulty to...">
+    <input type="number" name="to" alue="{{to}}" class="difficulty" placeholder="Difficulty to...">
     <input type="submit" value="search">
   </form>
+
+{{!-- Ако искаме да остават стойностите в полетата на сърча, трябва да добавим value="{{search,from,to}}" --}}
 
   {{#each cubes}}
 

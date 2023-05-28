@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+//const path =require ('path');
+
 const handlebars = require('express-handlebars');
 
 //добавяме мидълуеър за статичните файлове
+//ако не разпонзва пътя, добавяме path с require & Пишем app.use(express.static(path.resolve(__dirname,"public"))
 app.use(express.static('src/public'));
 
 //настройваме на хендълбарс

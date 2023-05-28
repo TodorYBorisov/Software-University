@@ -4,14 +4,21 @@ const port = 3000;
 
 const handlebars = require('express-handlebars');
 
-//настройка на хендълбарс
+//настройваме на хендълбарс
 app.engine('hbs', handlebars.engine({
     extname: 'hbs'
 }));
 app.set('view engine', 'hbs');
 
+//настройваме папката да се търси в тази директория
+app.set('views', 'src/views');
+
+//тук са ни пътищата
 app.get('/', (req, res) => {
-    res.send('Test');
+    res.render('index');
 });
+
+//добавяме мидълуеър за статичните файлове
+app.use(express.static('public'));
 
 app.listen(port, () => console.log(`Server is listening on port ${port}...`));

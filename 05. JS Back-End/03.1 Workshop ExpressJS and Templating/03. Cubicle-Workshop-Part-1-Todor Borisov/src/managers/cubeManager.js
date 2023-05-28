@@ -1,3 +1,4 @@
+const uniqid = require('uniqid');
 //тук ще менажираме данните свързани с кубовете
 //name, description, imageUrl, difficultyLevel = cubeData
 const cubes = [];
@@ -7,7 +8,7 @@ exports.getAll = ()=>cubes.slice();  // със слайс ще направим 
 exports.create = (cubeData) => {
 
     const newCube = {
-        id: cubes.length + 1, // така задаваме номерация 
+        id: uniqid(), // така задаваме униклен номер на всеки елемент с тази библиотека
         ...cubeData,
     };
     cubes.push(newCube);

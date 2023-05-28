@@ -64,6 +64,7 @@ app.get('/specific', specificmiddleware, (req, res) => {
 });
 
 //add third-party middleware
+//ползваме го ако имаме изпратени данни от форма, да може да парснем данните към обект през req.body, за да ги ползваме
 
 const bodyParser = express.urlencoded({ extended: false });
 app.use(bodyParser);

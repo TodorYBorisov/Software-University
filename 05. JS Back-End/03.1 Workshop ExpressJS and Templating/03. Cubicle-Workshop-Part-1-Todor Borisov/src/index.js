@@ -4,6 +4,9 @@ const port = 3000;
 
 const handlebars = require('express-handlebars');
 
+//добавяме мидълуеър за статичните файлове
+app.use(express.static('src/public'));
+
 //настройваме на хендълбарс
 app.engine('hbs', handlebars.engine({
     extname: 'hbs'
@@ -18,7 +21,5 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-//добавяме мидълуеър за статичните файлове
-app.use(express.static('public'));
 
 app.listen(port, () => console.log(`Server is listening on port ${port}...`));

@@ -26,6 +26,10 @@ router.get('/details/:id', (req, res) => {
 
     const cube = cubeManager.getOne(req.params.id); //взимаме id на един куб през мениджъра
 
+    if(!cube){ // ако пък нямаме куб с това id, ни върни 404, защото find може да върне undefined
+        return res.redirect('/404');
+    }
+
     res.render('details', { ...cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите
 });
 

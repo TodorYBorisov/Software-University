@@ -13,5 +13,9 @@ handlebarsConfigurator(app);
 app.use(homeController);
 app.use('/cubes', createAddCubeController); //тук си добавихме /cubes, трябва да се оправи пътя и в main layout
 
+app.get('*', (req, res) => {
+    res.redirect('/404');
+});
+
 
 app.listen(port, () => console.log(`Server is listening on port ${port}...`));

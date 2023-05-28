@@ -5,7 +5,13 @@ const cubeManager = require('../managers/cubeManager');
 
 router.get('/', (req, res) => {
 
-    const cubes = cubeManager.getAll(); //взимаме всички кубчета от мениджъра и ги подаваме на рендър темплейта
+    const { search, from, to } = req.query;
+
+    // req.params -е за параметрите
+    // req.body - за post данните които са пратени от формата и парснати
+    // req.query - за куери стринга горе url-a
+
+    const cubes = cubeManager.getAll(search, from, to); //взимаме всички кубчета от мениджъра и ги подаваме на рендър темплейта
 
     res.render('index', { cubes });
 });

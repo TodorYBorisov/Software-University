@@ -1,8 +1,11 @@
 const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
+
 const connectionStr = 'mongodb://localhost:27017';
+
 const client = new MongoClient(connectionStr, { useUnifiedTopology: true });
+
 client.connect(function (err) {
     const db = client.db('testdb');
     const people = db.collection('people');

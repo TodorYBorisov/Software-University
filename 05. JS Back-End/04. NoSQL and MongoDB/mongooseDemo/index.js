@@ -10,10 +10,15 @@ async function conectDB() {
 
     const cats = await Cat.find();
 
+    //метод по инстанция
     //cats.forEach(cat => cat.greet());
 
     //така вадим виртуалното пропърти
-    cats.forEach(cat =>console.log(cat.info));
+    cats.forEach(cat => console.log(cat.info));
+
+    //ADVANCED static model method
+    const result = await Cat.giveMeCats();
+    console.log(result);
 
 }
 conectDB();

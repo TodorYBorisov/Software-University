@@ -21,11 +21,19 @@ catSchema.virtual('info').get(function () {
     return `My name is ${this.name} nad I'm ${this.age} years old.`;
 });
 
+
 //валидиане на данни през схемата, стринга ни е error message
 catSchema.path('name').validate(function () {
     return this.name.length >= 2 && this.name.length <= 10;
-
+    
 }, 'The name must be between 2 and 10 symbols long!');
+
+
+////ADVANCED static model method
+catSchema.static('giveMeCats', function () {
+    return this.find();
+});
+
 
 const Cat = mongoose.model('Cat', catSchema);
 

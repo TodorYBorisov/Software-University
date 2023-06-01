@@ -4,11 +4,15 @@ const catSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        minLength: 2,// добавяме вграден валидатор
+        minLength: 2,// добавяме вграден валидатор, ако искаме къстъм съобщение за грешка трябва да го сложим в масив [2,'Error]
         maxLength: 10
     }, // можем да задаваме специфично пропърти и по този начин гарантираме, че ще го има
     age: Number,
     breed: String,
+    color: {
+        type: String,
+        enum:['white', 'black']
+    }
 });
 
 //може да слагме методи на схемата, къдeто this сочи към конкретния докуемт един вид

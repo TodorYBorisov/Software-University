@@ -9,17 +9,17 @@ const cubeSchema = new mongoose.Schema({
     description: {
         type: String,
         require: true,
-        maxLength: 10
+        //maxLength: 10
     },
     imageUrl: {
         type: String,
         require: true,
     },
     difficultyLevel: {
-        Number,
-        require: true,
-        min: 1,
-        max: 8,
+       type: Number,
+        require: true
+        // min: 1,
+        // max: 8,
     },
     //accessories: {}
 
@@ -28,9 +28,3 @@ const cubeSchema = new mongoose.Schema({
 const Cube = mongoose.model('Cube', cubeSchema);
 
 module.exports = Cube;
-
-
-•	Description - (String, required, max length validation)
-•	ImageUrl - (String, required, http / https validation)
-•	Difficulty Level - (Number, required, min and max valid range)
-•	Accessories - (ObjectId, ref Accessories Model)

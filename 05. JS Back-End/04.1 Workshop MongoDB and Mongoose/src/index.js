@@ -8,6 +8,8 @@ const handlebarsConfigurator = require('./config/handlebars');
 const conectDB = require('./config/dbConfig');
 const routes = require('./config/routes');
 
+const Cube = require('./models/Cube');
+
 expressConfigurator(app);
 handlebarsConfigurator(app);
 

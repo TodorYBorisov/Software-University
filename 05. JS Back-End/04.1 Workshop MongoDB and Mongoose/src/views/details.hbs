@@ -1,4 +1,5 @@
-{{!-- <!DOCTYPE html>
+{{!--
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,8 +20,8 @@
       </ul>
     </header> --}}
 
-    {{!-- Ако несе появяват данните това което сме го подали да се рендерира се поставя пред променливитес точка  --}}
-    {{!-- {{#with cube}} може и така но не трябва да деструкторираме--}} 
+    {{!-- Ако несе появяват данните това което сме го подали да се рендерира се поставя пред променливитес точка --}}
+    {{!-- {{#with cube}} може и така но не трябва да деструкторираме--}}
     <main>
       <h1>{{cube.name}}</h1>
       <img class="cube" src="{{cube.imageUrl}}">
@@ -30,8 +31,28 @@
         <a class="btn" href="/">Back</a>
       </div>
     </main>
+    <h2>Accessories</h2>
+    <div class="accessories">
+      <div class="accessory">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61J8UP8pySL._SX425_.jpg" alt="stickerName">
+        <h3>Accessory Name</h3>
+        <p>Accessory Description</p>
+      </div>
+      <div class="accessory">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61J8UP8pySL._SX425_.jpg" alt="stickerName">
+        <h3>Accessory Name</h3>
+        <p>Accessory Description</p>
+      </div>
+      <div class="accessory">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/61J8UP8pySL._SX425_.jpg" alt="stickerName">
+        <h3>Accessory Name</h3>
+        <p>Accessory Description</p>
+      </div>
+      <h3 class="italic">This cube has no accessories yet...</h3>
+    </div>
     {{!-- {{/with}} --}}
-  {{!-- </div>
+    {{!--
+  </div>
   <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
 </body>
 

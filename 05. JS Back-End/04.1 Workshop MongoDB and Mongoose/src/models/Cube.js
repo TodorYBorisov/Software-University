@@ -19,7 +19,7 @@ const cubeSchema = new mongoose.Schema({
        type: Number,
         require: true
         // min: 1,
-        // max: 8,
+        // max: 6,
     },
     //accessories: {}
 

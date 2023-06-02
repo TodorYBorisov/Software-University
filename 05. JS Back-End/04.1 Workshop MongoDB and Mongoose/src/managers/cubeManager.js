@@ -1,4 +1,7 @@
 const uniqid = require('uniqid');
+
+const Cube = require('../models/Cube');
+
 //тук ще менажираме данните свързани с кубовете
 //name, description, imageUrl, difficultyLevel = cubeData
 
@@ -24,13 +27,10 @@ exports.getAll = (search, from, to) => {
 
 exports.getOne = (getById) => cubes.find(x => x.id == getById);
 
-exports.create = (cubeData) => {
+//тук парвим нов куб 
+exports.create = async (cubeData) => {
+    const cube = new Cube(cubeData);
+    await cube.save();
 
-    const newCube = {
-        id: uniqid(), // така задаваме униклен номер на всеки елемент с тази библиотека
-        ...cubeData,
-    };
-    cubes.push(newCube);
-
-    return newCube;
+    return cube;
 };

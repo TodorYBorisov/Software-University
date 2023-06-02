@@ -3,7 +3,7 @@ const router = express.Router();
 
 const cubeManager = require('../managers/cubeManager');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 
     const { search, from, to } = req.query;
 
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     // req.body - за post данните които са пратени от формата и парснати
     // req.query - за куери стринга горе url-a
 
-    const cubes = cubeManager.getAll(search, from, to); //взимаме всички кубчета от мениджъра и ги подаваме на рендър темплейта
+    const cubes = await cubeManager.getAll(search, from, to); //взимаме всички кубчета от мениджъра и ги подаваме на рендър темплейта
 
     res.render('index', { cubes, search, from, to }); // тук сме подали search, from, to за да осатват стойностите в полетаа на формата
 });

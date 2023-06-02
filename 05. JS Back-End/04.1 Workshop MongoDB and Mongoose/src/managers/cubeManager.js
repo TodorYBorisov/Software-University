@@ -1,16 +1,14 @@
-const uniqid = require('uniqid');
-
 const Cube = require('../models/Cube');
 
 //тук ще менажираме данните свързани с кубовете
 //name, description, imageUrl, difficultyLevel = cubeData
 
-const cubes = []; //това ни се явява базата в момента
 
-exports.getAll = (search, from, to) => {
+exports.getAll = async (search, from, to) => {
 
-    let result = cubes.slice(); // със слайс ще направим един вид копие на масива, , зада  върнем нова референция към getAll
+    let result = await Cube.find().lean();
 
+    //сега филтрира в паметта, трябва да филтрира вътре в базата
     if (search) {
         result = result.filter(cube => cube.name.toLowerCase().includes(search.toLowerCase()));
     }

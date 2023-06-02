@@ -25,7 +25,7 @@ exports.getAll = (search, from, to) => {
     return result;
 };
 
-exports.getOne = (getById) => cubes.find(x => x.id == getById);
+exports.getOne = (getById) => Cube.findById(getById);
 
 //тук парвим нов куб 
 exports.create = async (cubeData) => {

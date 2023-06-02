@@ -22,15 +22,15 @@ router.post('/create', async (req, res) => {
     res.redirect('/'); // след като сме постнали данните редиректваме към home page
 });
 
-router.get('/details/:id', (req, res) => {
+router.get('/details/:id', async (req, res) => {
 
-    const cube = cubeManager.getOne(req.params.id); //взимаме id на един куб през мениджъра
+    const cube = await cubeManager.getOne(req.params.id).lean(); //взимаме id на един куб през мениджъра и го обръщаме с помоща на lean в plain object
 
-    if (!cube) { // ако пък нямаме куб с това id, ни върни 404, защото find може да върне undefined
+    if (!cube) { // ако нямаме cube с това id, ни върни 404
         return res.redirect('/404');
     }
 
-    res.render('details', { ...cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите
+    res.render('details', { cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
 });
 
 

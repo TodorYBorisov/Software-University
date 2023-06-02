@@ -33,7 +33,7 @@ router.get('/details/:id', async (req, res) => {
     res.render('details', { cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
 });
 
-router.get('/:id/attach-accessory', (req,res)=>{
+router.get('/attach-accessory/:id', (req,res)=>{
 
     res.render('accessory/attach');
 

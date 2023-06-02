@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const cubeManager = require('../managers/cubeManager');
+const accessoryManager = require('../managers/accessoryManager');
 
 router.get('/create', (req, res) => {
     res.render('create');
@@ -33,9 +34,16 @@ router.get('/details/:id', async (req, res) => {
     res.render('details', { cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
 });
 
-router.get('/attach-accessory/:id', (req,res)=>{
+router.get('/attach-accessory/:id', async (req, res) => {
 
-    res.render('accessory/attach');
+    const cube = await cubeManager.getOne(req.params.id).lean();
+
+    const accessories = await accessoryManager.getAll().lean();
+
+    //тук си подготвяме view данните за да ги ползваме като условие при if и ги подаваме на render
+    const hasAccessories = accessories.length > 0;
+
+    res.render('accessory/attach', { cube, accessories, hasAccessories });
 
 });
 

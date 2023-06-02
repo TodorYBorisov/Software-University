@@ -25,5 +25,4 @@ router.get('/404', (req, res) => {
 });
 
 
-
 module.exports = router;

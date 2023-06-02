@@ -3,6 +3,8 @@
 
 //това е същото като горното само че на един ред разписано
 const router = require('express').Router();
+const accessoryManager = require('../managers/accessoryManager');
+
 
 router.get('/create', (req, res) => {
 
@@ -10,12 +12,13 @@ router.get('/create', (req, res) => {
 
 });
 
-router.post('/create', (req, res) => {
-    const body = req.body;
+router.post('/create', async (req, res) => {
 
-    console.log(body);
+    const { name, description, imageUrl } = req.body;
+
+    await accessoryManager.create({ name, description, imageUrl });
 
     res.redirect('/');
-
 });
+
 module.exports = router;

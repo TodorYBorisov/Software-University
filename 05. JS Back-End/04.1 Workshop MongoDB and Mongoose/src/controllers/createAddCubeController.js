@@ -47,5 +47,14 @@ router.get('/attach-accessory/:id', async (req, res) => {
 
 });
 
+router.post('/attach-accessory/:id', async (req, res) => {
 
+    const { accessory } = req.body;//това го виждаме от ид на формата как се казва accessory id през формата
+    const id = req.params.id;//взимаме id
+
+    await cubeManager.attachAccessory(id, accessory);
+
+    res.redirect(`/cubes/details/${id}`);
+
+});
 module.exports = router;

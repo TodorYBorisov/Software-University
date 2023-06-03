@@ -25,10 +25,19 @@ exports.getAll = async (search, from, to) => {
 
 exports.getOne = (getById) => Cube.findById(getById);
 
-//тук парвим нов куб 
-exports.create = async (cubeData) => {
-    const cube = new Cube(cubeData);
-    await cube.save();
+//тук парвим нов куб с този синтакс е като е accessory Manager
+//exports.create = (cubeData) => Cube.create(cubeData);
 
-    return cube;
+exports.create = (cubeData) => {
+
+    const cube = new Cube(cubeData);
+
+    return cube.save();
+};
+
+//така правим релацията м/у куба с неговото id и id на аксесоара.
+exports.attachAccessory = async (id, accessory) => {
+    const cube = await Cube.findByIdAndUpdate(id);
+    cube.accessories.push(accessory);
+    return cube.save();
 };

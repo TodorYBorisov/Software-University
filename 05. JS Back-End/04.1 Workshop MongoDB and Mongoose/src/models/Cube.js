@@ -21,7 +21,11 @@ const cubeSchema = new mongoose.Schema({
         // min: 1,
         // max: 6,
     },
-    //accessories: {}
+    //тук го слагаме в масив, ако искаме да има повече от един аксесоар
+    accessories: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Accessory'
+    }]
 
 });
 

@@ -25,7 +25,7 @@ router.post('/create', async (req, res) => {
 
 router.get('/details/:id', async (req, res) => {
 
-    const cube = await cubeManager.getOne(req.params.id).lean(); //взимаме id на един куб през мениджъра и го обръщаме с помоща на lean в plain object
+    const cube = await cubeManager.getOneWithAccessories(req.params.id).lean(); //взимаме id на един куб през мениджъра и го обръщаме с помоща на lean в plain object
 
     if (!cube) { // ако нямаме cube с това id, ни върни 404
         return res.redirect('/404');
@@ -37,8 +37,10 @@ router.get('/details/:id', async (req, res) => {
 router.get('/attach-accessory/:id', async (req, res) => {
 
     const cube = await cubeManager.getOne(req.params.id).lean();
+    //const accessories = await accessoryManager.getAll().lean();
 
-    const accessories = await accessoryManager.getAll().lean();
+    //така му казваме вземи тия аксесоари които ни остава в падащото меню
+    const accessories = await accessoryManager.getRest(cube.accessories).lean();
 
     //тук си подготвяме view данните за да ги ползваме като условие при if и ги подаваме на render
     const hasAccessories = accessories.length > 0;

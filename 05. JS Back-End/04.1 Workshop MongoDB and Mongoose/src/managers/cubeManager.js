@@ -23,7 +23,12 @@ exports.getAll = async (search, from, to) => {
     return result;
 };
 
+//тук може да добавим .populate('accessories');, за да може да вземем към всеки куб неговите аксесоари, идва от референцията на модела
 exports.getOne = (getById) => Cube.findById(getById);
+
+
+//или правим нов, 
+exports.getOneWithAccessories = (getById) => this.getOne(getById).populate('accessories');
 
 //тук парвим нов куб с този синтакс е като е accessory Manager
 //exports.create = (cubeData) => Cube.create(cubeData);

@@ -1,6 +1,12 @@
 const app = require('express')();
-app.get('/', (req, res) => {
+const cookieParser = require('cookie-parser');
 
+app.use(cookieParser());
+
+app.get('/', (req, res) => {
+    console.log(req.cookies);
+
+    res.cookie('cookieParser', '1');
     res.send('Hello');
 });
 

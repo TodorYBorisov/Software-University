@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 
 const pass = '12345';
-const salt = 5;
+const salt = 10; //препоръчва се да е мин 10 
 const hashPass = bcrypt.hashSync(pass, salt);
 
 

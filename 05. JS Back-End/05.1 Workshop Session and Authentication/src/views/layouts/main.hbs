@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cubicle</title>
+    <title>{{title}}</title>
     <link href="/css/site.css" type="text/css" rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='/images/favicon.png' />
 </head>
@@ -17,14 +17,22 @@
                 <li><a href="/cubes/create">Add a Cube</a></li>
                 <li><a href="/accessories/create">Add Accessory</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/users/login">Login</a></li>
-                <li><a href="/users/register">Register</a></li>
-                <li><a href="/users/logout">Logout</a></li>
+                <li><a href="/user/login">Login</a></li>
+                <li><a href="/user/register">Register</a></li>
+                <li><a href="/user/logout">Logout</a></li>
             </ul>
         </header>
 
-        {{{body}}}
+        {{#if errors}}
+        <div id="notifications">
+            {{#each errors}}
+            <p id="notification-message">{{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
         
+        {{{body}}}
+
     </div>
     <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
 </body>

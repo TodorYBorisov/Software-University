@@ -7,8 +7,10 @@ const User = require('../models/User');
 const sectret='82a51089f3448419bcf30d4803a0a2cdd296558eb7021b6db190f906d230b4f7';
 
 async function register(username, password) {
+
 	const existingUsername = await User.findOne({ username }); // Проверяваме по username, дали вече има такъв
-	if (existingUsername) {                                    // Ако намерим съвпадение
+	
+    if (existingUsername) {                                    // Ако намерим съвпадение
 		throw new Error('Username or password already exists!'); // Хвърляме грешка
 	}
 
@@ -63,5 +65,4 @@ module.exports = {
 	register,
     login,
 	verifyToken,
-	
 };

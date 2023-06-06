@@ -40,6 +40,10 @@ exports.create = (cubeData) => {
     return cube.save();
 };
 
+exports.delete = (id) => Cube.findByIdAndDelete(id);
+
+exports.update = (id, cubeData) => Cube.findByIdAndUpdate(id, cubeData);
+
 //така правим релацията м/у куба с неговото id и id на аксесоара.
 exports.attachAccessory = async (id, accessory) => {
     const cube = await Cube.findByIdAndUpdate(id);

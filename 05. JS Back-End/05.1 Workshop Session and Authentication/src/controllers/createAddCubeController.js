@@ -68,11 +68,31 @@ router.get('/delete/:id', hasUser(), async (req, res) => {
 
     const cube = await cubeManager.getOne(req.params.id).lean();
 
+    res.render('deleteCube', { cube, title: 'Delete' });
+});
 
+router.post('/delete/:id', hasUser(), async (req, res) => {
 
+    const cube = await cubeManager.delete(req.params.id);
 
+    res.redirect('/');
+});
 
-    res.render('deleteCube', {cube});
+/////////////////////////// EDIT /////////////////////
+router.get('/edit/:id', hasUser(), async (req, res) => {
+
+    const cube = await cubeManager.getOne(req.params.id).lean();
+
+    res.render('editCube', { cube, title: 'Edit' });
+});
+
+router.post('/edit/:id', hasUser(), async (req, res) => {
+
+    const cubeData = req.body; //тук взимаме данните от формата и ги подаваме за ъпдейт
+
+   await cubeManager.update(req.params.id,cubeData);
+
+    res.redirect(`/cubes/details/${req.params.id}`);
 });
 
 

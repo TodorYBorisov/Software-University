@@ -12,11 +12,6 @@ async function register(username, password) {
 		throw new Error('Username or email already exists!'); // Хвърляме грешка
 	}
 
-	// const existingEmail = await User.findOne({ email }); // Проверяваме по email, дали вече има такъв
-	// if (existingEmail) {                                    // Ако намерим съвпадение
-	// 	throw new Error('Username or email already exists !'); // Хвърляме грешка
-	// }
-
 	if (password.length < 4) {                      // Ако намерим съвпадение
 		throw new Error('Password is too short!'); // Хвърляме грешка
 	}

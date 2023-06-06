@@ -5,9 +5,7 @@ const { register,login } = require('../managers/userManager');
 
 //////////////////////////////// REGISTER ////////////////////////////////
 router.get('/register', isGuest(), (req, res) => {
-
-    res.render('user/register', { title: 'Register' });
-
+    res.render('users/register', { title: 'Register' });
 });
 
 router.post('/register', isGuest(), async (req, res) => {
@@ -29,7 +27,7 @@ router.post('/register', isGuest(), async (req, res) => {
         res.redirect('/');  // ПРОВЕРИ НАКЪДЕ ТРЯБВА ДА СЕ РЕДИРЕКТНЕ СЛЕД УСПЕШЕН Register
 
     } catch (error) {
-        res.render('user/register', {errors: errorHandler(error).message});
+        res.render('users/register', {errors: errorHandler(error).message});
     }
 });
 
@@ -37,12 +35,13 @@ router.post('/register', isGuest(), async (req, res) => {
 
 router.get('/login', isGuest(), (req, res) => {
 
-    res.render('user/login', { title: 'Login' });
+    res.render('users/login', { title: 'Login' });
 
 });
 
 router.post('/login', isGuest(), async (req, res) => {
     const { username, password} = req.body;
+    
     try {
         if (username == '' || password == ''){
             throw new Error('All fields are required !');
@@ -53,7 +52,7 @@ router.post('/login', isGuest(), async (req, res) => {
 		res.cookie('token', token);
 		res.redirect('/');  // ПРОВЕРИ НАКЪДЕ ТРЯБВА ДА СЕ РЕДИРЕКТНЕ СЛЕД УСПЕШЕН Login
 	} catch (error) {
-            res.render('user/login', {errors: errorHandler(error).message});
+            res.render('users/login', {errors: errorHandler(error).message});
     }
 });
 

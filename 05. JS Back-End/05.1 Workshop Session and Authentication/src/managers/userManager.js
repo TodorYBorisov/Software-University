@@ -9,7 +9,7 @@ const sectret='82a51089f3448419bcf30d4803a0a2cdd296558eb7021b6db190f906d230b4f7'
 async function register(username, password) {
 	const existingUsername = await User.findOne({ username }); // Проверяваме по username, дали вече има такъв
 	if (existingUsername) {                                    // Ако намерим съвпадение
-		throw new Error('Username or email already exists!'); // Хвърляме грешка
+		throw new Error('Username or password already exists!'); // Хвърляме грешка
 	}
 
 	if (password.length < 4) {                      // Ако намерим съвпадение
@@ -26,15 +26,24 @@ async function register(username, password) {
 	return createSession(user);                             // Създаваме сесия на потребителя
 }
 
+async function login(username, password) {
+	if (password.length < 4) {                      // Ако намерим съвпадение
+		throw new Error('Password is too short !'); // Хвърляме грешка
+	}
 
+	const user = await User.findOne({ username });  // Проверяваме по username, дали вече има такъв
+	if (!user) {                                    // Ако няма регистриран такъв user
+		throw new Error('Incorrect username or password !');    // Хвърляме грешка 
+	}
 
+	const hasMatch = await bcrypt.compare(password, user.hashedPassword);   // Сравняваме подадената парола с хешираната от намерения user 
 
+	if (!hasMatch) {                                                        // Ако няма съвпадение 
+		throw new Error('Incorrect username or password !');                // Хвърляме грешка 
+	}
 
-
-
-
-
-
+	return createSession(user);      
+}
 
 function createSession({ _id, username, hashedPassword }) {
 	const payload = {                                                       // Това са данните, които искаме да запазим в токена
@@ -52,7 +61,7 @@ function verifyToken(token) {
 
 module.exports = {
 	register,
-    //login,
+    login,
 	verifyToken,
 	
 };

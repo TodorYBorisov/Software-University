@@ -3,6 +3,8 @@ const router = express.Router();
 
 const cubeManager = require('../managers/cubeManager');
 const accessoryManager = require('../managers/accessoryManager');
+const { route } = require('./userController');
+const { hasUser } = require('../middlewares/routGuards');
 
 router.get('/create', (req, res) => {
     console.log(req.user);
@@ -61,4 +63,17 @@ router.post('/attach-accessory/:id', async (req, res) => {
     res.redirect(`/cubes/details/${id}`);
 
 });
+///////////////////////////// DELETE /////////////////////////////////
+router.get('/delete/:id', hasUser(), async (req, res) => {
+
+    const cube = await cubeManager.getOne(req.params.id).lean();
+
+
+
+
+
+    res.render('deleteCube', {cube});
+});
+
+
 module.exports = router;

@@ -5,6 +5,7 @@ const cubeManager = require('../managers/cubeManager');
 const accessoryManager = require('../managers/accessoryManager');
 const { route } = require('./userController');
 const { hasUser } = require('../middlewares/routGuards');
+const { getDifficultyLevelViewData } = require('../util/viewHelpers');
 
 router.get('/create', (req, res) => {
     console.log(req.user);
@@ -68,7 +69,9 @@ router.get('/delete/:id', hasUser(), async (req, res) => {
 
     const cube = await cubeManager.getOne(req.params.id).lean();
 
-    res.render('deleteCube', { cube, title: 'Delete' });
+    const options = getDifficultyLevelViewData(cube.difficultyLevel);
+
+    res.render('deleteCube', { cube,options, title: 'Delete' });
 });
 
 router.post('/delete/:id', hasUser(), async (req, res) => {
@@ -78,19 +81,23 @@ router.post('/delete/:id', hasUser(), async (req, res) => {
     res.redirect('/');
 });
 
+
+
 /////////////////////////// EDIT /////////////////////
 router.get('/edit/:id', hasUser(), async (req, res) => {
 
     const cube = await cubeManager.getOne(req.params.id).lean();
 
-    res.render('editCube', { cube, title: 'Edit' });
+    const options = getDifficultyLevelViewData(cube.difficultyLevel);
+
+    res.render('editCube', { cube,options,  title: 'Edit' });
 });
 
 router.post('/edit/:id', hasUser(), async (req, res) => {
 
     const cubeData = req.body; //тук взимаме данните от формата и ги подаваме за ъпдейт
 
-   await cubeManager.update(req.params.id,cubeData);
+    await cubeManager.update(req.params.id, cubeData);
 
     res.redirect(`/cubes/details/${req.params.id}`);
 });

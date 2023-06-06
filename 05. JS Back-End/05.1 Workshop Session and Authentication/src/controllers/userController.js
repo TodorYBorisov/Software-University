@@ -49,7 +49,7 @@ router.post('/login', isGuest(), async (req, res) => {
 
 		const token = await login(username, password);
 
-		res.cookie('token', token);
+		res.cookie('token', token, {httpOnly: true});
 		res.redirect('/');  // ПРОВЕРИ НАКЪДЕ ТРЯБВА ДА СЕ РЕДИРЕКТНЕ СЛЕД УСПЕШЕН Login
 	} catch (error) {
             res.render('users/login', {errors: errorHandler(error).message});

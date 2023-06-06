@@ -9,7 +9,7 @@ const userController = require('../controllers/userController');
 router.use(homeController);
 router.use('/cubes', createAddCubeController); //тук си добавихме /cubes, трябва да се оправи пътя и в main layout
 router.use('/accessories', accessoryControler);
-router.use('/user', userController);
+router.use('/users', userController);
 
 router.get('*', (req, res) => {
     res.redirect('/404');

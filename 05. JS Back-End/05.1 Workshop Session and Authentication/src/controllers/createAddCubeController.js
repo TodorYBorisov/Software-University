@@ -35,8 +35,9 @@ router.get('/details/:id', async (req, res) => {
     if (!cube) { // ако нямаме cube с това id, ни върни 404
         return res.redirect('/404');
     }
+    const isOwner = cube.owner?.toString() === req.user._id;
 
-    res.render('details', { cube }); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
+    res.render('details', { cube ,isOwner}); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
 });
 
 router.get('/attach-accessory/:id', async (req, res) => {

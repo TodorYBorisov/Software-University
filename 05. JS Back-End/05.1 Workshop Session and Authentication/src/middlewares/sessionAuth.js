@@ -11,7 +11,8 @@ module.exports = () => (req, res, next) => {
 			res.locals.email = userData.email;
 		} catch (error) {
             res.clearCookie('token');
-            res.redirect('/404');
+            //res.redirect('/404'); //тук редиректваме ако токена е невалиден
+			res.redirect('/users/login');
             return;
         }
 	}

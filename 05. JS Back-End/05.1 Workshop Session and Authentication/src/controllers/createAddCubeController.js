@@ -5,6 +5,7 @@ const cubeManager = require('../managers/cubeManager');
 const accessoryManager = require('../managers/accessoryManager');
 
 router.get('/create', (req, res) => {
+    console.log(req.user);
     res.render('create');
 });
 
@@ -17,7 +18,8 @@ router.post('/create', async (req, res) => {
         name,
         description,
         imageUrl,
-        difficultyLevel: Number(difficultyLevel)
+        difficultyLevel: Number(difficultyLevel),
+        owner: req.user._id
     });
 
     res.redirect('/'); // след като сме постнали данните редиректваме към home page

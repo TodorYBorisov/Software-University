@@ -31,7 +31,7 @@ router.post('/register', isGuest(), async (req, res) => {
     }
 });
 
-//////////////////////////////// LOGIN ////////////////////////////////
+
 
 router.get('/login', isGuest(), (req, res) => {
 
@@ -56,7 +56,7 @@ router.post('/login', isGuest(), async (req, res) => {
     }
 });
 
-////////////////////////////// LOGOUT ////////////////////////////////
+
 router.get('/logout', hasUser(), (req, res) => {
     res.clearCookie('token');
     res.redirect('/');

@@ -35,7 +35,7 @@ app.get('/login', (req, res) => {
 
 });
 
-app.post('/login', isEmail, (req, res) => {
+app.post('/login',body('password').isLength({min:2, max:3}) (req, res) => {
 
     const { email, password } = req.body;
 

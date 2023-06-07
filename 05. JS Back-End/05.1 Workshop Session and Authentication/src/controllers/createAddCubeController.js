@@ -35,9 +35,9 @@ router.get('/details/:id', async (req, res) => {
     if (!cube) { // ако нямаме cube с това id, ни върни 404
         return res.redirect('/404');
     }
-    const isOwner = cube.owner?.toString() === req.user._id;
+    const isOwner = cube.owner?.toString() === req.user?._id;
 
-    res.render('details', { cube ,isOwner}); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
+    res.render('details', { cube, isOwner }); //тук деструкторираме с ... , за да може да се появят данните в детайлите, или там просто пишем cube.name... cube. пред всяко пропърти
 });
 
 router.get('/attach-accessory/:id', async (req, res) => {
@@ -72,7 +72,7 @@ router.get('/delete/:id', hasUser(), async (req, res) => {
 
     const options = getDifficultyLevelViewData(cube.difficultyLevel);
 
-    res.render('deleteCube', { cube,options, title: 'Delete' });
+    res.render('deleteCube', { cube, options, title: 'Delete' });
 });
 
 router.post('/delete/:id', hasUser(), async (req, res) => {
@@ -89,9 +89,13 @@ router.get('/edit/:id', hasUser(), async (req, res) => {
 
     const cube = await cubeManager.getOne(req.params.id).lean();
 
+    if (cube.owner.toString() !== req.user?._id) {
+        return res.redirect('/404');
+    }
+
     const options = getDifficultyLevelViewData(cube.difficultyLevel);
 
-    res.render('editCube', { cube,options,  title: 'Edit' });
+    res.render('editCube', { cube, options, title: 'Edit' });
 });
 
 router.post('/edit/:id', hasUser(), async (req, res) => {

@@ -3,7 +3,7 @@ const { isGuest, hasUser } = require('../middlewares/routGuards');
 const { errorHandler } = require('../util/errorHandler');
 const { register,login } = require('../managers/userManager');
 
-//////////////////////////////// REGISTER ////////////////////////////////
+//////////////////////////////// REGISTER ////////////////////////////
 router.get('/register', isGuest(), (req, res) => {
     res.render('users/register', { title: 'Register' });
 });

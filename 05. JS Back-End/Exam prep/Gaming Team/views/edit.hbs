@@ -1,0 +1,62 @@
+<main id="edit">
+    <section id="edit-container">
+        <div class="edit-container-info">
+            <h1>Edit Game Code Offer</h1>
+            <form method="post">
+                <label>Platform:</label>
+                <select id="platform" name="platform">
+                    {{#select game.platform}}
+                    <option value="">-------</option>
+                    <option value="PC">PC</option>
+                    <option value="Nintendo">Nintendo</option>
+                    <option value="PS4">PS4</option>
+                    <option value="PS5">PS5</option>
+                    <option value="XBOX">XBOX</option>
+                    {{/select}}
+                </select>
+                <label>Name:</label>
+                <input type="text" id="name" name="name" value="{{game.name}}">
+                <label>Image:</label>
+                <input type="text" id="image" name="imageUrl" placeholder="" value="{{game.imageUrl}}">
+                <label>Price:</label>
+                <input type=" number" id="price" name="price" value="{{game.price}}">
+                <label>Genre:</label>
+                <input type="text" id="genre" name="genre" value="{{game.genre}}">
+                <label>Description:</label>
+                <textarea id="description" name="description">{{game.description}}</textarea>
+                <input type="submit" id="btn" value="EDIT"></input>
+            </form>
+        </div>
+    </section>
+</main>
+
+{{!-- <section class="edit-form-container">
+
+    <form method="post">
+        <h3>Edit Book Review</h3>
+        <label>Title</label>
+        <input type="text" name="title" class="box" value="{{book.title}}" id="">
+        <label>Author</label>
+        <input type="text" name="author" class="box" value="{{book.author}}" id="">
+        <label>Genre</label>
+        <input type="text" name="genre" class="box" value="{{book.genre}}" id="">
+        <label>Stars</label>
+        <input type="number" name="stars" class="box" value="{{book.stars}}" id="">
+        <label>Image</label>
+        <input type="text" name="imageUrl" class="box" value="{{book.imageUrl}}" id="">
+        <label>Review</label>
+        <textarea class="box" name="review">{{book.review}}</textarea>
+        <input type="submit" value="Edit" class="btn">
+    </form>
+</section> --}}
+
+{{!-- Ако имаме падащо меню, го обграждаме със {{#select game.platform}}/{{/select}} и изтриваме от value, ако има
+selected стойност
+{{#select game.platform}}
+<option value="">-------</option>
+<option value="PC">PC</option>
+<option value="Nintendo">Nintendo</option>
+<option value="PS4">PS4</option>
+<option value="PS5">PS5</option>
+<option value="XBOX" selected>XBOX</option>
+{{/select}} --}}

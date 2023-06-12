@@ -23,3 +23,6 @@ module.exports = () => (req, res, next) => {
 //1 няма cookie/token
 //2 има cookie/token
 //3.има невалидно cookie
+//С res.locals.username по този начин вкарваме username в глобалния контекст през мидълуера, който темплета ще го чете
+
+// ако искаме да добавим други полета в res.locals трябва да ги подадем в payload в userService

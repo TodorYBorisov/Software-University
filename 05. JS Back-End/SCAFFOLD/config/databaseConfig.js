@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = 'mongodb://127.0.0.1:27017/scaffoldDB'; //ТУК да се смени името на базата данни според задачата
+const URI = 'mongodb://127.0.0.1:27017/bookingUni'; //ТУК да се смени името на базата данни според задачата
 
 module.exports = async (app) => {
     try {

@@ -1,8 +1,17 @@
-<h1>Login Page</h1>
-<form method="post">
-    <label>Username: <input type="text" name="username" value="{{body.username}}"></label>
-    <label>Password: <input type="password" name="password"></label>
-    <button>Login</button>
-</form>
+ <section class="login-form-container">
+    <form method="post" action="/auth/login">
+        <h3>Login</h3>
+        <label>Email</label>
+        <input type="email" name="email" class="box" id="email" value="{{body.email}}">
+        <label>Password</label>
+        <input type="password" name="password" class="box" id="password">
+        <input type="submit" value="Login" class="btn">
+        <p>Don't have an account ? <a href="/auth/register">Create one</a></p>
+    </form>
+</section>
 
 
+{{!-- 
+1. добавяш method="post" action="/auth/login" на формата
+2. добавяш value="{{body.email}}" value="{{body.username}} за да ги остава в полетата след грешка"
+ --}}

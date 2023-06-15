@@ -18,21 +18,21 @@ function isGuest() {
 	};
 }
 
-function isOwner() {
-	return function (req, res, next) {
-		const userId = req.session.user?._id;
+// function isOwner() {
+// 	return function (req, res, next) {
+// 		const userId = req.session.user?._id;
 
-		//тука data идва от колекцията в базата, трябва да е с нейното име
-		if (res.locals.data.owner == userId) {
-			next();
-		} else {
-			res.redirect('/');
-		}
-	};
-}
+// 		//тука ако го ползвам да сменя името на колекцията (trip.creator) колекцията в базата, трябва да е с нейното име
+// 		if (res.locals.trip.creator == userId) {
+// 			next();
+// 		} else {
+// 			res.redirect('/auth/login');
+// 		}
+// 	};
+// }
 
 module.exports = {
 	hasUser,
 	isGuest,
-	isOwner
+	//isOwner
 };

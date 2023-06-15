@@ -10,7 +10,7 @@ module.exports = () => (req, res, next) => {
 
 			res.locals.username = userData.username; 
 			res.locals.email = userData.email;
-			//res.locals.gender = userData.gender;
+			res.locals.gender = userData.gender;
 			//res.locals.hasUser = true; //НОВО
 		} catch (error) {
             res.clearCookie('token');

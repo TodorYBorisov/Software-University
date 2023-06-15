@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
 	gender: {
 		type: String,
 		required: true,
+		enum: {
+			values: ['male', 'female'],
+			message: '{VALUE} is not supported!',
+		}
 	},
 	tripsHistory: {
 		type: [mongoose.Types.ObjectId],

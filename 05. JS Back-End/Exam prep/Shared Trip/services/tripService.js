@@ -7,11 +7,12 @@ async function getAll() {
 //return Book.find({}).populate('owner').lean() ще добави от owner модела свойствата на рег. потребителя _id, username, email, password, firsName, lastName това което е от моделa
 
 async function getById(id) {
-    return await Trip.findById(id).populate('creator').lean();
+    return await Trip.findById(id).populate('creator').populate('buddies').lean();;
 }
 
+
 async function create(trip) {
-    return await Trip.create(trip);
+    return Trip.create(trip);
 }
 
 async function updateById(id, trip) {
@@ -27,7 +28,6 @@ async function updateById(id, trip) {
     existing.price = trip.price;
     existing.description = trip.description;
 
-
     await existing.save();
 }
 
@@ -36,20 +36,27 @@ async function deleteById(id) {
     return Trip.findByIdAndDelete(id);
 }
 //===========================================
-async function addToWishList(tripId, userId) {
+async function joinTrip(tripId, userId) {
     const existing = await Trip.findById(tripId);
 
-    if (existing.wishingList.includes(userId)) {
-        throw new Error('Cannot wish twice');
+    if (existing.buddies.includes(userId)) {
+        throw new Error('Cannot join the trip twice');
     }
 
-    existing.wishingList.push(userId);
+    existing.buddies.push(userId);
     return existing.save();
 }
 
+// функция за профила
 async function userPreference(userId) {
     return Trip.find({ wishingList: userId }).lean();
 }
+
+//функция за пътуванията на потребителя които е направил
+async function userTrips(userId) {
+    return Trip.find({ creator: userId }).lean();
+}
+
 
 async function search(nameSearch, platformSearch) {
 
@@ -74,10 +81,11 @@ module.exports = {
     create,
     updateById,
     deleteById,
-    addToWishList,
+    joinTrip,
     userPreference,
-    search
-    
+    search,
+    userTrips
+ 
 };
 
 // за search функацията да сменя, масива който идва от модела

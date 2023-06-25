@@ -23,7 +23,7 @@ const loginTemplate = (onSubmit) => html`
             <input type="submit" class="btn btn-primary" value="Login" />
         </div>
     </div>
-</form>`;
+</form>`
 
 
 export async function loginPage(ctx) {

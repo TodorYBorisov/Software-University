@@ -14,11 +14,11 @@ export async function getFurniture() {
 }
 
 export async function getItemById(id) {
-    return await api.get(host + '/data/catalog/' + id);
+    return await api.get(host + '/data/catalog/' + id)
 }
 
 export async function getMyFurniture() {
-    const userId = sessionStorage.getItem('userId');
+    const userId = sessionStorage.getItem('userId')
     return await api.get(host + `/data/catalog?where=_ownerId%3D%22${userId}%22`);
 }
 

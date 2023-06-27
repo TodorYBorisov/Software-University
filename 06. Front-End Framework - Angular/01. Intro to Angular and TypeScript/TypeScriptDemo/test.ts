@@ -1,6 +1,12 @@
 let isEven: boolean = false;
 let num: number = 5; //  така декларираме число
-let str: string = ''//така декларираем стрингове
+let str: string = '';//така декларираем стрингове
+let color: string = 'blue';
+color = 'red';
+
+let list: number[] = [1, 2, 3, 4, 5];
+let list2: Array<number> = [1, 2, 3];
+
 
 type User = {
     name: String,

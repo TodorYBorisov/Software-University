@@ -62,3 +62,9 @@ class Person extends Human {
 }
 
 const personPesho = new Person('Ivan', 33);
+
+function getIdentity<T>(id:T) {
+    console.log(id);
+}
+getIdentity<string>('123');
+getIdentity<number>(123)

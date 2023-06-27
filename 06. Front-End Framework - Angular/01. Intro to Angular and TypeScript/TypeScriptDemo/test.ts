@@ -39,3 +39,26 @@ anotherUserList.forEach(({ firstName, id }) => {
 
     console.log(`${id}: ${firstName}`);
 });
+
+
+class Human {
+
+    speak() {
+        console.log('Hello');
+
+    }
+}
+
+class Person extends Human {
+    private name: string;
+    public age: number;
+
+    constructor(name: string, age: number) {
+        super();
+        this.name = name;
+        this.age = age
+
+    }
+}
+
+const personPesho = new Person('Ivan', 33);

@@ -1,4 +1,6 @@
 let isEven: boolean = false;
+let num: number = 5; //  така декларираме число
+let str: string = ''//така декларираем стрингове
 
 type User = {
     name: String,

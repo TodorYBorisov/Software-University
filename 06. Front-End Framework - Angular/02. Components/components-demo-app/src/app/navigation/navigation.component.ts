@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class NavigationComponent {
 
+  title ='Navigation title';
+  onClick() {
+    console.log('This button was clicked!');
+  }
 }

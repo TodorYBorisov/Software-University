@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Toshko Test';
-  num= 5
+  num = 5
 }

@@ -1,6 +1,13 @@
-<app-navigation></app-navigation>
+<app-navigation 
+[title] = 'title' 
+[activeUsers]="users"
+(outputChiledHandler)="outputChiledHandler()"
 
-<div>{{title}}</div>
+
+
+></app-navigation>
+
+<!-- <div>{{title}}</div>
 <hr/>
-<app-home></app-home>
+<app-home></app-home> -->
 

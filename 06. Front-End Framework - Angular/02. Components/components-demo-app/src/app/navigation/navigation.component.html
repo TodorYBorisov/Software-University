@@ -3,12 +3,14 @@
     <span *ngIf="!toggle">Show</span> -->
     <!-- <span>{{isActive? "Show": "Hide"}}</span> -->
 
+    <h3>{{titleFromApp}}</h3>
+
     <span *ngIf="isActive">
         <ul>
             <li *ngFor="let user of activeUsers">
-                <span *ngIf="user.age % 2===0">
-                    {{user.name + ': ' + user.age}}
-                </span>
+                {{user.name + ': ' + user.age}}
+                <!-- <span *ngIf="user.age % 1===0">
+                </span> -->
             </li>
         </ul>
     </span>

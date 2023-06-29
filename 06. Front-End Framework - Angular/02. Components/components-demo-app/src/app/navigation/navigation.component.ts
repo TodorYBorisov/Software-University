@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -7,32 +7,25 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  activeUsers = [
-    { name: 'Mitko', age: 21 },
-    { name: 'Ivo', age: 18 },
-    { name: 'Toshko', age: 25 }
-  ]
+  @Input('title') titleFromApp: string='';
+  @Input('activeUsers') activeUsers: {name:string, age:number}[]=[];
+  @Output() onChildOutput = new EventEmitter<boolean>();
 
   isActive = false;
   inputValue ='Hello'
 
   ngOnInit(): void {
     console.log('Navigation->created');
-    
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
-    
 
   }
 
 
   onClick(event:Event): void {
-    console.log({event});
-
     //...args: number[] така подаваме аргументи в ивента
-    
     this.isActive = !this.isActive;
+    this.onChildOutput.emit(this.isActive)
   }
 }

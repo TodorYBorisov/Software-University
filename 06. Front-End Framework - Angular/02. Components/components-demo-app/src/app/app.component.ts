@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Title from Appcomponent!';
+
+  users = [
+    { name: 'Mitko', age: 21 },
+    { name: 'Ivo', age: 18 },
+    { name: 'Toshko', age: 25 }
+  ]
+
+  outputChiledHandler(){
+    console.log('outputChiledHandler');
+    
+  }
 }

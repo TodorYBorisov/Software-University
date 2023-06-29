@@ -1,4 +1,26 @@
 <div id="nav">
-    <span>{{title}}</span>
-    <button (click)="onClick()">Click me</button>
+    <!-- <span *ngIf="toggle">Hide</span>
+    <span *ngIf="!toggle">Show</span> -->
+    <!-- <span>{{isActive? "Show": "Hide"}}</span> -->
+
+    <span *ngIf="isActive">
+        <ul>
+            <li *ngFor="let user of activeUsers">
+                <span *ngIf="user.age % 2===0">
+                    {{user.name + ': ' + user.age}}
+                </span>
+            </li>
+        </ul>
+    </span>
+
+    <span *ngIf="!isActive">
+        <div>
+            Nothing is active!
+        </div>
+    </span>
+
+    <!-- <input [attr.data-testche]="inputValue" type="text"> // къстъм атрибут -->
+    <input [value]="inputValue" type="text"> 
+
+    <button (click)="onClick($event)">Make me {{isActive? "Inactive": "Active"}}</button>
 </div>

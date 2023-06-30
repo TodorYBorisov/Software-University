@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 export class NavigationComponent implements OnInit {
 
   @Input('title') titleFromAppComponet: string='';
-  @Input('users') usersFromAppComponet: {name:string, age:number}[]=[];
+  @Input('users') usersFromAppComponet: {name:string, age:number}[]=[]; //тук usersFromAppComponet е нова променслива която е дошла от parent елемента
   @Output() onChildOutput = new EventEmitter<boolean>();
 
   isActive = false;

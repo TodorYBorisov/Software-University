@@ -15,7 +15,7 @@ const main = () => {
     //wywołuje nasze funkcje
     prepareDOMElements();
     prepareDOMEvents();
-}
+};
 
 const prepareDOMElements = () => {
     //pobieramy wszystkie elementy
@@ -29,7 +29,7 @@ const prepareDOMElements = () => {
     popupInput = document.querySelector('.popup-input');
     popupAddBtn = document.querySelector('.accept');
     popupCloseBtn = document.querySelector('.cancel');
-}
+};
 
 const prepareDOMEvents = () => {
     //nadajemy nasłuchiwanie
@@ -38,7 +38,7 @@ const prepareDOMEvents = () => {
     popupCloseBtn.addEventListener('click', closePopup);
     popupAddBtn.addEventListener('click', changeTodoText);
     toDoInput.addEventListener('keyup', enterKeyCheck);
-}
+};
 
 const addNewToDo = () => {
     //tworzymy nowego toDo
@@ -54,9 +54,9 @@ const addNewToDo = () => {
         toDoInput.value = '';
         errorInfo.textContent = '';
     } else {
-        errorInfo.textContent = 'Wpisz treść zadania!';
+        errorInfo.textContent = 'Enter the content of the task!';
     }
-}
+};
 
 const createToolAreal = () => {
     //towrzymy elementy (przyciski i dodajemy do toDo)
@@ -67,7 +67,7 @@ const createToolAreal = () => {
 
     const buttonDone = document.createElement('button');
     buttonDone.classList.add('complete');
-    buttonDone.innerHTML = '<i class="fas fa-check"></i>'
+    buttonDone.innerHTML = '<i class="fas fa-check"></i>';
 
     const buttonEdit = document.createElement('button');
     buttonEdit.classList.add('edit');
@@ -75,11 +75,11 @@ const createToolAreal = () => {
 
     const buttonCancel = document.createElement('button');
     buttonCancel.classList.add('delete');
-    buttonCancel.innerHTML = '<i class="fas fa-times"></i>'
+    buttonCancel.innerHTML = '<i class="fas fa-times"></i>';
 
     //dodajemy elementy do siebie 
     div.append(buttonDone, buttonEdit, buttonCancel);
-}
+};
 
 //funkcjs sprawdzająca w co klikamy (aby wiedziec czy zakonczyc task czy moze go usunac czy edytowac)
 const checkClick = (e) => {
@@ -94,19 +94,19 @@ const checkClick = (e) => {
         deleteToDo(e);
 
     }
-}
+};
 
 //funkcje odpowiedzialne za popup
 const editToDo = (e) => { 
     todoToEdit = e.target.closest('li'); //edytujemy nablizsze li do przycisku (wiadomka B-) )
     popupInput.value = todoToEdit.firstChild.textContent; //przypisujemy do inputa (edytora) wartosc ktora mielismy w child (tekst) elementu li 
     popup.style.display = 'flex';
-}
+};
 
 const closePopup = () => {
     popup.style.display = 'none';
     popupInfo.textContent = '';
-}
+};
 
 //funkcja wprowadzajaca zmiany z inputa do naszego elementu li
 const changeTodoText = () => {
@@ -118,7 +118,7 @@ const changeTodoText = () => {
     } else {
         popupInfo.textContent = 'Musisz podać jakąś treść!';
     }
-}
+};
 
 const deleteToDo = (e) => {
     e.target.closest('li').remove(); //style.display = 'none' jak poczatkowo myslalem tez by zadzialala ale ta better B-)
@@ -126,16 +126,16 @@ const deleteToDo = (e) => {
     //wyswietlamy brak elementow gdy ich nie ma
     const allToDos = ulList.querySelectorAll('li');
     if (allToDos.length == 0) {
-        errorInfo.textContent = 'Brak zadań na liście.'
+        errorInfo.textContent = 'Brak zadań na liście.';
     }
-}
+};
 
 //wykonujemy też dodanie todo na enterze
 const enterKeyCheck = (e) => {
     if(e.key == 'Enter'){
         addNewToDo();
     }
-}
+};
 
 //wykonuje się w przypadku zmiany na stronie
 document.addEventListener('DOMContentLoaded', main);

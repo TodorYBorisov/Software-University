@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 })
 export class NavigationComponent implements OnInit {
 
-  @Input('title') titleFromApp: string='';
-  @Input('activeUsers') activeUsers: {name:string, age:number}[]=[];
+  @Input('title') titleFromAppComponet: string='';
+  @Input('users') usersFromAppComponet: {name:string, age:number}[]=[];
   @Output() onChildOutput = new EventEmitter<boolean>();
 
   isActive = false;

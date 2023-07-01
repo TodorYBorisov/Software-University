@@ -17,6 +17,17 @@ export class AppComponent {
     { name: 'Toshko', age: 30 },
   ]
 
+  constructor(){
+    setInterval(()=>{
+      this.users.push({
+        name:'DemoName',
+        age:0
+      })
+      console.log('User has been added!');
+      
+    },3000)
+  }
+
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
     
     const user = {
@@ -24,7 +35,7 @@ export class AppComponent {
       age: Number(inputAge.value)
     }
     this.users.push(user)
-
+    // this.users = [...this.users, user] // смяна на референцията за имаме чендж детекшъш
     inputName.value=''
     inputAge.value=''
 

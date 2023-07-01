@@ -23,9 +23,9 @@ export class AppComponent {
         name:'DemoName',
         age:0
       })
-      console.log('User has been added!');
+      //console.log('User has been added!');
       
-    },3000)
+    }) //,3000 
   }
 
   addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
@@ -35,7 +35,7 @@ export class AppComponent {
       age: Number(inputAge.value)
     }
     this.users.push(user)
-    // this.users = [...this.users, user] // смяна на референцията за имаме чендж детекшъш
+    // this.users = [...this.users, user] // сменяме референцията, за да може да тригърнем чендж детекшъна, презаписваме
     inputName.value=''
     inputAge.value=''
 

@@ -1,63 +1,24 @@
 import { Component } from '@angular/core';
+import { UserService } from './user.service';
 import { User } from './types/User';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
 export class AppComponent {
-
   title = 'Demo';
+  appUsers: User[] = []
 
-  users: User[] = [
-    { name: 'Pesho', age: 20 },
-    { name: 'Mitko', age: 23 },
-    { name: 'Ivo', age: 26 },
-    { name: 'Toshko', age: 30 },
-  ]
-
-  constructor() {
-    setInterval(() => {
-      this.users.push({
-        name: 'DemoName',
-        age: 0
-      })
-      //console.log('User has been added!');
-
-    }) //,3000 
+  constructor(public userService: UserService) {
+    this.appUsers = this.userService.users;
   }
 
-  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement) {
-
-    const user = {
-      name: inputName.value,
-      age: Number(inputAge.value)
-    }
-    this.users.push(user)
-    // this.users = [...this.users, user] // сменяме референцията, за да може да тригърнем чендж детекшъна, презаписваме
-    inputName.value = ''
-    inputAge.value = ''
-
-  }
-}
-
-//dependancy injection example
-
-class Wallet {
-  ballance = 0;
-  name = ''
-
-  constructor(ballance: number, name: string) {
-    this.ballance = ballance
-    this.name = name
-  }
-}
-class Car {
-  model = '';
-  constructor(model: string) {
-    this.model = model;
-
+  setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
+    this.userService.addUser(inputName, inputAge)
   }
 }
 
@@ -77,6 +38,26 @@ class Car {
 // const personMaria = new Person(5000)
 // personMaria.wallet.ballance //5000
 
+//dependancy injection example
+
+class Wallet {
+  ballance = 0;
+  name = ''
+
+  constructor(ballance: number, name: string) {
+    this.ballance = ballance
+    this.name = name
+  }
+}
+
+class Car {
+  model = '';
+  constructor(model: string) {
+    this.model = model;
+
+  }
+}
+
 class PersonBetter {
   wallet: Wallet;
   car: Car;
@@ -91,4 +72,4 @@ class PersonBetter {
 const ivansCar = new Car('BMW');
 const ivansWallet = new Wallet(5000, 'Ivan');
 
-const betterPerson = new PersonBetter(ivansCar, ivansWallet)
+const betterPerson = new PersonBetter(ivansCar, ivansWallet);

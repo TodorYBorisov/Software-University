@@ -10,20 +10,26 @@ import { User } from '../types/User';
 })
 export class UsersListComponent {
 
-  @Input() users: User[] =[];
+  @Input() users: User[] = [];
 
-    //взимане на change detectora
-    constructor(private cd: ChangeDetectorRef) {
+  //взимане на change detectora
+  constructor(private cd: ChangeDetectorRef) { }
 
-    }
-  
-    ngOnChanges() {
-      // console.log('Invoked from ngOnChanges');
-  
-    }
-  
-    //правим функция която да извиква промените
-    refresh() {
-      this.cd.detectChanges();
-    }
+  ngOnChanges() {
+    // console.log('Invoked from ngOnChanges');
+
+  }
+
+  //правим функция която да извиква промените
+  refresh() {
+    this.cd.detectChanges();
+  }
 }
+
+// CoffeMachineBase
+// CoffeMachineDelongi extend CoffeMachineBase
+// CoffeMachineLavazza extend CoffeMachineBase
+
+// CoffeMachineBase.makeCoffee();
+// CoffeMachineDelongi.makeCoffee();
+// CoffeMachineLavazza.makeCoffee();

@@ -3,11 +3,11 @@
 <div>
   <input #inputName type="text" placeholder="name">
   <input #inputAge type="text" placeholder="age">
-  <button (click)="userService.addUser(inputName,inputAge)">Add User</button>
-  <!-- <button (click)="setUser(inputName,inputAge)">Add User</button> -->
+  <!-- <button (click)="userService.addUser(inputName,inputAge)">Add User</button> -->
+  <button (click)="setUser(inputName,inputAge)">Add User</button>
 </div>
 
 
-<app-users-list [users]="userService.users"></app-users-list>
-<!-- <app-users-list [users]="appUsers"></app-users-list> -->
+<!-- <app-users-list [users]="userService.users"></app-users-list> -->
+<app-users-list [users]="appUsers"></app-users-list>
 <!-- коментарите са от app.components -->

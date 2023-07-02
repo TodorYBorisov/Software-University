@@ -7,7 +7,13 @@
   <button (click)="setUser(inputName,inputAge)">Add User</button>
 </div>
 
+<div *ngIf="isLoading">
+  <h3>Loading...</h3>
+</div>
+
+<div *ngIf="!isLoading">
+  <app-users-list [users]="appUsers"></app-users-list>
+</div>
 
 <!-- <app-users-list [users]="userService.users"></app-users-list> -->
-<app-users-list [users]="appUsers"></app-users-list>
 <!-- коментарите са от app.components -->

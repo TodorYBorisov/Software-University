@@ -11,21 +11,29 @@ import { User } from './types/User';
 export class AppComponent implements OnInit {
   title = 'Demo';
   appUsers: User[] = []
+  isLoading = true
 
   constructor(public userService: UserService) {
     this.appUsers = this.userService.users;
   }
 
   ngOnInit(): void {
-    this.userService.getUsers().then((users) => {
+    // this.userService.getUsers().then((users) => {
+    //   this.appUsers = users;
+    //   this.isLoading = false
+
+
+    this.userService.getUsers().subscribe((users) => {
       this.appUsers = users;
+      this.isLoading = false
+      
       
 
     })
   }
   setUser(inputName: HTMLInputElement, inputAge: HTMLInputElement): void {
     this.userService.addUser(inputName, inputAge);
-    this.appUsers =this.userService.users;
+    this.appUsers = this.userService.users;
   }
 
 }

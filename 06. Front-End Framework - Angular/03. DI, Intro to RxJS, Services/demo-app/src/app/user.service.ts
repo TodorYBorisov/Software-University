@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { User } from './types/User';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn:'root'
+})
+  
 
 export class UserService {
 
   users: User[] = []
+ 
 
   constructor(private http: HttpClient) {
     // setInterval(() => {
@@ -42,7 +46,12 @@ export class UserService {
   //   return await result.json();
   // }
 
- getUsers() {
-    return fetch('https://jsonplaceholder.typicode.com/users').then((result) => result.json());
+ getUsers() { 
+    // return fetch('https://jsonplaceholder.typicode.com/users').then((result) => result.json()); //това е промис варианта
+
+    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
+
   }
+
+
 }

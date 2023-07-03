@@ -16,7 +16,8 @@ export class ThemesComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getThemes().subscribe((themes) => {
-      //console.log(themes[0]); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
+      //console.log(themes); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
+      //console.log(themes[0]) може да си притнем една картичка, за да видим какви са пропъртитата
 
       this.themesList = themes //тук ги присвояваме от потока към които сме се закачили
 

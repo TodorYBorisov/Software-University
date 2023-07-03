@@ -14,7 +14,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.getPosts(5).subscribe((posts) => {
-      console.log(posts[0]); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
+      //console.log(posts); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
 
       this.postsList = posts;
     })

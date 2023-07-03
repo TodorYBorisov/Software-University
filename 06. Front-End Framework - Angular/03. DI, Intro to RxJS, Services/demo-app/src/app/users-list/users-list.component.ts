@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { User } from '../types/User';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-users-list',
@@ -11,6 +12,7 @@ import { User } from '../types/User';
 export class UsersListComponent {
 
   @Input() users: User[] = [];
+  
 
   //взимане на change detectora
   constructor(private cd: ChangeDetectorRef) { }

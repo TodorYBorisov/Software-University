@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 import { User } from './types/User';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit {
   constructor(public userService: UserService) {
     this.appUsers = this.userService.users;
   }
+
+ 
 
   ngOnInit(): void {
     // this.userService.getUsers().then((users) => {

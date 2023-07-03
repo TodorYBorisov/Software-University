@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { ThemesComponent } from './themes/themes.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule} from '@angular/common/http' //добавяме този модул, за да може да fetch from API
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule} from '@angular/common/http' //добавяме тоз
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

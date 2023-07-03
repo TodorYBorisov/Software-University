@@ -10,13 +10,23 @@ import { Post } from '../types/post';
 export class PostsComponent implements OnInit {
 
   postsList: Post[] = [];
+  isLoading: boolean = true;
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getPosts(5).subscribe((posts) => {
-      //console.log(posts); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
-
-      this.postsList = posts;
-    })
+    this.apiService.getPosts(5).subscribe(
+      {
+        next: (posts) => {
+          this.postsList = posts //тук ги присвояваме от потока към които сме се закачили
+          this.isLoading = false
+        },
+        error: (error) => {
+          this.isLoading = false,
+            console.log(`Error: ${error}`);
+        }
+      });
   }
 }
+ //console.log(posts); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
+//  this.postsList = posts

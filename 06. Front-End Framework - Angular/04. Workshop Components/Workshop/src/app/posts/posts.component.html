@@ -5,7 +5,7 @@
         <app-loader></app-loader>
     </div>
 
-    <div class="aside">
+    <div class="aside" *ngIf="!isLoading">
         <h2 class="title">Recent posts</h2>
         <div>
             <div *ngFor="let post of postsList" class="aside-theme">

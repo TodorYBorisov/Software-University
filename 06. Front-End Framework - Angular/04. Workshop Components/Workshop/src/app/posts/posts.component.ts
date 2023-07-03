@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { Post } from '../types/post';
 
 @Component({
   selector: 'app-posts',
@@ -8,12 +9,14 @@ import { ApiService } from '../api.service';
 })
 export class PostsComponent implements OnInit {
 
+  postsList: Post[] = [];
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.getPosts(5).subscribe((posts) => {
-      console.log(posts); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
+      console.log(posts[0]); //тук може да му сложим {} за да може да го копираме като обект,за да го копираме от конзолата
 
+      this.postsList = posts;
     })
   }
 }

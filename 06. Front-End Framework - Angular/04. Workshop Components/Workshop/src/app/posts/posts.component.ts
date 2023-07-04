@@ -11,6 +11,7 @@ export class PostsComponent implements OnInit {
 
   postsList: Post[] = [];
   isLoading: boolean = true;
+  thereAreNoPosts: boolean = false //ако постовете свършат
 
   constructor(private apiService: ApiService) { }
 
@@ -20,6 +21,10 @@ export class PostsComponent implements OnInit {
         next: (posts) => {
           this.postsList = posts //тук ги присвояваме от потока към които сме се закачили
           this.isLoading = false
+
+          if (this.postsList.length === 0) {
+            this.thereAreNoPosts = true
+          }
         },
         error: (error) => {
           this.isLoading = false,

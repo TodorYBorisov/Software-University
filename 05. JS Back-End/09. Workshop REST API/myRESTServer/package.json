@@ -1,0 +1,11 @@
+{
+  "name": "myrestserver",
+  "version": "1.0.0",
+  "description": "This is my REST API server for Angular project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Todor Borisov",
+  "license": "ISC"
+}

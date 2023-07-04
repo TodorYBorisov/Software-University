@@ -5,6 +5,10 @@
         <app-loader></app-loader>
     </div>
 
+    <div *ngIf="!isLoading && thereAreNoPosts" >
+        <h3>There are no more posts1</h3>
+    </div>
+
     <div class="aside" *ngIf="!isLoading">
         <h2 class="title">Recent posts</h2>
         <div>

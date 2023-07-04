@@ -11,6 +11,7 @@ export class ThemesComponent implements OnInit {
 
   themesList: Theme[] = []; // сетваме themeList за да може да ги *ngFor-нем
   isLoading: boolean = true; //правим си една променлива която я добавяме долу когато дойдат данните
+  // thereAreNoThemes: boolean = false // ако няма повече теми
 
   constructor(private apiService: ApiService) { }
 
@@ -20,10 +21,15 @@ export class ThemesComponent implements OnInit {
         next: (themes) => {
           this.themesList = themes //тук ги присвояваме от потока към които сме се закачили
           this.isLoading = false
+
+          // if (this.themesList.length === 0) { //правим проверка за броя на темите
+          //   this.thereAreNoThemes = true;
+          // }
+
         },
-        error: (error) =>{
-          this.isLoading =false,
-          console.log(`Error: ${error}`);
+        error: (error) => {
+          this.isLoading = false,
+            console.log(`Error: ${error}`);
         }
       });
   }

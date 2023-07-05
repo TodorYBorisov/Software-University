@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 
-const secret = 'q-90234xcwmietvuselrg';
+const secret = '7182311b8540c9b2f614aaf13a734f8bc72f05dea5254604ead8c5d9df298357';
 
 const tokenBlacklist = new Set();
 

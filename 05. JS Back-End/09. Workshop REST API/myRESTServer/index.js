@@ -8,7 +8,7 @@ const trimBody = require('./middlewares/trimBody');
 const session = require('./middlewares/session');
 
 
-const connectionString = 'mongodb://localhost:27017/furniture3';
+const connectionString = 'mongodb://127.0.0.1:27017/furniture';
 
 start();
 
@@ -30,5 +30,5 @@ async function start() {
     app.use('/users', authController);
     app.use('/data/catalog', dataController);
 
-    app.listen(3030, () => console.log('REST service started'));
+    app.listen(3030, () => console.log('REST service started!'));
 }

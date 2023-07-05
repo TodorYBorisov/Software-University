@@ -13,7 +13,8 @@ Here is the response we get:
 {
     "name": "rest-api",
     "version": "1.0.0",
-    "description": "REST-api for back-end of Angular course workshop in SoftUni",
+    "description": "
+    pi for back-end of Angular course workshop in SoftUni",
     "main": "index.js",
 }
 ```

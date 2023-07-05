@@ -13,9 +13,11 @@ async function register(email, password) {
         throw new Error('Email is taken');
     }
 
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const user = await User.create({
         email,
-        hashedPassword: await bcrypt.hash(password, 10)
+        hashedPassword
     });
 
     return createToken(user);

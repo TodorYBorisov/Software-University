@@ -1,7 +1,7 @@
 <div class="user-list-wraper">
     <ul>
-        <li *ngFor=" let user of userList">
-            {{user.username}}
+        <li *ngFor=" let user of userList" [routerLink]="['/user', 'detail', user.id]">
+            <p class="clickable"> {{user.id}} | {{user.username}}</p>
         </li>
     </ul>
 </div>

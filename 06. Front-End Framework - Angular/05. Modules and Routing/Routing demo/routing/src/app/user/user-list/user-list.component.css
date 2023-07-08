@@ -8,3 +8,7 @@
 .user-list-wraper li {
     padding: 10px;
 }
+.clickable {
+    cursor: pointer;
+    background-color: aqua;
+}

@@ -4,20 +4,24 @@ import { SharedModule } from '../shared/shared.module';
 import { GlobalLoaderComponent } from './global-loader/global-loader.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
 @NgModule({
   declarations: [
     GlobalLoaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    PageNotFoundComponent
   ],
   imports: [
     CommonModule, SharedModule, RouterModule
   ],
   exports: [
     GlobalLoaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    PageNotFoundComponent
+    
   ]
 })
 export class CoreModule { }

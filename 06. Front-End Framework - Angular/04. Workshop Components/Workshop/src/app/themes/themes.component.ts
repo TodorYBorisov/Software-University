@@ -21,7 +21,7 @@ export class ThemesComponent implements OnInit {
         next: (themes) => {
           this.themesList = themes //тук ги присвояваме от потока към които сме се закачили
           this.isLoading = false
-
+          
           // if (this.themesList.length === 0) { //правим проверка за броя на темите
           //   this.thereAreNoThemes = true;
           // }

@@ -9,13 +9,13 @@ import { User } from 'src/app/types/User';
 })
 export class UserListComponent implements OnInit {
 
-  myFetchData: User[] = [];
-  
+  userList: User[] = [];
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.fetchUsers().subscribe((users) => {
-      this.myFetchData =users
+      this.userList = users
       console.log(users);
 
     });

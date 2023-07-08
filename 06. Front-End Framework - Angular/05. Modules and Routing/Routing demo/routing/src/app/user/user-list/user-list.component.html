@@ -1,1 +1,7 @@
-<p>user-list works!</p>
+<h3>Fetching data from API!</h3>
+
+<ul>
+    <li *ngFor=" let user of myFetchData">
+        {{user.id}} {{user.username}}
+    </li>
+</ul>

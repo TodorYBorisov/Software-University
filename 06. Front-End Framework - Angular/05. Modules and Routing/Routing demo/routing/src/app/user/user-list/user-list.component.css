@@ -1,0 +1,10 @@
+.user-list-wraper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-list-wraper li {
+    padding: 10px;
+}

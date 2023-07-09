@@ -21,7 +21,7 @@ export class UserListComponent implements OnInit {
     //Toва е правилният начин с error handling
     ngOnInit(): void {
       
-      this.globalLoaderService.showLoader();
+      this.globalLoaderService.showLoader();// това показва глобални спинер лоудър
       
       // setTimeout(() => {
         

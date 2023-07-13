@@ -11,11 +11,12 @@ export class UserDetailComponent {
 
   constructor(private activeRoute: ActivatedRoute) {
     
-    //static way
+    //static way отговаря за статични данни
     console.log('идва от snapshot.data', this.activeRoute.snapshot.data['user']);
     
     //dynamic way
     this.activeRoute.params.subscribe((v) => console.log('идва от params.subscribe', v));
+    //може да взимаме самото id примерно
     
     
     // console.log('идва от snapshot.url', this.activeRoute.snapshot.url);

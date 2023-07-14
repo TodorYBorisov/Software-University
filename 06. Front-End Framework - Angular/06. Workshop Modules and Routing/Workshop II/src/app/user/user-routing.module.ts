@@ -7,9 +7,21 @@ import { AuthActivate } from '../core/guards/authActivate';
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent, canActivate: [AuthActivate] },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthActivate] },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthActivate] },
+  {
+    path: 'login',
+    component: LoginComponent,
+    // canActivate: [AuthActivate]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    // canActivate: [AuthActivate]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    // canActivate: [AuthActivate]
+  },
 
 ];
 

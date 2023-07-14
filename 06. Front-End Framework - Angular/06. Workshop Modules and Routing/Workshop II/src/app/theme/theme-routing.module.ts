@@ -5,6 +5,7 @@ import { NewThemeComponent } from './new-theme/new-theme.component';
 import { CurrentThemeComponent } from './current-theme/current-theme.component';
 
 import { MainComponent } from '../main/main.component';
+import { AuthActivate } from '../core/guards/authActivate';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
     },
     {
         path: 'add-theme',
-        component: NewThemeComponent
+        component: NewThemeComponent,
+        canActivate: [AuthActivate]
     },
 
 ];

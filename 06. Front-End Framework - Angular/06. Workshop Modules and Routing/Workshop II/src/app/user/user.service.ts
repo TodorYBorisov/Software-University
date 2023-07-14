@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { User } from '../types/user';
-const USER_KEY = '[user]'
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +7,7 @@ const USER_KEY = '[user]'
 export class UserService {
 
   user: User | undefined;
+  USER_KEY = '[user]' // това е ключа с който записваме потребителя в LocalStoriga
 
   //с това проверяваме дали има потребител в localStorige
   get isLogged(): boolean {
@@ -16,7 +16,7 @@ export class UserService {
 
   constructor() {
     try {
-      const localStorigeUser = localStorage.getItem(USER_KEY) || "";
+      const localStorigeUser = localStorage.getItem(this.USER_KEY) || "";
 
       this.user = JSON.parse(localStorigeUser);
 
@@ -25,4 +25,20 @@ export class UserService {
       this.user = undefined;
     }
   }
+
+  login(): void {
+    this.user = {
+      email: 'toshko@abv.bg',
+      firstName: 'toshko'
+    };
+
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
+
+  }
+
+  logout(): void {
+    this.user = undefined
+    localStorage.removeItem(this.USER_KEY)
+  }
+
 }

@@ -11,10 +11,18 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
+  //така дърпаме всички теми от апи-то
   getThemes() {
     const { appUrl } = environment;
-    return this.http.get<Theme[]>(`${appUrl}/themes`)
+    return this.http.get<Theme[]>(`${appUrl}/themes`);
   }
+
+  //така дърпаме единична тема по нейното id 
+  getTheme(id: string) {
+    const { appUrl } = environment;
+    return this.http.get<Theme>(`${appUrl}/themes/${id}`);
+  }
+
 
   //ако искаме да имаме лимит колко поста да ни връща от базата правим условието в return
   getPosts(limit?: number) {

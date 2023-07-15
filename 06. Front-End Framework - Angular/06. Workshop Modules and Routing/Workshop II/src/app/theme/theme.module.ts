@@ -5,15 +5,14 @@ import { CurrentThemeComponent } from './current-theme/current-theme.component';
 import { themeRoutingModule } from './theme-routing.module';
 
 
-
 @NgModule({
   declarations: [
     NewThemeComponent,
-    CurrentThemeComponent
+    CurrentThemeComponent, 
   ],
   imports: [
     CommonModule,
-    themeRoutingModule
+    themeRoutingModule,
   ]
 })
 export class ThemeModule { }

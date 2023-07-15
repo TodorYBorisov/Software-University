@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Theme } from '../types/theme';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-themes',
@@ -13,7 +14,11 @@ export class ThemesComponent implements OnInit {
   isLoading: boolean = true; //правим си една променлива която я добавяме долу когато дойдат данните
   // thereAreNoThemes: boolean = false // ако няма повече теми
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private userService: UserService) { }
+
+ get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
 
   ngOnInit(): void {
     this.apiService.getThemes().subscribe(
@@ -21,7 +26,7 @@ export class ThemesComponent implements OnInit {
         next: (themes) => {
           this.themesList = themes //тук ги присвояваме от потока към които сме се закачили
           this.isLoading = false
-          
+
           // if (this.themesList.length === 0) { //правим проверка за броя на темите
           //   this.thereAreNoThemes = true;
           // }

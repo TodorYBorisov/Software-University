@@ -26,7 +26,7 @@ const routes: Routes = [
     {
         path: 'add-theme',
         component: NewThemeComponent,
-        // canActivate: [AuthActivate]
+        canActivate: [AuthActivate]
     },
 
 ];

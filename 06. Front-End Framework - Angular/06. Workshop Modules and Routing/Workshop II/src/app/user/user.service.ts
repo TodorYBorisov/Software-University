@@ -56,8 +56,7 @@ export class UserService {
       password: password
     };
 
-    // Save the user object in localStorage or send it to the server for registration
-    // Example: saving in localStorage
+    // Save the user object in localStorage
     localStorage.setItem(this.USER_KEY, JSON.stringify(user));
 
     console.log('Registration successful');

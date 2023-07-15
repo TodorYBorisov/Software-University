@@ -11,10 +11,10 @@ export class LoginComponent {
 
   constructor(private userService: UserService , private router: Router) { }
 
-  login(email: string, password: string): void {
+  login(firstName: string, password: string): void {
 
     //за сега не оперираме с данните за логването
-    this.userService.login();
+    this.userService.login(firstName,password);
     this.router.navigate(['/'])
   }
 

@@ -8,7 +8,7 @@
                 <!-- username -->
                 <p class="field field-icon">
                     <label for="username"><span><i class="fas fa-user"></i></span></label>
-                    <input class="input-error" type="text" name="username" id="username" placeholder="Johny"#inputUsername>
+                    <input class="input-error" type="text" name="username" id="username" placeholder="Johny"#inputFirstName>
                 </p>
                 <!-- <p class="error">
                     Username is required!
@@ -54,7 +54,7 @@
                 </p>
                 <!-- <p class="error">Repeat Password does not match password!</p> -->
 
-                <button (click)="register(inputUsername.value,inputEmail.value,inputTel.value, inputPassword.value, inputRePassword.value)" routerLink="/home">Create Account</button>
+                <button (click)="register(inputFirstName.value,inputEmail.value,inputTel.value, inputPassword.value, inputRePassword.value)" routerLink="/home">Create Account</button>
 
                 <p class="text-center">
                     Have an account?

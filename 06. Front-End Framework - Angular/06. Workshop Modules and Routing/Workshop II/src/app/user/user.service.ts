@@ -26,10 +26,10 @@ export class UserService {
     }
   }
 
-  login(): void {
+  login(firstName: string, email: string): void {
     this.user = {
-      email: 'toshko@abv.bg',
-      firstName: 'toshko'
+      email: email,
+      firstName: firstName
     };
 
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))
@@ -41,7 +41,7 @@ export class UserService {
     localStorage.removeItem(this.USER_KEY)
   }
 
-  register(username: string, email: string, tel: string, password: string, rePassword: string): void {
+  register(firstName: string, email: string, tel: string, password: string, rePassword: string): void {
     
     if (password !== rePassword) {
       console.log('Passwords do not match');
@@ -50,10 +50,10 @@ export class UserService {
 
     // Create the user object
     const user = {
-      username: username,
-      tel: tel,
+      firstName: firstName,
+      // tel: tel,
       email: email,
-      password: password
+      // password: password
     };
 
     // Save the user object in localStorage

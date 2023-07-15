@@ -41,4 +41,25 @@ export class UserService {
     localStorage.removeItem(this.USER_KEY)
   }
 
+  register(username: string, email: string, tel: string, password: string, rePassword: string): void {
+    
+    if (password !== rePassword) {
+      console.log('Passwords do not match');
+      return;
+    }
+
+    // Create the user object
+    const user = {
+      username: username,
+      tel: tel,
+      email: email,
+      password: password
+    };
+
+    // Save the user object in localStorage or send it to the server for registration
+    // Example: saving in localStorage
+    localStorage.setItem(this.USER_KEY, JSON.stringify(user));
+
+    console.log('Registration successful');
+  }
 }

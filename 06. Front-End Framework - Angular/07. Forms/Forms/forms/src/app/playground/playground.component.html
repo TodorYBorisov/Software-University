@@ -1,0 +1,38 @@
+<p>playground works!</p>
+
+<div appHighlightOnMove> Hello, Directives</div>
+
+
+
+<hr>
+<div *ngIf="true">
+  <span>Simple Div 1</span>
+</div>
+<hr>
+
+<!-- това е като горното със звездичката -->
+<ng-template [ngIf]="true">
+  <div>Simple Div 1.1</div>
+</ng-template>
+
+<!-- къстъм ngif структорна директива -->
+<button (click)="toggle()">toggle my state</button>
+
+<!-- Usage 1 -->
+<div *appMyStructural="isShown">Structural Directives (usage 1)</div>
+
+<!-- Usage 2 -->
+<ng-template [appMyStructural]="isShown" let-value="value" let-val #myDirectiveRef="appMyStructural">
+  <div>Structural Directives (usage 2)</div>
+  
+  <h4>value: {{value}} : {{val}}</h4>
+
+</ng-template>
+
+<!-- Usage 3 -->
+
+<ng-template #tmp>
+  <div>Structural Directives (usage 3)</div>
+</ng-template>
+
+<ng-container [appMyStructural]="isShown" [myTmpProp]="tmp"> </ng-container>

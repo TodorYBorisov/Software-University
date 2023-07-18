@@ -1,1 +1,41 @@
-<p>register works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="registerHandler()">
+    <!-- Email -->
+    <div class="form-goup">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" formControlName="email">
+    </div>
+
+    <!-- Errors for email -->
+    <ng-container *ngIf="registerForm.get('email')?.touched">
+        <div class="error_color" *ngIf="registerForm.get('email')?.errors?.['required']">Email is required!</div>
+        <div class="error_color" *ngIf="registerForm.get('email')?.errors?.['email']"> Email is not valid!</div>
+    </ng-container>
+
+
+    <!-- Password -->
+    <div class="form-goup">
+        <label for="password">Paswword</label>
+        <input type="text" name="password" id="password" formControlName="password">
+    </div>
+
+
+    <!-- <div class="form-goup">
+        <label for="rePassword">Repeat Paswword</label>
+        <input type="text" name="password" id="rePassword">
+    </div> -->
+
+    <!-- Errors for paswword -->
+    <ng-container *ngIf="registerForm.get('password')?.touched">
+        <div class="error_color" *ngIf="registerForm.get('password')?.errors?.['required']">Password is required!</div>
+        <div class="error_color" *ngIf="registerForm.get('password')?.errors?.['minlength']"> Password must be at least
+            5 characters!</div>
+        <!-- <div class="error_color" *ngIf="rePasswordInput.errors?.['compareWith']"> Password don't match!</div> -->
+    </ng-container>
+
+
+    <button [disabled]="registerForm.invalid">Register</button>
+</form>
+<br>
+<br>
+<!-- така динамично може да виждаме какво пишем във инпут полетата -->
+{{registerForm.value | json}}

@@ -1,4 +1,4 @@
-<form #loginForm="ngForm" (ngSubmit)="submitHandler(loginForm)">
+<form #loginForm="ngForm" (ngSubmit)="loginHandler(loginForm)">
     <!-- Email -->
     <div class="form-goup">
         <label for="email">Email</label>
@@ -7,22 +7,22 @@
 
     <!-- Errors for email -->
     <ng-container *ngIf="emailInput.touched">
-        <div *ngIf="emailInput.errors?.['required']">Email is required!</div>
-        <div *ngIf="emailInput.errors?.['email']"> Email is not valid!</div>
+        <div class="error_color" *ngIf="emailInput.errors?.['required']">Email is required!</div>
+        <div class="error_color" *ngIf="emailInput.errors?.['email']"> Email is not valid!</div>
     </ng-container>
 
 
     <!-- Password -->
     <div class="form-goup">
         <label for="password">Paswword</label>
-        <input type="text" name="password" id="password" ngModel password required [minlength]="8" #passwordInput="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$">
+        <input type="text" name="password" id="password" ngModel password required [minlength]="5" #passwordInput="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$">
     </div>
 
     <!-- Errors for paswword -->
     <ng-container *ngIf="passwordInput.touched">
-        <div *ngIf="passwordInput.errors?.['required']">Password is required!</div>
-        <div *ngIf="passwordInput.errors?.['minlength']"> Password must be at least 8 characters!</div>
-        <div *ngIf="passwordInput.errors?.['pattern']"> Password requires at least one uppercase letter, one lowercase letter, one digit, and one symbol!</div>
+        <div class="error_color" *ngIf="passwordInput.errors?.['required']">Password is required!</div>
+        <div class="error_color" *ngIf="passwordInput.errors?.['minlength']"> Password must be at least 5 characters!</div>
+        <div class="error_color" *ngIf="passwordInput.errors?.['pattern']"> Password requires at least one uppercase letter, one lowercase letter, one digit, and one symbol!</div>
     </ng-container>
 
 

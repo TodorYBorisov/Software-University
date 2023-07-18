@@ -1,0 +1,45 @@
+
+<form #registerForm="ngForm" (ngSubmit)="registerHandler(registerForm)">
+    <!-- Email -->
+    <div class="form-goup">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" ngModel email required #emailInput="ngModel">
+    </div>
+
+    <!-- Errors for email -->
+    <ng-container *ngIf="emailInput.touched">
+        <div class="error_color" *ngIf="emailInput.errors?.['required']">Email is required!</div>
+        <div class="error_color" *ngIf="emailInput.errors?.['email']"> Email is not valid!</div>
+    </ng-container>
+
+
+    <!-- Password -->
+    <div class="form-goup">
+        <label for="password">Paswword</label>
+        <input type="text" name="password" id="password" ngModel password required [minlength]="5" #passwordInput="ngModel">
+    </div>
+
+      <!-- Repeat Password -->
+      <div class="form-goup">
+        <label for="password">Repeat Paswword</label>
+        <input type="text" name="rePassword" id="rePassword" ngModel rePassword required [minlength]="5" compareWith="password" #rePasswordInput="ngModel">
+    </div>
+
+    <!-- Errors for paswword and rePasword -->
+    <ng-container *ngIf="passwordInput.touched">
+        <div class="error_color" *ngIf="passwordInput.errors?.['required']">Password is required!</div>
+        <div class="error_color" *ngIf="passwordInput.errors?.['minlength']"> Password must be at least 5 characters!</div>
+    </ng-container>
+
+    <ng-container *ngIf="rePasswordInput.touched">
+        <div class="error_color" *ngIf="rePasswordInput.errors?.['required']">Repeat password is required!</div>
+        <div class="error_color" *ngIf="rePasswordInput.errors?.['minlength']">Repeat password must be at least 5 characters!</div>
+        <div class="error_color" *ngIf="passwordInput.value != rePasswordInput.value">Passwords do not match!</div>
+    </ng-container>
+
+    <button [disabled]="registerForm.invalid || passwordInput.value != rePasswordInput.value" >Register2</button>
+</form>
+<br>
+<br>
+<!-- така динамично може да виждаме какво пишем във инпут полетата -->
+{{registerForm.value | json}}

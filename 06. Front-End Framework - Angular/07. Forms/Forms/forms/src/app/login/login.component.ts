@@ -26,7 +26,7 @@ export class LoginComponent {
 
 
   //начин на подаване на данните от формата 1
-  submitHandler(form: NgForm): void {
+  loginHandler(form: NgForm): void {
 
     //ако формата е невалидна
     if (form.invalid) {

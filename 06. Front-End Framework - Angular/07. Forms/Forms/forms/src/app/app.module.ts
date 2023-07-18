@@ -10,7 +10,10 @@ import { RegisterComponent } from './register/register.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyStructuralDirective } from './my-structural.directive';
 import { PlaygroundComponent } from './playground/playground.component';
-import { FormsModule } from '@angular/forms'; //това е за темплейт дривън формите
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterTestComponent } from './register-test/register-test.component';
+
 
 
 @NgModule({
@@ -23,11 +26,15 @@ import { FormsModule } from '@angular/forms'; //това е за темплей�
     MyStructuralDirective,
     MyRouterLinkDirective,
     PlaygroundComponent,
+    RegisterTestComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, //това е за темплейт дривън формите
+    ReactiveFormsModule, //това е за  реактивните форми
+    BrowserAnimationsModule
    
   ],
   providers: [],

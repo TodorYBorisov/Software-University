@@ -1,1 +1,34 @@
-<p>login works!</p>
+<form #loginForm="ngForm" (ngSubmit)="submitHandler(loginForm)">
+    <!-- Email -->
+    <div class="form-goup">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" ngModel email required #emailInput="ngModel">
+    </div>
+
+    <!-- Errors for email -->
+    <ng-container *ngIf="emailInput.touched">
+        <div *ngIf="emailInput.errors?.['required']">Email is required!</div>
+        <div *ngIf="emailInput.errors?.['email']"> Email is not valid!</div>
+    </ng-container>
+
+
+    <!-- Password -->
+    <div class="form-goup">
+        <label for="password">Paswword</label>
+        <input type="text" name="password" id="password" ngModel password required [minlength]="8" #passwordInput="ngModel" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$">
+    </div>
+
+    <!-- Errors for paswword -->
+    <ng-container *ngIf="passwordInput.touched">
+        <div *ngIf="passwordInput.errors?.['required']">Password is required!</div>
+        <div *ngIf="passwordInput.errors?.['minlength']"> Password must be at least 8 characters!</div>
+        <div *ngIf="passwordInput.errors?.['pattern']"> Password requires at least one uppercase letter, one lowercase letter, one digit, and one symbol!</div>
+    </ng-container>
+
+
+    <button [disabled]="loginForm.invalid" >Login</button>
+</form>
+<br>
+<br>
+<!-- така динамично може да виждаме какво пишем във инпут полетата -->
+{{loginForm.value | json}}

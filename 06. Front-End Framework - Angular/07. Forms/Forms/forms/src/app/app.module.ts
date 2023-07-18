@@ -10,6 +10,8 @@ import { RegisterComponent } from './register/register.component';
 import { MyRouterLinkDirective } from './my-router-link.directive';
 import { MyStructuralDirective } from './my-structural.directive';
 import { PlaygroundComponent } from './playground/playground.component';
+import { FormsModule } from '@angular/forms'; //това е за темплейт дривън формите
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { PlaygroundComponent } from './playground/playground.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

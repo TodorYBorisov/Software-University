@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { DEFAULT_DOMAINS } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +11,20 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
+appEmailsDomains = DEFAULT_DOMAINS;
+
   constructor(private userService: UserService , private router: Router) { }
 
-  login(firstName: string, password: string): void {
+  login(loginForm: NgForm): void {
+
+    //console.log(loginForm.value);
+    
+    if(loginForm.invalid){
+      return;
+    }
 
     //за сега не оперираме с данните за логването
-    this.userService.login(firstName,password);
+    this.userService.login();
     this.router.navigate(['/'])
   }
 

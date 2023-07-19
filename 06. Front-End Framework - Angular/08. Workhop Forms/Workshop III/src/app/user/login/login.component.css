@@ -83,3 +83,8 @@ p.error {
 .input-error {
     border-left-color: red;
 }
+
+.error_color {
+    color: red;
+
+}

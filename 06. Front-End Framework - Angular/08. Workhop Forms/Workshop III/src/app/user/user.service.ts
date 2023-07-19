@@ -26,10 +26,10 @@ export class UserService {
     }
   }
 
-  login(firstName: string, email: string): void {
+  login(): void {
     this.user = {
-      email: email,
-      firstName: firstName
+      email: 'toshko@abv',
+      firstName: 'Toshko'
     };
 
     localStorage.setItem(this.USER_KEY, JSON.stringify(this.user))

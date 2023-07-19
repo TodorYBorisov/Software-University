@@ -15,14 +15,14 @@ export class RegisterComponent {
 
   form = this.formBuilder.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
-    email: ['', [Validators.required, Validators.email, emailValidator(DEFAULT_DOMAINS)]],
+    email: ['', [Validators.required, emailValidator(DEFAULT_DOMAINS)]],
     tel: ['', [Validators.required]],
     passGroup: this.formBuilder.group({
       password: ['', [Validators.required, Validators.minLength(5)]],
       rePassword: ['', [Validators.required]],
     }, {
 
-      validators: [matchPasswordsValidator('password','rePassword')]
+      validators: [matchPasswordsValidator('password', 'rePassword')]
     })
 
   })
@@ -30,9 +30,7 @@ export class RegisterComponent {
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
 
   registerHandler(): void {
-    if (this.form.invalid) {
-      return;
-    }
+    if (this.form.invalid) { return; }
 
     console.log(this.form.value);
 

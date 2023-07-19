@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterTestComponent {
 
+  isMale: boolean = true;
+
   registerHandler(registerForm: NgForm): void {
 
     //ако формата е невалидна
@@ -16,14 +18,19 @@ export class RegisterTestComponent {
     }
 
     //така взимаме данните от формата
-    const value: { email: string, password: string, rePassword: string } = registerForm.value;
+    const value: { email: string, password: string, rePassword: string, gender:string } = registerForm.value;
     console.log(value.email);
     console.log(value.password);
     console.log(value.rePassword);
+    console.log(value.gender);
 
-    registerForm.setValue({ email: '', password: '', rePassword: '' })
+    registerForm.setValue({ email: '', password: '', rePassword: '', gender: '' })
 
     //зачистване на полетата на формата
     registerForm.resetForm();
+
+  }
+  onGenderChange(gender: string) {
+    this.isMale = gender === 'male';
   }
 }

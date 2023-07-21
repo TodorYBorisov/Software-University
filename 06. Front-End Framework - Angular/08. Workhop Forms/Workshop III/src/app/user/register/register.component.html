@@ -15,8 +15,7 @@
 
             <ng-container *ngIf="form.get('username')?.touched">
                 <p class="error" *ngIf="form.get('username')?.errors?.['required']"> Username is required!</p>
-                <p class="error" *ngIf="form.get('username')?.errors?.['minlength']"> Username should be longer than 5
-                    chars!</p>
+                <p class="error" *ngIf="form.get('username')?.errors?.['minlength']"> Username should be longer than 5 chars!</p>
             </ng-container>
 
             <!-- email -->

@@ -26,16 +26,27 @@ export class AppComponent implements OnInit {
 
   time$ = interval(1000).pipe(map(() => new Date()));
 
-  constructor(private authService: AuthService) { }
-  ngOnInit(): void {
+  users$ = this.authService.userObject$;
+  isLoadingUsers$ = this.authService.isLoadingUsers$;
 
-    this.authService.loadUsers().subscribe({
-        next: console.log,
-        error: (error)=>{
-          console.log(`Error from appComponent ${error}`);
-          
-        }
-      });
+
+  constructor(private authService: AuthService) { }
+
+  reloadUsers(): void {
+    this.authService.loadUsers();
   }
 
+
+
+  ngOnInit(): void {
+
+    // this.authService.loadUsers().subscribe({
+    //     next: console.log,
+    //     error: (error)=>{
+    //       console.log(`Error from appComponent ${error}`);
+
+    //     }
+    //   }); 
+  }
 }
+

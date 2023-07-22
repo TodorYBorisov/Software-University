@@ -1,0 +1,14 @@
+<div>{{user | json}}</div>
+
+<div>
+  <h1>
+    sum of list:
+    {{user.list | reduce : sum : 0 }}
+  </h1>
+
+  <button (click)="addProperty()">Add property</button>
+
+  <div>
+    Clock: {{time$ |async | date : 'hh:mm:ss'}}
+  </div>
+</div>

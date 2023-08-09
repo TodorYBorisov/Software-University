@@ -22,7 +22,8 @@ appEmailsDomains = DEFAULT_DOMAINS;
     if(loginForm.invalid){
       return;
     }
-
+   
+    
     //за сега не оперираме с данните за логването
     this.userService.login();
     this.router.navigate(['/'])

@@ -1,0 +1,20 @@
+1 - ng add @compodoc/compodoc
+
+2- npm install --save-dev @babel/plugin-proposal-private-methods
+
+3 - за старт на сървъра и документацията npx compodoc -p tsconfig.doc.json -s
+
+4 - скрипт "compodoc": "npx compodoc -p tsconfig.doc.json -s"  стартира с npm run compodoc
+
+https://triptogether1.netlify.app/home
+
+https://dashboard.render.com/
+
+https://www.netlify.com/?attr=homepage-modal
+
+https://vercel.com/
+
+
+
+
+

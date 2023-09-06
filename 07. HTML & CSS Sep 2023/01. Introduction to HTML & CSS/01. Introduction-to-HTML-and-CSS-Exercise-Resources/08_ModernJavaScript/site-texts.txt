@@ -1,5 +1,4 @@
 The Modern JavaScript Tutorial
-
 The JavaScript language 1.0
 
 The JavaScript language 1.0 An introduction

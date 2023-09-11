@@ -2,7 +2,7 @@
     width: 700px;
     height: 730px;
     border: 1px solid #000000;
-    align-content: center;
+    align-content: center; /*това центрира контейнера*/
     padding: 10px 20px;
     background-color: #a6e1ec;
 }
@@ -23,5 +23,5 @@ li {
     margin-bottom: 5px;
     font-size: 14px;
     border: 1px solid #000000;
-    list-style:none ;
+    list-style:none ; /* премахва на li тага булетите отпред*/
 }

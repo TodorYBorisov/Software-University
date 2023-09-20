@@ -1,0 +1,63 @@
+html {
+    font-family: Helvetica, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, serif;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ul li ul {
+    list-style-type: disc;
+}
+
+ul li ul li ul {
+    list-style-type: circle;
+}
+
+/* начало стилизация на таблица */
+table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: rgb(204, 204, 204);
+    text-align: left;
+}
+
+table th,
+table td {
+    border: 1px solid #d7d7d7;
+    padding-left: 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(241, 241, 241);
+
+}
+
+/* край на стилизацията  */
+blockquote {
+    border-left: 2px solid rgb(221, 221, 221);
+    font-style: italic;
+    padding-left: 20px;
+    line-height: 1.5;
+
+
+}
+
+blockquote>footer {
+    text-align: right;
+}

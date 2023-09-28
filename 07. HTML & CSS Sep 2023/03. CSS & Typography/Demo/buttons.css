@@ -1,0 +1,25 @@
+.button {
+    display: inline-block;
+    background-color: #ccc;
+    color: #000;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    transition: all 0.3s ease-in;
+   
+
+}
+
+.button:hover {
+    background-color: #369;
+    color: #fff;
+}
+
+.button:active {
+    background-color: orange;
+    color: white;
+}
+
+.button.type-pill {
+    border-radius: 5em;
+}

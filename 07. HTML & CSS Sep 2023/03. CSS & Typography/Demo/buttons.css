@@ -6,7 +6,7 @@
     padding: 0.5em 1em;
     border-radius: 0.3em;
     transition: all 0.3s ease-in;
-   
+
 
 }
 
@@ -22,4 +22,30 @@
 
 .button.type-pill {
     border-radius: 5em;
+}
+
+/* table */
+
+table {
+    table-layout: fixed;
+    /*прави колоните да са еднакви*/
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th, td{
+    padding: 0.5em 0.7em;
+}
+table thead th{
+    background-color:#DDD;
+}
+table tbody tr:nth-child(even){
+    background-color: #eee;
 }

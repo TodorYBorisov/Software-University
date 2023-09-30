@@ -43,6 +43,7 @@ td {
 th, td{
     padding: 0.5em 0.7em;
 }
+
 table thead th{
     background-color:#DDD;
 }

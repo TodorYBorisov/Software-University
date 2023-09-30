@@ -46,6 +46,7 @@ th, td{
 table thead th{
     background-color:#DDD;
 }
+
 table tbody tr:nth-child(even){
     background-color: #eee;
 }

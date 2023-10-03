@@ -1,0 +1,15 @@
+.block{
+    background-color: orange;
+    /* width: 30rem; */
+    min-width: 20rem;
+    max-width: 25rem;
+}
+
+.half-container{
+    background-color: aqua;
+    width: 50%;
+}
+.half-text{
+    background-color: pink;
+    width: 50%;
+}

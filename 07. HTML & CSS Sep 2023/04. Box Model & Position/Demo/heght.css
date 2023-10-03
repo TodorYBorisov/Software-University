@@ -1,0 +1,6 @@
+p {
+    background-color: orange;
+    max-height: 15rem;
+    overflow: auto;
+    width: 50%;
+}

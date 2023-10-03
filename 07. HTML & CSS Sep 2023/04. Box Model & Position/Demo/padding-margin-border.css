@@ -1,0 +1,28 @@
+.block{
+    background-color: lightcoral;
+    padding: 10px;
+    margin: 40px;
+
+}
+.inline{
+    background-color: lightgrey;
+}
+.iblock{
+    background-color: lightcyan;
+    display: inline-block;
+    margin: 10px;
+}
+
+button{
+    display: block;
+    width: 70px;
+    margin: 10px;
+    border-radius: 0.3rem;
+    border-style: dotted;
+    border-color: red;
+}
+
+button.second{
+    margin-left: 35px;
+    
+}

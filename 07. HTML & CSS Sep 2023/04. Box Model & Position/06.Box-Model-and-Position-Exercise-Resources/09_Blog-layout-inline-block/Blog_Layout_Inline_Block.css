@@ -6,7 +6,6 @@ body {
     line-height: 1.5;
     padding: 30px;
     margin: 0px;
-
 }
 
 article {
@@ -17,8 +16,7 @@ article {
 aside {
     display: inline-block;
     width: 39%;
-    vertical-align: top;
-
+    vertical-align:top;
 }
 
 section>ul>li,

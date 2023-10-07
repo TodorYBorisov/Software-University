@@ -1,0 +1,53 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+body {
+    margin: 0;
+}
+
+.viewport {
+    height: 100vh;
+    position: relative;
+}
+
+div:nth-child(1) {
+    background: linear-gradient(90deg, rgba(0,36,35,1) 0%, rgba(9,49,121,0.9922093837535014) 39%, rgba(0,255,196,1) 100%);
+}
+
+div:nth-child(2) {
+    background: linear-gradient(90deg, rgba(36,0,21,1) 0%, rgba(121,9,96,0.9922093837535014) 39%, rgba(255,123,0,1) 100%);
+}
+
+.card {
+    width: 10em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.3em;
+    overflow: hidden;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    box-shadow: 0 0 1em 0.2em rgb(0, 0, 0, 0.2) inset;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card .inner-shadow {
+    display: block;
+    background: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 1em 0.5em rgb(0, 0, 0, 0.5) inset;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.card:hover .inner-shadow {
+    opacity: 0;
+}

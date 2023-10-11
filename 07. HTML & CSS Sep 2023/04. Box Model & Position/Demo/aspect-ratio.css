@@ -1,0 +1,32 @@
+.slide {
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide [class^="ar-"] {
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+.ar-16x9 {
+    overflow: hidden;
+    background: #000;
+    position: relative;
+    border: 2px solid greenyellow;
+}
+
+.ar-16x9:after {
+    display: block;
+    content: '';
+    padding-top: 56.25%; /* 9/16*100 нидава това съптношение */
+}
+
+.ar-16x9 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%; /* местим снимката в средата на елемента */
+    left: 0;
+    transform: translateY(-50%); /* местим снимката с50% нагоре по Y */
+}

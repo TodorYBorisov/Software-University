@@ -1,6 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
-body {
+/* body {
     margin: 0;
 }
 
@@ -44,6 +44,65 @@ img {
     right: 0;
     bottom: 0;
     box-shadow: 0 0 1em 0.5em rgb(0, 0, 0, 0.5) inset;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.card:hover .inner-shadow {
+    opacity: 0;
+} */
+
+
+/* ========Центриране на снимки=========== */
+body {
+    margin: 0;
+}
+
+.viewport {
+    height: 100vh;
+    /*височината на браузъра*/
+    position: relative;
+}
+
+div:nth-child(1) {
+    
+    background: linear-gradient(90deg, rgba(9,8,156,1) 0%, rgba(72,77,142,1) 0%, rgba(20,161,152,1) 100%);
+}
+
+div:nth-child(2) {
+    background: linear-gradient(90deg, rgba(171,56,112,1) 0%, rgba(156,8,83,1) 29%, rgba(207,132,18,1) 100%);
+}
+
+.card {
+    width: 15em;
+    position: absolute;
+    /*центрираме горения ляв ъгъл на снимкта да е в центъра*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.3em;
+    overflow: hidden;
+    box-shadow: 0em 0em 0.5em 0.5em rgb(0, 0, 0, 0.2)
+}
+
+.card img {
+    /*оразмерява снимките*/
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+.card .inner-shadow {
+    display: block;
+    background: rgb(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 1em 0.5em rgb(0, 0, 0, 0.5) inset;
+    /*прави сянка на вътре в снимката*/
     opacity: 1;
     transition: opacity 0.3s ease-in;
 }

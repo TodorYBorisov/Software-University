@@ -110,3 +110,11 @@ div:nth-child(2) {
 .card:hover .inner-shadow {
     opacity: 0;
 }
+
+i {
+    color: white;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    padding: 10px;
+}

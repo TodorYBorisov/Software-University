@@ -1,0 +1,44 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+main {
+    background-color: #ffffff;
+}
+
+svg {
+    fill: #262626;
+}
+
+ul li {
+    list-style: none outside;
+    display: inline-block;
+    padding: 15px;
+    margin: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #eeeeee;
+    border-radius: 100%;
+}
+
+main ul li {
+    cursor: pointer;
+}
+
+ul li:nth-child(1) a:hover svg {
+    fill: #3b5998;
+}
+
+ul li:nth-child(2) a:hover svg {
+    fill: #00aced;
+}
+
+ul li:nth-child(3) a:hover svg {
+    fill: red;
+}
+
+ul li:nth-child(4) a:hover svg {
+    fill: #007bb6;
+}
+
+ul li:nth-child(5) a:hover svg {
+    fill: #517fa4;
+}

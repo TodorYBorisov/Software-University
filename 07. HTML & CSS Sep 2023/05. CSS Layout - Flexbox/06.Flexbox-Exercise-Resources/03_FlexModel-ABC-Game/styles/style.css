@@ -1,0 +1,40 @@
+html {
+    font-family:  Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+div.container {
+    padding: 2rem;
+    max-width: 15vw;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+
+}
+
+span {
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    align-content: center;
+}
+
+
+/* span:nth-child(11){order: 1} */
+/* span:nth-child(3){order: 10}
+span:nth-child(7){order: 11}
+span:nth-child(10){order: 12}
+span:nth-child(11){order: -1} */
+.eleven{order: 1;}
+.two{order: 2;}
+.twelve{order: 3;}
+.four{order: 4;}
+.eight{order: 5;}
+.nine{order: 6;}
+.six{order: 7;}
+.five{order: 8;}
+.one{order: 9;}
+.three{order: 10;}
+.seven{order: 11;}
+.ten{order: 12;}

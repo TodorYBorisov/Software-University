@@ -15,16 +15,16 @@ p {
 
 /* ===================== */
 /* Header */
-header{
+header {
     display: flex;
-    border-bottom: 2px solid rgb(0,0,0);
+    border-bottom: 2px solid rgb(0, 0, 0);
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     align-items: center;
 }
 
 nav {
-   margin-left: auto;
+    margin-left: auto;
 }
 
 nav ul {
@@ -41,10 +41,12 @@ nav ul li a {
     text-decoration: none;
     color: rgb(0, 153, 0);
 }
+
 /* ===================== */
-h1{
+h1 {
     text-transform: uppercase;
 }
+
 h2 {
     padding-bottom: 1rem;
     font-family: Georgia, serif;

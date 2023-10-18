@@ -1,0 +1,88 @@
+
+@media (max-width:600px) {
+
+    .home-left,
+    .home-right,
+    .home-container01 {
+        display: none;
+    }
+
+    .navbar-logo-title {
+        margin: 0px;
+    }
+
+    /* за да паднат едно под друго сменяме на колона */
+    .home-hero1 {
+        flex-direction: column;
+    }
+
+    .home-container03 {
+        align-items: center;
+    }
+
+    .section-container {
+        padding-top: 40px;
+    }
+
+    /* да намалим от 3 на 2 колоните и да оправим снимките */
+    .category-card-category-card {
+        flex: 0 0 47%;
+    }
+
+    .category-card-category-card img {
+        height: 100%;
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    .home-container06.max-width-container {
+        padding: 0 60px;
+    }
+
+    .home-full-width-banner.section-container {
+        flex-direction: column;
+    }
+
+    .home-left4 {
+        padding: 2em 0;
+
+    }
+
+    .home-left4 .home-text30 {
+        display: block;
+
+    }
+
+    .home-content {
+        margin-bottom: 20px;
+    }
+
+    .home-text30 {
+        width: auto;
+    }
+
+    /* разпъване на снимка на целия ред, махаме width-a */
+    .home-image6 {
+        width: 100%;
+    }
+    .home-main{
+        padding-bottom: 50px;
+    }
+
+    /* така премахваме зададения width ot 400px  */
+    .blog-post-card-blog-post-card {
+        max-width: initial;
+    }
+
+    /* завъртаме футъра да бъде колона */
+    .home-footer1{
+        flex-direction: column-reverse;
+        padding-top: 60px;
+    }
+    .home-links-container{
+        flex-direction: column;
+    }
+    .home-text32{
+        margin-top: 50px;
+    }
+}

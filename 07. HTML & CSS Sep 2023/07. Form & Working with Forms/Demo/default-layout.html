@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* основна стилизация */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 2em;
+            border: 2px solid green;
+            min-height: 100vh;
+        }
+
+        .site {
+            border: 2px solid blue;
+            max-width: 80em; /*тук задаваме колкок да е широк контейнера*/
+            margin: 0 auto;
+        }
+
+        /* на сайта всички деца */
+        .site > *{
+            border: 2px solid red;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="site">
+        <header class="site-header">
+            <p>Header</p>
+        </header>
+        <main class="site-main">
+            <p>Main</p>
+        </main>
+        <footer class="site-footer">
+            <p>Footer</p>
+        </footer>
+    </div>
+</body>
+
+</html>

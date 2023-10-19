@@ -1,0 +1,36 @@
+/* Задаваме шрифта */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* html {
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+    font-size: 16px;
+    line-height: 1.5;
+} */
+
+html {
+    font: 12px/1.5 'PT Serif', serif; /* тука да се смени font-family*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* ========================== */
+
+
+body {
+    max-width:100%;
+    background-color: red;
+}

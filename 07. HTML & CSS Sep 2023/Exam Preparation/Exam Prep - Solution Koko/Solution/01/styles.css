@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
     padding: 0;
@@ -7,7 +7,8 @@
 }
 
 html {
-    font: 12px/1.5 Poppins, sans-serif;
+    font: 12px/1.5 'PT Serif', serif;
+
 }
 
 body {
@@ -72,5 +73,3 @@ img {
     padding: 0.5em 1em;
     border-radius: 2em;
 }
-
-

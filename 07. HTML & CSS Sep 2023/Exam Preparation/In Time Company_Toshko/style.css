@@ -13,7 +13,7 @@ body {
 
 a {
     text-decoration: none;
-    color: rgb(15, 39, 76);
+    color: rgb(77, 77, 77);
 }
 
 nav ul li {
@@ -35,4 +35,305 @@ header {
 .top-nav ul li a {
     font-size: 1.25em;
     font-weight: 700;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 500;
+    color: rgb(77, 77, 77);
+}
+
+.logo span {
+    color: rgb(28, 161, 181);
+}
+
+.top-nav ul li:nth-child(1) {
+    border-bottom: 0.2em solid rgb(28, 161, 181);
+
+}
+
+/* Секция 1 */
+.hero {
+    position: relative;
+}
+
+.hero .hero-image img {
+    width: 100%;
+    height: 66vh;
+    background-size: cover;
+}
+
+.hero-content {
+    border: 1px solid black;
+    display: inline-block;
+    position: absolute;
+    top: 17em;
+    left: 21em;
+    color: white;
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    font-weight: normal;
+    line-height: 1;
+
+}
+
+.hero-content p {
+    margin-top: 1em;
+}
+
+.hero-content p a {
+    font-size: 1.5em;
+    color: white;
+    padding: 0.5em 2em;
+    background-color: rgb(0, 140, 186);
+    border-radius: 2em;
+}
+
+.welcome {
+    padding: 4em 20em;
+    text-align: center;
+}
+
+.welcome .welcome-title {
+    color: rgb(57, 57, 57);
+    font-weight: 500;
+    font-size: 2em;
+    /* padding: 0.5em; */
+}
+
+.welcome .welcome-title span {
+    border-bottom: 0.1em solid rgb(46, 175, 194);
+}
+
+.welcome span {
+    padding-bottom: 0.2em;
+}
+
+.welcome .welcome-p {
+    color: rgb(68, 83, 96);
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 1em 3.5em;
+    margin-bottom: 1em;
+}
+
+.welcome p a.button {
+    font-size: 2em;
+    color: white;
+    padding: 0.5em 1.5em;
+    background-color: rgb(69, 69, 69);
+    border-radius: 2em;
+
+}
+
+/* ========================= */
+/* Секция 3 */
+.services {
+    background-color: #eef0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+    padding: 3em 23em;
+}
+
+.services-h2.line::after {
+    width: 45%;
+    background-color: #444444;
+    margin-left: 2em;
+}
+
+.line::after {
+    content: "";
+    display: block;
+    height: 4px;
+}
+
+.services-h2 {
+    margin-bottom: 0.75em;
+}
+
+.services-cards {
+    display: flex;
+    gap: 1em;
+
+}
+.services-card-image img{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.services-card{
+    display: flex;
+    flex-direction: column;
+    background-color:#ffffff;
+    border-radius: 0.5em;
+    overflow: hidden;
+    justify-content: space-between;
+}
+.services-card-content{
+    text-align: center;
+    padding: 2em 0em 3em 1em
+}
+.services-card-h3{
+    font-size: 1.7em;
+    font-weight: normal;
+    color:#454545;
+    margin-bottom: 0.25em;
+}
+.services-card-p{
+    padding: 0em 2em;
+    margin-bottom: 2em;
+}
+
+.services-card-a{
+    border-radius: 0.25em;
+    font-size: 1em;
+    font-weight: 500;
+    background-color:#454545 ;
+    padding: 0.5em 1.5em;
+    color: white;
+}
+/* ================================ */
+/* Секция 4 */
+
+.subscribe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #393f43;
+    padding: 3em 0em;
+}
+.subscribe-h2{
+    font-size: 1.9em;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 0.5em;
+}
+
+.subscribe-p{
+    color: white;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+.subscribe-h2.line::after {
+    width: 17%;
+    background-color: white;
+    margin-left: 6.5em;
+}
+
+.line::after {
+    content: "";
+    display: block;
+    height: 4px;
+}
+
+.subcribe-form{
+    display: flex;
+    gap: 0.5em;
+    border-radius: 1em;
+}
+button{
+    padding: 1em 2em;
+    font-weight: bold;
+    color: white;
+    background-color:#6bbfff ;
+    border-radius: 0.5em;
+    border: none;
+
+}
+input{
+    display: inline-flex;
+    width: 32em;
+    border: none;
+    border-radius: 0.5em;
+    font-style: italic;
+    background-color:#545a5e ;
+}
+/* ===================================== */
+/* Секция 5  */
+.contacts-links-ul,
+.contacts-services-ul,
+.contacts-address-ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.contacts h4 {
+    color: white;
+    font-size: 1.45em;
+    font-weight: normal;
+    margin-bottom: 0.75em;
+}
+
+.contacts svg,
+.contacts a {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.contacts svg {
+    fill: #fff;
+}
+
+.contacts {
+    background-color: #2f3539;
+    padding: 2.5em 12.4em;
+    display: flex;
+}
+
+.contacts-links {
+    flex: 1 0 25%;
+    display: flex;
+    flex-direction: column;
+}
+.contacts-services {
+    flex: 1 0 25%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.75em;
+}
+.contacts-address {
+    flex: 1 0 25%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.25em;
+}
+
+.contacts-address-ul .contacts-address-ul-li:nth-child(1) {
+    margin-bottom: 1.25em;
+}
+
+.contacts-icons {
+    flex: 1 0 25%;
+    margin-left: 7.25em;
+}
+.contacts-icons svg {
+    padding-inline-end: 0.3em;
+    margin-left: 0.25em;
+    font-size: 1.4em;
+}
+
+/* ============================================= */
+/* Footer */
+.footer {
+    background-color: #262b2f;
+    width: 100%;
+    padding: 0.5em;
+    color: #fff;
+    text-align: center;
+}
+
+.footer p>span {
+    color: #008cba;
+    margin-left: 0.25em;
 }

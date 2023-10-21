@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    max-width: 85em;
+    margin: 16em auto;
+
+}
+
+.card {
+    background-color: #f6f8f9;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1em;
+   
+}
+
+.section-left {
+    width: 50%;
+    padding: 5em;
+}
+
+.first-p {
+    font-weight: 600;
+    margin-bottom: 1.5em;
+    color: rgb(46, 57, 70);
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 0.5em;
+    color: rgb(35, 46, 60);
+}
+.text{
+    font-size: 1.5em;
+    color:rgb(91, 102, 113);
+    margin-bottom: 1em;
+}
+.buttons{
+    display: flex;
+    gap: 1em;
+}
+
+.contact a {
+    display: block;
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    background-color: rgb(120, 110, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 0.3em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    
+}
+.more a{
+    display: block;
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    background-color:rgb(246, 248, 249);
+    color:rgb(38, 49, 64);
+    border-radius: 0.3em;
+    border: 1px solid  rgb(0, 0, 0);
+    letter-spacing: 2px;
+    font-weight: bold;
+
+}
+.card-image img{
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    height: auto;
+    padding: 2em 1.5em;
+}

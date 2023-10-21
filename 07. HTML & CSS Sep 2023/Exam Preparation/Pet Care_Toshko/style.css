@@ -1,0 +1,336 @@
+/* Основни настройки според заданието */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* сетване на основното боди */
+
+body {
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Open Sans', sans-serif;
+    /* max-width: 100em; */
+    /* margin: 0em auto; */
+}
+
+/* Навигация */
+a {
+    text-decoration: none;
+    color: rgb(15, 39, 76);
+}
+
+nav ul li {
+    list-style: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 20em;
+}
+
+.top-nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+.top-nav ul li a {
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+/* ====Бутон еднакъв навсякъде======= */
+.button {
+    color: rgb(238, 61, 19);
+    font-size: 1.3em;
+    font-weight: 700;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2em;
+    padding: 1em 2.4em;
+}
+
+/* ============================= */
+/* Секция 1 */
+
+.hero {
+    background: url('images/header-bg.png') 100% 100% no-repeat;
+    padding: 2em 24em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8em;
+}
+
+.hero-content {
+    align-items: center;
+    flex-basis: 40%;
+    color: white;
+    margin-top: 5em;
+}
+
+.hero-title {
+    font-size: 4em;
+    line-height: 1;
+    margin-bottom: 0.25em;
+}
+
+.hero-title span {
+    display: block;
+    font-weight: 100;
+}
+
+.hero-p {
+    font-size: 1.3em;
+    font-weight: 300;
+    line-height: 2;
+    /* width: 80%; */
+    margin-bottom: 3em;
+}
+
+.hero-image {
+    position: relative;
+    flex-basis: 60%;
+    height: 40em;
+}
+
+.hero-image img {
+    /* width: 100%;
+    height: 100%; */
+    object-fit: contain;
+    position: absolute;
+    top: 1em;
+    left: -10em;
+}
+
+/* =========================== */
+/* Секция 2 */
+
+.service {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 24em;
+    align-items: center;
+    /* border-bottom: 1px solid rgb(9, 9, 9); */
+}
+
+.service-heading {
+    text-align: center;
+    padding-inline: 15em;
+    margin-bottom: 4em;
+}
+
+.service-heading .service-h2 {
+    font-size: 3em;
+    color: rgb(27, 29, 50);
+}
+
+.service-heading .service-p {
+    line-height: 2;
+    font-size: 1em;
+    color: rgb(140, 140, 140);
+}
+
+/* стилизация на самите картички */
+.service-card {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    padding-bottom: 4em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(226, 205, 198);
+    border-radius: 1em;
+    padding: 4em 0em;
+}
+
+.service-card .card .card-content {
+    text-align: center;
+    padding: 0em 2em;
+}
+
+/* задаваме падинг на смиката, за да се види задния фон */
+.card-image-img {
+    padding: 3.2em;
+}
+/* слагаме фона */
+.card-image {
+    background: url('images/service-bg.png') center no-repeat;
+    margin-bottom: 1rem;
+}
+
+.card:first-of-type .card-image {
+    background-position: 75%;
+}
+
+.card:last-of-type .card-image {
+    background-position: 20%;
+}
+
+.card-content-h3 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.card-content-p {
+    line-height: 1.8;
+    color: #999999;
+}
+/* ======================================== */
+/* Секция 3 */
+
+.care {
+    padding: 8em 24em 4em 24em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8em;
+    gap: 4em;
+}
+
+.care-content {
+    align-items: center;
+    flex-basis: 55%;
+    margin-top: 5em;
+}
+
+.care-title {
+    font-size: 4em;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+.care-title span {
+    display: block;
+    font-weight: 300;
+    margin-top: 0.5em;
+}
+
+.care-p {
+    font-size: 1.4em;
+    font-weight: 300;
+    line-height: 2;
+    width: 108%;
+    margin-bottom: 3em;
+}
+
+.care-image {
+    position: relative;
+    flex-basis: 45%;
+    height: 40em;
+}
+.button-care{
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    background-color:  rgb(238, 61, 19);;
+    border-radius: 2em;
+    padding: 1em 3em;
+}
+/* =================================== */
+/* Секция 4  */
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('images/cats-bg.png') 100% 100% no-repeat;
+    padding-block: 9%;
+    color: white;
+    text-align: center;
+}
+
+.contact-h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.contact-p {
+    font-size: 1.5em;
+    line-height: 1.8;
+    padding-inline: 25em;
+    margin-bottom: 3em;
+}
+.contact-buttons span{
+    margin-left: 1em;
+   
+}
+/* ============================ */
+/* Footer 1*/
+
+/* footer {
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    padding-top: 7em;
+    background-color: #f8f8f8;
+    
+}
+.first{
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-bottom: 3em;
+    color:black;
+    letter-spacing: 4
+}
+
+footer ul li  {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: rgb(46, 46, 46);
+    list-style: none;
+}
+
+footer ul {
+    width: 17vw;
+}
+
+.footer-logo{
+    width: 50%;
+}
+footer ul .last-li{
+    margin-top: 4.01em;
+} */
+/* Footer 2 */
+
+.footer{
+    background-color:rgb(248, 248, 248) ;
+    display: flex;
+    justify-content: center;
+    gap: 8em;
+
+}
+
+.footer-link{
+   margin-top: 5em;
+   margin-bottom: 10em;
+   line-height: 2;
+}
+
+.footer-link-h4{
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    padding-bottom: 1em;
+}
+.footer-link-p{
+    color:rgb(142, 142, 142) ;
+}
+.footer-link-img{
+    padding-bottom: 1em;
+}

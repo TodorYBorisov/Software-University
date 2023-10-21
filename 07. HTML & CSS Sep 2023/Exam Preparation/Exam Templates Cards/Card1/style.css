@@ -1,0 +1,101 @@
+/* Зареждаме fonts от google */
+@import url('https://fonts.google.com/specimen/PT+Serif');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 12px/1.5 Poppins, sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    font-size: 'PT Serif', serif;
+    /*сменяме от goole fonts*/
+    max-width: 80em;
+    margin: 6em auto;
+}
+
+/* стилизация на картичката */
+.card {
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.6);
+
+}
+
+.card-info {
+    width: 50%;
+    padding: 2em 1.5em;
+    background: url(image/image1.png) top left;
+    background-size: 100% 82%;
+}
+
+.card-info h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    border-bottom: 1px dotted green;
+    margin-bottom: 0.5em;
+}
+
+/* стилизация на div + 2p*/
+.card-info-intro {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    margin-bottom: 3em;
+}
+
+/* стилизация на Ul */
+.card-ul {
+    padding: 0;
+    font-size: 1.2em;
+    margin-bottom: 3em;
+}
+
+.card-ul-li {
+    list-style: none;
+}
+
+.card-ul-li span {
+    color: green;
+}
+
+.last-p {
+    font-size: 1.35em;
+    line-height: 1.3;
+    margin-bottom: 3em;
+}
+
+/* стилизация на таблицата */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th,
+tbody,
+tr,
+td {
+    border: 1px solid green;
+}
+
+/* стилизация на снимката */
+.card-image {
+    width: 50%;
+    padding: 2em 1.5em;
+    background: url(image/kiwi-smoothie.jpg) center no-repeat;
+    background-size: 90% 90%;
+}

@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Helvetica, sans-serif;
+    /* margin: 5% 10% 5% 10%; */
+}
+
+
+.chilhop {
+    background-color: #1881b6;
+    display: flex;
+    justify-content: space-between;
+    margin: 4em;
+    border: 0.5em solid black;
+    border-radius: 2em;
+}
+
+.chilhop .info {
+    width: 60%;
+    padding: 64px 24px 64px 64px;
+}
+
+.chilhop .subtitle {
+    font-size: 34px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 52px;
+    margin-bottom: 60px;
+}
+
+.chilhop .title {
+    font-size: 65px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+.chilhop .desc {
+    font-size: 27px;
+    line-height: 2;
+    text-indent: 88px;
+    margin-top: 30px;
+    margin-bottom: 34px;
+    color: black;
+    font-weight: 500;
+}
+
+.chilhop .btn {
+    all: unset; 
+    border: 1px solid black;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight:600;
+    font-size: 24px;
+   
+}
+
+.chilhop .btn-first {
+    background-color: #b6416d;
+    color: white;
+    margin-right: 210px;
+    margin-left: 150px;
+    
+}
+
+.buttons{
+    display: flex;
+    /* justify-content: space-around; */
+    
+}
+
+.chilhop-img {
+    width: 40%;
+    padding: 64px 64px 64px 26px;
+    overflow: hidden;
+}
+
+.chilhop-img img {
+    width: 100%;
+    display: block;
+    height: auto;
+}

@@ -11,35 +11,32 @@ var root = ReactDOM.createRoot(rootDomElement);
 // const header = React.createElement('header', { className: 'site-header' }, h1, h2);
 
 
+// const Footer = () => {
+//     return React.createElement('div',
+//         { className: 'site-footer' },
+//         React.createElement('p', {}, '&copy; All rights reserved'),
+//     );
+// };
+
 var Footer = function Footer() {
-    return React.createElement('div', { className: 'site-footer' }, React.createElement('p', {}, '&copy; All rights reserved'));
+    return React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'p',
+            null,
+            ' \xA9 All Rights Reserved.'
+        )
+    );
 };
 
 var headerJSX = React.createElement(
     'div',
     null,
     React.createElement(
-        'header',
-        null,
-        React.createElement(
-            'ul',
-            null,
-            React.createElement(
-                'li',
-                null,
-                'Home'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'About'
-            ),
-            React.createElement(
-                'li',
-                null,
-                'Contacts'
-            )
-        )
+        'h1',
+        { className: 'site-header' },
+        'This is site with footer.'
     ),
     React.createElement(Footer, null)
 );

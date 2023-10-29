@@ -12,22 +12,25 @@ const root = ReactDOM.createRoot(rootDomElement);
 // const header = React.createElement('header', { className: 'site-header' }, h1, h2);
 
 
-const Footer = () => {
-    return React.createElement('div',
-        { className: 'site-footer' },
-        React.createElement('p', {}, '&copy; All rights reserved'),
-    );
-};
+// const Footer = () => {
+//     return React.createElement('div',
+//         { className: 'site-footer' },
+//         React.createElement('p', {}, '&copy; All rights reserved'),
+//     );
+// };
+
+const Footer = () => (
+    <div>
+        <p> &copy; All Rights Reserved.</p>
+    </div>
+
+)
+
+
 
 const headerJSX = (
     <div>
-        <header>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contacts</li>
-            </ul>
-        </header>
+        <h1 className="site-header">This is site with footer.</h1>
         <Footer></Footer>
     </div>
 );

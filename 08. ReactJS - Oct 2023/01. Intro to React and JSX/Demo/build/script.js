@@ -10,12 +10,17 @@ var root = ReactDOM.createRoot(rootDomElement);
 
 // const header = React.createElement('header', { className: 'site-header' }, h1, h2);
 
+
+var Footer = function Footer() {
+    return React.createElement('div', { className: 'site-footer' }, React.createElement('p', {}, '&copy; All rights reserved'));
+};
+
 var headerJSX = React.createElement(
-    'header',
-    { className: 'site-header' },
+    'div',
+    null,
     React.createElement(
-        'nav',
-        { className: 'site-nav' },
+        'header',
+        null,
         React.createElement(
             'ul',
             null,
@@ -27,15 +32,16 @@ var headerJSX = React.createElement(
             React.createElement(
                 'li',
                 null,
-                'Contacts'
+                'About'
             ),
             React.createElement(
                 'li',
                 null,
-                'About'
+                'Contacts'
             )
         )
-    )
+    ),
+    React.createElement(Footer, null)
 );
 
 root.render(headerJSX);

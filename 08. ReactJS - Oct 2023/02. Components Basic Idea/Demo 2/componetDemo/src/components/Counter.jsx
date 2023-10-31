@@ -8,10 +8,16 @@ export default function Counter(props) {
         setClicks(click + 1);
     };
 
+    const onDecrementClick = () => {
+        setClicks(click -1);
+    };
+
     return (
         <div>
             <p>{click}</p>
-            <button onClick={onIncrementClick}>Click me</button>
+            <button onClick={onIncrementClick}>+</button>
+            {/* <button onClick={onDecrementClick}>-</button> */}
+            <button onClick={()=>setClicks(click-1)}>-</button>
         </div>
     )
 };

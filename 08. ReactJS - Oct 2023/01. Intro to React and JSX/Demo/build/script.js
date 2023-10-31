@@ -18,16 +18,17 @@ var root = ReactDOM.createRoot(rootDomElement);
 //     );
 // };
 
-var Footer = function Footer() {
-    return React.createElement(
-        'div',
-        null,
-        React.createElement(
-            'p',
-            null,
-            ' \xA9 All Rights Reserved.'
-        )
-    );
+// const Footer = () => (
+//     <div>
+//         <p> &copy; All Rights Reserved.</p>
+//     </div>
+
+// )
+
+//nonJSX
+function Footer(params) {
+    var reactElement = React.createElement('div', { className: 'site-footer' }, React.createElement('p', { className: 'footer' }, 'All rights reserved'));
+    return reactElement;
 };
 
 var headerJSX = React.createElement(

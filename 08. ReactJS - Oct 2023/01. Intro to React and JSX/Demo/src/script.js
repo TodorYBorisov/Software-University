@@ -39,7 +39,7 @@ function Footer(params) {
     return reactElement = React.createElement(
         'div',
         { className: 'site-footer' },
-        React.createElement(FooterText) //по този начин влагаме горната функция с криет елемент в самия футър
+        React.createElement(FooterText) //по този начин влагаме горната функция с React.createElement в самия футър
     );
 };
 

@@ -27,13 +27,19 @@ const root = ReactDOM.createRoot(rootDomElement);
 // )
 
 //nonJSX
+
+
+function FooterText(params) {
+    return React.createElement('p',
+    { className: 'footer' },
+    'All rights reserved')
+}
+
 function Footer(params) {
     return reactElement = React.createElement(
         'div',
         { className: 'site-footer' },
-        React.createElement('p',
-            { className: 'footer' },
-            'All rights reserved')
+        React.createElement(FooterText) //по този начин влагаме горната функция с криет елемент в самия футър
     );
 };
 

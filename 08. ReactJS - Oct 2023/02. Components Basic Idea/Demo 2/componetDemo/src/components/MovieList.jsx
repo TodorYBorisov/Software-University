@@ -6,9 +6,9 @@ export default function MovieList(props) {
         <div className="movie-list">
             <h2>{props.headingText}</h2>
             <ul>
-                <li><Movie data={props.movies[0]}/></li>
-                <li><Movie data={props.movies[1]}/></li>
-                <li><Movie data={props.movies[2]}/></li>
+                <Movie data={props.movies[0]}/>
+                <Movie data={props.movies[1]}/>
+                <Movie data={props.movies[2]}/>
             </ul>
         </div>
     );

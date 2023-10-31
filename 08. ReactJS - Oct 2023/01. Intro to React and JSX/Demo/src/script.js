@@ -1,6 +1,5 @@
 import '../node_modules/react/umd/react.production.min.js';
 import '../node_modules/react-dom/umd/react-dom.production.min.js';
-import React from 'react';
 
 
 const rootDomElement = document.getElementById('root');
@@ -34,7 +33,7 @@ function Footer(params) {
         { className: 'site-footer' },
         React.createElement('p',
             { className: 'footer' },
-            '&copy; All rights reserved')
+            'All rights reserved')
     );
     return reactElement;
 };

@@ -44,7 +44,7 @@ function Footer(params) {
 const headerJSX = (
     <div>
         <h1 className="site-header">This is site with footer.</h1>
-        <Footer></Footer>
+        <Footer/>
     </div>
 );
 

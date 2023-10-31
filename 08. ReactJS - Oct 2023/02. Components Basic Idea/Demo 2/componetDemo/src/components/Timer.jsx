@@ -6,7 +6,7 @@ export default function Timer(props) {
 
     // console.log(time);
 
-    //useEffect instead of setTime
+    //Note: DO NOT use setTime==> useEffect instead of setTime!
     setTimeout(() => {
         setTime(time + 1);
     }, 3000);

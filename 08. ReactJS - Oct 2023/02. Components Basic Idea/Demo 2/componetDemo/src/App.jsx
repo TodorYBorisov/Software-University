@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <Timer />
+      <Timer startTime={5} />
       <h1>My first dynamic react application!</h1>
       <MovieList movies={movies} headingText='My movie list' />
 

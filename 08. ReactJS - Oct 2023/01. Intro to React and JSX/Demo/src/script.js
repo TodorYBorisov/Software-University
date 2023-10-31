@@ -1,5 +1,6 @@
 import '../node_modules/react/umd/react.production.min.js';
 import '../node_modules/react-dom/umd/react-dom.production.min.js';
+import React from 'react';
 
 
 const rootDomElement = document.getElementById('root');
@@ -19,12 +20,24 @@ const root = ReactDOM.createRoot(rootDomElement);
 //     );
 // };
 
-const Footer = () => (
-    <div>
-        <p> &copy; All Rights Reserved.</p>
-    </div>
+// const Footer = () => (
+//     <div>
+//         <p> &copy; All Rights Reserved.</p>
+//     </div>
 
-)
+// )
+
+//nonJSX
+function Footer(params) {
+    const reactElement = React.createElement(
+        'div',
+        { className: 'site-footer' },
+        React.createElement('p',
+            { className: 'footer' },
+            '&copy; All rights reserved')
+    );
+    return reactElement;
+};
 
 
 

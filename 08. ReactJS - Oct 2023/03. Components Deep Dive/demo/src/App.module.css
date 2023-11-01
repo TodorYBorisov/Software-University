@@ -1,0 +1,18 @@
+.listItem {
+   list-style: none;
+   display: inline;
+   margin: 1em;
+   padding: 1em;
+   background-color: blue;
+   border: 2px solod black;
+   color: white;
+}
+
+.listItem:hover {
+    cursor: pointer;
+    background-color: green;
+ }
+
+.list{
+    margin-top:3em;
+ }

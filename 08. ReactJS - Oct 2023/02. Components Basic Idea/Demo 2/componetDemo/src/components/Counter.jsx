@@ -11,11 +11,15 @@ export default function Counter(props) {
     const onDecrementClick = () => {
         setClicks(click -1);
     };
+    const clear = () => {
+        setClicks(0);
+    };
 
     return (
         <div>
             <p>{click}</p>
             <button onClick={onIncrementClick}>+</button>
+            <button onClick={clear}>Clear</button>
             <button onClick={onDecrementClick}>-</button>
             {/* <button onClick={()=>setClicks(click-1)}>-</button> */}
         </div>

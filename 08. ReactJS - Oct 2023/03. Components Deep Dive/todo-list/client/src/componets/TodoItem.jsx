@@ -1,7 +1,7 @@
-export default function TodoItem({_id, text, isCompleted }) {
+export default function TodoItem({_id, text, isCompleted, changeStatusHandler }) {
 
     const onChangeStatusClick=()=>{
-
+        changeStatusHandler(_id)
     }
 
     return (

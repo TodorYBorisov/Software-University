@@ -17,7 +17,12 @@ export default function TodoList(params) {
             })
             .catch((Error) => console.log(Error));
 
-    }, [])
+    }, []);
+
+    //смяна на статуса при натискането на бутона
+    const changeStatusHandler = (todoId) => {
+        setTodos(state => state.map(todo=> todo._id ==))
+    }
 
 
     return (
@@ -47,9 +52,11 @@ export default function TodoList(params) {
                                 key={todo._id}
                                 _id={todo._id}
                                 text={todo.text}
-                                isCompleted={todo.isCompleted} />
+                                isCompleted={todo.isCompleted}
+                                changeStatusHandler={changeStatusHandler}
+                                />
                         ))}
-                     
+
 
                     </tbody>
                 </table>

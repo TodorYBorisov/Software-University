@@ -11,7 +11,8 @@ export default function Counter(props) {
     const onDecrementClick = () => {
         setClicks(click => click - 1);
     };
-    const clear = () => {
+    const clear = (event) => {
+        console.log(event);
         setClicks(0);
     };
 

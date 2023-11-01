@@ -8,7 +8,7 @@ export default function FetchDemo(props) {
 
     // console.log(characters);
 
-    const listNames = characters.map((character, index) => <li className={styles.listItem} key={index}>{character.name}</li>)
+    //const listNames = characters.map((character, index) => <li className={styles.listItem} key={index}>{character.name}</li>)
 
     useEffect(() => {
         fetch('https://swapi.dev/api//people')
@@ -25,7 +25,7 @@ export default function FetchDemo(props) {
         <div>
             <h2>SW Characters</h2>
             <ul>
-                {listNames}
+                {characters.map(character => <li className={styles.listItem} key={character.url}>{character.name}</li>)}
             </ul>
         </div>
     )

@@ -19,8 +19,6 @@ export default function FetchDemo(props) {
             .catch((Error) => console.log(Error));
     }, [])
 
-
-
     return (
         <div>
             <h2>SW Characters</h2>

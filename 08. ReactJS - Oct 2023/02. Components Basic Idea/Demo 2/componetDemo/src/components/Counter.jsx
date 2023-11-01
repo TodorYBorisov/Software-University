@@ -26,6 +26,22 @@ export default function Counter(props) {
     //     warning = <p>Invalid count!</p>
     // }
 
+
+    let message = null;
+
+    switch (click) {
+        case 1:
+            message = 'Test 1'
+            break;
+
+        case 2:
+            message = 'Test 2'
+            break;
+        case 3:
+            message = 'Test 3'
+            break;
+    }
+
     return (
         <div>
             <p>{click}</p>
@@ -35,8 +51,7 @@ export default function Counter(props) {
             {click < 0 ? <p>Invalid count</p> : null}
 
             {/* {click == 0 && <p>Please start incrementig!</p>}  */}
-
-
+            <h4>{message}</h4>
 
             <button onClick={onIncrementClick}>+</button>
             <button onClick={clear}>Clear</button>

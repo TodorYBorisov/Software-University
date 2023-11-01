@@ -5,11 +5,11 @@ export default function Counter(props) {
     const [click, setClicks] = useState(0);
 
     const onIncrementClick = () => {
-        setClicks(click + 1);
+        setClicks(click => click + 1);
     };
 
     const onDecrementClick = () => {
-        setClicks(click -1);
+        setClicks(click => click - 1);
     };
     const clear = () => {
         setClicks(0);

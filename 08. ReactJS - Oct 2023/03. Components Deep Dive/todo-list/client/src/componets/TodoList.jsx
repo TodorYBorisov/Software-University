@@ -21,7 +21,7 @@ export default function TodoList(params) {
 
     //смяна на статуса при натискането на бутона
     const changeStatusHandler = (todoId) => {
-        setTodos(state => state.map(todo=> todo._id ==))
+        setTodos(state => state.map(todo=> todo._id === todoId ? {...todo, isCompleted: !todo.isCompleted} : todo ))
     }
 
 

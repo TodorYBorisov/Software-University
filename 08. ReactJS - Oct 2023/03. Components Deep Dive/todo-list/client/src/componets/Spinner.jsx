@@ -1,4 +1,4 @@
-export default function Spinner(props) {
+export default function Spinner() {
     return (
         <div className="loading-container">
             <div className="loading-spinner">
@@ -6,4 +6,4 @@ export default function Spinner(props) {
             </div>
         </div>
     );
-};
+}

@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Spinner from "./Spinner";
-import TodoItem from "./TodoItem";
+import { useEffect, useState } from 'react';
+import TodoItem from './TodoItem';
 
 
+// eslint-disable-next-line no-unused-vars
 export default function TodoList(params) {
 
     const [todos, setTodos] = useState([]);
@@ -12,8 +12,8 @@ export default function TodoList(params) {
             .then(responce => responce.json())
             .then(data => {
 
-                const result = Object.values(data)
-                setTodos(result)
+                const result = Object.values(data);
+                setTodos(result);
             })
             .catch((Error) => console.log(Error));
 
@@ -21,8 +21,8 @@ export default function TodoList(params) {
 
     //смяна на статуса при натискането на бутона
     const changeStatusHandler = (todoId) => {
-        setTodos(state => state.map(todo=> todo._id === todoId ? {...todo, isCompleted: !todo.isCompleted} : todo ))
-    }
+        setTodos(state => state.map(todo=> todo._id === todoId ? {...todo, isCompleted: !todo.isCompleted} : todo ));
+    };
 
 
     return (
@@ -63,4 +63,4 @@ export default function TodoList(params) {
             </div>
         </section>
     );
-};
+}

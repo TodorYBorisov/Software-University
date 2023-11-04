@@ -1,4 +1,4 @@
-export default function Header(props) {
+export default function Header() {
     return (
         <header className="navigation-header">
             <span className="navigation-logo">
@@ -8,4 +8,4 @@ export default function Header(props) {
             <span className="navigation-description">Todo List</span>
         </header>
     );
-};
+}

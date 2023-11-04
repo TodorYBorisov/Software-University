@@ -1,6 +1,6 @@
-import Footer from "./componets/Footer";
-import Header from "./componets/Header";
-import TodoList from "./componets/TodoList";
+import Footer from './componets/Footer';
+import Header from './componets/Header';
+import TodoList from './componets/TodoList';
 
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
       <main className="main">
 
         <TodoList />
-        
+
       </main>
       <Footer />
     </>
   );
 }
 
-export default App
+export default App;

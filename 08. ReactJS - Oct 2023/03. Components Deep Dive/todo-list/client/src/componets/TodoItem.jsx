@@ -1,8 +1,9 @@
+// eslint-disable-next-line react/prop-types
 export default function TodoItem({_id, text, isCompleted, changeStatusHandler }) {
 
     const onChangeStatusClick=()=>{
-        changeStatusHandler(_id)
-    }
+        changeStatusHandler(_id);
+    };
 
     return (
         <tr className={`todo${isCompleted ? ' is-completed' : ''}`}>
@@ -13,4 +14,4 @@ export default function TodoItem({_id, text, isCompleted, changeStatusHandler })
             </td>
         </tr>
     );
-};
+}

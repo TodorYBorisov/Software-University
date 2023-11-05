@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-export default function Counter(props) {
+export default function Counter() {
 
     const [click, setClicks] = useState(0);
 
@@ -31,14 +31,14 @@ export default function Counter(props) {
 
     switch (click) {
         case 1:
-            message = 'Test 1'
+            message = 'Test 1';
             break;
 
         case 2:
-            message = 'Test 2'
+            message = 'Test 2';
             break;
         case 3:
-            message = 'Test 3'
+            message = 'Test 3';
             break;
     }
 
@@ -58,5 +58,5 @@ export default function Counter(props) {
             <button onClick={onDecrementClick}>-</button>
             {/* <button onClick={()=>setClicks(click-1)}>-</button> */}
         </div>
-    )
-};
+    );
+}

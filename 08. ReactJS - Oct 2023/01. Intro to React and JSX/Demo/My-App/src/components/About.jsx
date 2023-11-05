@@ -1,4 +1,4 @@
-export default function About(params) {
+export default function About() {
     return(
         <section className="about_section layout_padding">
         <div className="container  ">
@@ -39,4 +39,4 @@ export default function About(params) {
         </div>
       </section>
     );
-};
+}

@@ -1,4 +1,4 @@
-export default function Footer(params) {
+export default function Footer() {
     return (
         <section className="footer_section">
             <div className="container">
@@ -9,4 +9,4 @@ export default function Footer(params) {
             </div>
         </section>
     );
-};
+}

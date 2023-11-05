@@ -1,4 +1,4 @@
-export default function Header(params) {
+export default function Header() {
     return (<div className="hero_area">
         <div className="hero_bg_box">
             <div className="bg_img_box">
@@ -144,4 +144,4 @@ export default function Header(params) {
 
     </div>
     );
-};
+}

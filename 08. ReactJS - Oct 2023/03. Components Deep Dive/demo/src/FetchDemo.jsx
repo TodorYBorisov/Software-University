@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useEffect } from "react"
+import { useState } from 'react';
+import { useEffect } from 'react';
 import styles from './FetchDemo.module.css';
 
-export default function FetchDemo(props) {
+export default function FetchDemo() {
 
     const [characters, setCharacters] = useState([]);
 
@@ -17,7 +17,7 @@ export default function FetchDemo(props) {
                 setCharacters(data.results);
             })
             .catch((Error) => console.log(Error));
-    }, [])
+    }, []);
 
     return (
         <div>
@@ -26,5 +26,5 @@ export default function FetchDemo(props) {
                 {characters.map(character => <li className={styles.listItem} key={character.url}>{character.name}</li>)}
             </ul>
         </div>
-    )
+    );
 }

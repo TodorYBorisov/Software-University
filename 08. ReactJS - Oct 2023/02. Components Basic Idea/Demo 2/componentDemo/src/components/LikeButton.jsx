@@ -3,7 +3,7 @@ import styles from './LikeButton.module.css';
 
 export default function LikeButton() {
     const [like, setLike] = useState(false);
-    const [likesCount, setLikesCount] = useState(26);
+    const [likesCount, setLikesCount] = useState(9);
 
     const handleLike = () => {
         if (!like) {

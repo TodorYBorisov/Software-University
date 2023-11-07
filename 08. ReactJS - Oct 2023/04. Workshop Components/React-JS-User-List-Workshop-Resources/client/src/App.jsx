@@ -1,9 +1,18 @@
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import UserList from "./components/UserList"
 
 function App() {
     return (
-        <div>
-            <h1>Test</h1>
-        </div>
+        <>
+            <Header />
+            <main className="main">
+
+                <UserList />
+
+            </main>
+            <Footer />
+        </>
     )
 }
 
